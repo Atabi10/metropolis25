@@ -9,6 +9,7 @@ interface SectionHeaderProps {
   className?: string
   titleClassName?: string
   dark?: boolean
+  id?: string
 }
 
 export function SectionHeader({
@@ -20,9 +21,11 @@ export function SectionHeader({
   className,
   titleClassName,
   dark = true,
+  id,
 }: SectionHeaderProps) {
   return (
     <div
+      id={id}
       className={clsx(
         'mb-12 md:mb-16',
         align === 'center' && 'text-center',
