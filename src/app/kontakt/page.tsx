@@ -109,7 +109,7 @@ export default function KontaktPage() {
                   Fragen, Anfragen oder Feedback — wir freuen uns von dir zu hören.
                 </p>
 
-                <form action="/api/contact" method="POST" className="space-y-4" aria-label="Kontaktformular">
+                <form action="https://formspree.io/f/xbdbzjkl" method="POST" className="space-y-4" aria-label="Kontaktformular">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="form-label">Name *</label>
