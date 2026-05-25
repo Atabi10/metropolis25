@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Play, ChevronDown } from 'lucide-react'
 import { clsx } from 'clsx'
 
@@ -36,15 +37,24 @@ export function HeroSection() {
 
       {/* ── BACKGROUND VIDEO / IMAGE ──────────────────────── */}
       <div className="absolute inset-0 z-0">
-        {/* Cinematic gradient placeholder — replace with actual video/image */}
+        {/* Real team photo */}
+        <Image
+          src="/images/symposium-mboa-team.jpeg"
+          alt="SC Metropolis 25 Berlin — Team"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+
+        {/* Dark cinematic overlay */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 70% 40%, rgba(0, 40, 85, 0.6) 0%, transparent 60%),
-              radial-gradient(ellipse at 30% 60%, rgba(224, 161, 6, 0.1) 0%, transparent 50%),
-              linear-gradient(180deg, rgba(0,8,20,0.3) 0%, rgba(0,5,15,0.7) 50%, rgba(0,3,10,0.98) 100%),
-              linear-gradient(135deg, #0a0d1e 0%, #001a3a 40%, #0a0d14 100%)
+              radial-gradient(ellipse at 70% 40%, rgba(0, 40, 85, 0.5) 0%, transparent 60%),
+              radial-gradient(ellipse at 30% 60%, rgba(224, 161, 6, 0.08) 0%, transparent 50%),
+              linear-gradient(180deg, rgba(0,8,20,0.5) 0%, rgba(0,5,15,0.75) 50%, rgba(0,3,10,0.98) 100%)
             `,
           }}
         />

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FixtureCard, type Fixture } from '@/components/ui/FixtureCard'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Trophy, TrendingUp } from 'lucide-react'
@@ -103,8 +104,19 @@ export default function SpielbetrIebPage() {
             ))}
           </div>
 
-          <div className="space-y-3 max-w-lg">
-            {symposiumMboaFixtures.map(f => <FixtureCard key={f.id} fixture={f} />)}
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <div className="space-y-3">
+              {symposiumMboaFixtures.map(f => <FixtureCard key={f.id} fixture={f} />)}
+            </div>
+            <div className="relative rounded overflow-hidden border border-dark-border">
+              <Image
+                src="/images/Integration-tournament-team.jpeg"
+                alt="Symposium Mboa Turnier 2026 — SC Metropolis 25"
+                width={800}
+                height={600}
+                className="object-cover w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
