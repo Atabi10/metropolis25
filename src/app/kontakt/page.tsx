@@ -65,7 +65,7 @@ export default function KontaktPage() {
                     { platform: 'Instagram', handle: '@scmetropolis25', href: 'https://instagram.com/scmetropolis25' },
                     { platform: 'TikTok',    handle: '@scmetropolis25', href: 'https://tiktok.com/@scmetropolis25' },
                     { platform: 'YouTube',   handle: 'SC Metropolis 25', href: 'https://youtube.com/@scmetropolis25' },
-                    { platform: 'Facebook',  handle: 'SC Metropolis 25 Berlin', href: 'https://facebook.com/scmetropolis25' },
+                    { platform: 'Facebook',  handle: 'SC Metropolis 25 Berlin', href: 'https://www.facebook.com/profile.php?id=61590362822229' },
                   ].map(s => (
                     <a key={s.platform} href={s.href} target="_blank" rel="noopener noreferrer"
                       className="flex items-center justify-between py-2 border-b border-dark-border last:border-0 text-text-secondary hover:text-gold transition-colors group">

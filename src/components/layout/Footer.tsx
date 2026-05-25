@@ -47,7 +47,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/scmetropolis25' },
   { icon: Youtube,   label: 'YouTube',   href: 'https://youtube.com/@scmetropolis25' },
-  { icon: Facebook,  label: 'Facebook',  href: 'https://facebook.com/scmetropolis25' },
+  { icon: Facebook,  label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61590362822229' },
   {
     // TikTok — using a simple SVG path icon
     icon: () => (
