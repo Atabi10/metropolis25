@@ -11,7 +11,8 @@ const categories = ['Alle', 'Vereinsnews', 'Spielberichte', 'Akademie', 'Sponsor
 
 // Mock data — replace with Sanity CMS
 const allNews: NewsItem[] = [
-  { id: '1', slug: 'vereinsgruendung-2025', title: 'SC Metropolis 25 Berlin offiziell gegründet', excerpt: 'Ein neues Kapitel im Berliner Fußball beginnt: SC Metropolis 25 Berlin e.V. ist offiziell eingetragen und startet in die erste Saison.', category: 'Vereinsnews', publishedAt: '2025-01-15', featured: true },
+  { id: '7', slug: 'symposium-mboa-turnier-2026', title: 'Starker Auftritt beim Symposium Mboa Turnier 2026', excerpt: 'SC Metropolis 25 zeigt beim Symposium Mboa Fußballturnier am 23. und 24. Mai 2026 in Berlin eine beeindruckende Vorstellung: Drei Spiele, zwei Siege, ein Unentschieden — ungeschlagen durch die Gruppenphase.', category: 'Spielberichte', publishedAt: '2026-05-24', featured: true },
+  { id: '1', slug: 'vereinsgruendung-2025', title: 'SC Metropolis 25 Berlin offiziell gegründet', excerpt: 'Ein neues Kapitel im Berliner Fußball beginnt: SC Metropolis 25 Berlin e.V. ist offiziell eingetragen und startet in die erste Saison.', category: 'Vereinsnews', publishedAt: '2025-01-15' },
   { id: '2', slug: 'intarp-hauptsponsor', title: 'Intarp GmbH wird Hauptsponsor', excerpt: 'Wir freuen uns, Intarp GmbH als unseren offiziellen Hauptsponsor begrüßen zu dürfen. Eine starke Partnerschaft für die Zukunft.', category: 'Sponsoring', publishedAt: '2025-02-01' },
   { id: '3', slug: 'jugendakademie-startet', title: 'Jugendakademie nimmt Betrieb auf', excerpt: 'Unser Nachwuchsprogramm startet durch: Die Jugendakademie von SC Metropolis 25 sucht Talente zwischen 8 und 18 Jahren.', category: 'Akademie', publishedAt: '2025-03-10' },
   { id: '4', slug: 'erster-sieg', title: 'Erster Sieg in der Kreisliga B', excerpt: 'Historischer Moment: SC Metropolis 25 holt beim ersten Ligaspiel drei Punkte. 3:1 gegen SV Lichtenberg 47.', category: 'Spielberichte', publishedAt: '2025-08-23' },

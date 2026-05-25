@@ -18,6 +18,12 @@ const allFixtures: Fixture[] = [
   { id: '5', homeTeam: 'Tennis Borussia Berlin', awayTeam: 'SC Metropolis 25', date: '2025-09-20', time: '16:30', venue: 'TeBe-Sportplatz', competition: 'Kreisliga B', status: 'upcoming', isHomeGame: false },
 ]
 
+const symposiumMboaFixtures: Fixture[] = [
+  { id: 't1', homeTeam: 'SC Metropolis 25', awayTeam: 'Kenia', date: '2026-05-23', time: '', venue: 'Berlin', competition: 'Symposium Mboa Turnier 2026 — Gruppe C', status: 'finished', homeScore: 1, awayScore: 1, isHomeGame: true },
+  { id: 't2', homeTeam: 'SC Metropolis 25', awayTeam: 'Zimbabwe', date: '2026-05-23', time: '', venue: 'Berlin', competition: 'Symposium Mboa Turnier 2026 — Gruppe C', status: 'finished', homeScore: 1, awayScore: 0, isHomeGame: true },
+  { id: 't3', homeTeam: 'SC Metropolis 25', awayTeam: 'Guinée', date: '2026-05-24', time: '', venue: 'Berlin', competition: 'Symposium Mboa Turnier 2026 — Gruppe C', status: 'finished', homeScore: 2, awayScore: 1, isHomeGame: true },
+]
+
 const tableData = [
   { pos: 1, team: 'SV Lichtenberg 47',  p: 3, w: 3, d: 0, l: 0, gf: 9,  ga: 2, gd: '+7', pts: 9  },
   { pos: 2, team: 'SC Metropolis 25',   p: 2, w: 1, d: 0, l: 1, gf: 5,  ga: 3, gd: '+2', pts: 3, isOurs: true },
@@ -67,6 +73,38 @@ export default function SpielbetrIebPage() {
                 {allFixtures.filter(f => f.status === 'finished').map(f => <FixtureCard key={f.id} fixture={f} />)}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Symposium Mboa Tournament */}
+      <section className="section-padding bg-navy/20 border-y border-gold/10">
+        <div className="container-custom">
+          <div className="flex items-center gap-3 mb-2">
+            <Trophy className="w-5 h-5 text-gold" />
+            <div className="section-label">Turnier</div>
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl text-white uppercase mb-1">
+            Symposium Mboa <span className="text-gold-gradient">2026</span>
+          </h2>
+          <p className="text-text-muted text-sm mb-8">23.–24. Mai 2026 · Gruppe C · Berlin — Ungeschlagen durch die Gruppenphase 🏆</p>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-3 gap-4 mb-8 max-w-md">
+            {[
+              { label: 'Siege', value: '2', color: 'text-green-400' },
+              { label: 'Unentschieden', value: '1', color: 'text-gold' },
+              { label: 'Niederlage', value: '0', color: 'text-text-muted' },
+            ].map(s => (
+              <div key={s.label} className="card p-4 text-center">
+                <div className={`font-display text-3xl ${s.color}`}>{s.value}</div>
+                <div className="text-text-muted text-xs uppercase tracking-wider mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-3 max-w-lg">
+            {symposiumMboaFixtures.map(f => <FixtureCard key={f.id} fixture={f} />)}
           </div>
         </div>
       </section>
