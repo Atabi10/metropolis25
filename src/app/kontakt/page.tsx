@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mail, MapPin, Clock, MessageCircle, ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Clock, MessageCircle, ArrowRight, Phone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Kontakt — SC Metropolis 25 Berlin',
@@ -35,6 +35,7 @@ export default function KontaktPage() {
 
               {[
                 { icon: Mail,        label: 'E-Mail',    value: 'info@sc-metropolis25.de',  href: 'mailto:info@sc-metropolis25.de' },
+                { icon: Phone,       label: 'Telefon',   value: '+49 151 74338335', href: 'tel:+4915174338335' },
                 { icon: MapPin,      label: 'Standort',  value: 'Lichtenberg, Berlin, Germany', href: null },
                 { icon: Clock,       label: 'Erreichbar', value: 'Mo–Fr: 09:00–18:00 Uhr', href: null },
                 { icon: MessageCircle, label: 'WhatsApp', value: 'Community beitreten', href: 'https://chat.whatsapp.com/scmetropolis25' },
