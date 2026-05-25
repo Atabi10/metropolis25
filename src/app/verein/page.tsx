@@ -17,10 +17,10 @@ const milestones = [
 ]
 
 const boardMembers = [
-  { name: 'N.N.', role: '1. Vorsitzender', initials: 'V' },
-  { name: 'N.N.', role: '2. Vorsitzender', initials: 'V' },
-  { name: 'N.N.', role: 'Schatzmeister/in', initials: 'S' },
-  { name: 'N.N.', role: 'Sportlicher Leiter', initials: 'L' },
+  { name: 'Raoul Atabong',       role: '1. Vorsitzender',  initials: 'RA' },
+  { name: 'Hassan Ghaddar',      role: '2. Vorsitzender',  initials: 'HG' },
+  { name: 'Leoni Charlize Klauß', role: 'Schatzmeisterin', initials: 'LK' },
+  { name: 'Moustafa Ghaddar',    role: 'Sportdirektor',    initials: 'MG' },
 ]
 
 export default function VereinPage() {
