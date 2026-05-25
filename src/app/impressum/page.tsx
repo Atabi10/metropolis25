@@ -27,8 +27,9 @@ export default function ImpressumPage() {
               </h2>
               <div className="space-y-1 text-text-secondary text-sm">
                 <p className="text-white font-semibold">Sport-Club Metropolis 25 Berlin e.V.</p>
-                <p>[Straße und Hausnummer]</p>
-                <p>[PLZ] Berlin</p>
+                <p>c/o Atabong</p>
+                <p>Seehausener Str. 33</p>
+                <p>13057 Berlin</p>
                 <p>Deutschland</p>
               </div>
             </div>
@@ -40,7 +41,7 @@ export default function ImpressumPage() {
               <div className="space-y-1 text-text-secondary text-sm">
                 <p>Eingetragen im Vereinsregister</p>
                 <p>Registergericht: Amtsgericht Charlottenburg</p>
-                <p>Registernummer: [VR-Nummer]</p>
+                <p>Registernummer: VerR 42279 B</p>
               </div>
             </div>
 
@@ -49,8 +50,10 @@ export default function ImpressumPage() {
                 Vertreten durch
               </h2>
               <div className="space-y-1 text-text-secondary text-sm">
-                <p>[Name des 1. Vorsitzenden] — 1. Vorsitzender</p>
-                <p>[Name des 2. Vorsitzenden] — 2. Vorsitzender</p>
+                <p>Raoul Atabong — 1. Vorsitzender</p>
+                <p>Hassan Ghaddar — 2. Vorsitzender</p>
+                <p>Leoni Charlize Klauß — Schatzmeisterin</p>
+                <p>Moustafa Ghaddar — Sportdirektor</p>
               </div>
             </div>
 
@@ -68,7 +71,7 @@ export default function ImpressumPage() {
               <h2 className="font-heading text-white text-lg uppercase tracking-wider mb-4">
                 Inhaltlich Verantwortlicher gemäß §55 Abs. 2 RStV
               </h2>
-              <p className="text-text-secondary text-sm">[Name des Verantwortlichen], [Adresse]</p>
+              <p className="text-text-secondary text-sm">Raoul Atabong, Seehausener Str. 33, 13057 Berlin</p>
             </div>
 
             <div className="card p-6">
