@@ -59,7 +59,7 @@ export default function ImpressumPage() {
                 Kontakt
               </h2>
               <div className="space-y-1 text-text-secondary text-sm">
-                <p>E-Mail: <a href="mailto:info@sc-metropolis25.de" className="text-gold hover:underline">info@sc-metropolis25.de</a></p>
+                <p>E-Mail: <a href="mailto:kontakt@sc-metropolis25.de" className="text-gold hover:underline">kontakt@sc-metropolis25.de</a></p>
                 <p>Website: <a href="https://sc-metropolis25.de" className="text-gold hover:underline">www.sc-metropolis25.de</a></p>
               </div>
             </div>

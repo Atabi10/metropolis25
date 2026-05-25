@@ -34,7 +34,7 @@ export default function KontaktPage() {
               </h2>
 
               {[
-                { icon: Mail,        label: 'E-Mail',    value: 'info@sc-metropolis25.de',  href: 'mailto:info@sc-metropolis25.de' },
+                { icon: Mail,        label: 'E-Mail',    value: 'kontakt@sc-metropolis25.de',  href: 'mailto:kontakt@sc-metropolis25.de' },
                 { icon: Phone,       label: 'Telefon',   value: '+49 151 74338335', href: 'tel:+4915174338335' },
                 { icon: MapPin,      label: 'Standort',  value: 'Lichtenberg, Berlin, Germany', href: null },
                 { icon: Clock,       label: 'Erreichbar', value: 'Mo–Fr: 09:00–18:00 Uhr', href: null },

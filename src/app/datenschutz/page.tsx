@@ -41,7 +41,7 @@ export default function DatenschutzPage() {
               <div className="space-y-1">
                 <p className="text-white font-semibold">Sport-Club Metropolis 25 Berlin e.V.</p>
                 <p>[Adresse]</p>
-                <p>E-Mail: <a href="mailto:info@sc-metropolis25.de" className="text-gold hover:underline">info@sc-metropolis25.de</a></p>
+                <p>E-Mail: <a href="mailto:kontakt@sc-metropolis25.de" className="text-gold hover:underline">kontakt@sc-metropolis25.de</a></p>
               </div>
             </div>
 

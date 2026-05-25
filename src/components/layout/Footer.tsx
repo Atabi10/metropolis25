@@ -103,9 +103,9 @@ export function Footer() {
                 <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" aria-hidden="true" />
                 <span>Lichtenberg, Berlin</span>
               </div>
-              <a href="mailto:info@sc-metropolis25.de" className="flex items-center gap-3 text-text-muted text-sm hover:text-gold transition-colors">
+              <a href="mailto:kontakt@sc-metropolis25.de" className="flex items-center gap-3 text-text-muted text-sm hover:text-gold transition-colors">
                 <Mail className="w-4 h-4 text-gold shrink-0" aria-hidden="true" />
-                info@sc-metropolis25.de
+                kontakt@sc-metropolis25.de
               </a>
             </div>
 
