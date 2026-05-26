@@ -3,8 +3,8 @@ import { ArrowRight, Star } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 const comingSoon = [
-  { name: 'U23 / Zweite Mannschaft', badge: 'U23', href: '/mitmachen?team=u23' },
-  { name: 'Damen-Team', badge: 'Frauen', href: '/mitmachen?team=frauen' },
+  { name: '2. Herren-Mannschaft', badge: '2. Herren', href: '/mitmachen?team=2herren' },
+  { name: 'Frauenfußball', badge: 'Frauen', href: '/mitmachen?team=frauen' },
 ]
 
 export function TeamsSection() {
@@ -46,9 +46,9 @@ export function TeamsSection() {
                   </h3>
                   <span className="badge-gold text-xs">Aktiv</span>
                 </div>
-                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Kreisliga B Berlin · Saison 2025/26</p>
+                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Aufbau für BFV-Spielbetrieb · Saison 2026/27</p>
                 <p className="text-text-muted text-sm leading-relaxed max-w-xl">
-                  Unser Aushängeschild. Die Erste Mannschaft kämpft für Metropolis 25 im Berliner Amateurfußball —
+                  Unser Aushängeschild. 23 aktive Feldspieler bereiten sich auf den regulären BFV-Spielbetrieb vor —
                   trainiert von Makendi Amos.
                 </p>
               </div>

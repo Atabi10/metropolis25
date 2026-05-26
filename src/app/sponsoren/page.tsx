@@ -54,7 +54,7 @@ const packages = [
 ]
 
 const stats = [
-  { value: '60+', label: 'Aktive Mitglieder', icon: Users },
+  { value: '37+', label: 'Mitglieder', icon: Users },
   { value: '200+', label: 'Social Follower', icon: Eye },
   { value: '11', label: 'Nationalitäten', icon: Star },
   { value: '2025', label: 'Gegründet', icon: TrendingUp },

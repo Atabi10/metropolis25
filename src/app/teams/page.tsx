@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Teams — SC Metropolis 25 Berlin',
-  description: 'Alle Mannschaften von SC Metropolis 25 Berlin — Erste Mannschaft, U23, Jugend und Akademie.',
+  description: 'Alle Mannschaften von SC Metropolis 25 Berlin — 1. Herren aktiv, 2. Herren und Frauenfußball im Aufbau.',
 }
 
 const comingSoon = [
