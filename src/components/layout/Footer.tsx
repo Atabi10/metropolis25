@@ -169,9 +169,12 @@ export function Footer() {
       <div className="border-t border-dark-border bg-dark/50">
         <div className="container-custom py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-xs">
-            <p>
-              &copy; {currentYear} Sport-Club Metropolis 25 Berlin e.V. — Alle Rechte vorbehalten.
-            </p>
+            <div>
+              <p>&copy; {currentYear} Sport-Club Metropolis 25 Berlin e.V. — Alle Rechte vorbehalten.</p>
+              <p className="mt-1 text-[10px] text-dark-muted max-w-md">
+                Sportstätten und Trainingszeiten befinden sich aktuell in organisatorischer Abstimmung.
+              </p>
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/impressum" className="hover:text-gold transition-colors">Impressum</Link>
               <span className="text-dark-muted">·</span>

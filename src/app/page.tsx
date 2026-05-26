@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { HeroSection }        from '@/components/home/HeroSection'
 import { StatsBar }           from '@/components/ui/StatsBar'
+import { TrustSection }       from '@/components/home/TrustSection'
 import { ClubIdentitySection }from '@/components/home/ClubIdentitySection'
 import { TeamsSection }       from '@/components/home/TeamsSection'
 import { FixturesPreview }    from '@/components/home/FixturesPreview'
@@ -20,6 +21,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <StatsBar />
+      <TrustSection />
       <ClubIdentitySection />
       <TeamsSection />
       <FixturesPreview />

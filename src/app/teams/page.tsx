@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 const comingSoon = [
   {
-    name: 'U23 / Zweite Mannschaft',
-    badge: 'U23',
-    description: 'Der Entwicklungspool für die Erste Mannschaft. Im Aufbau — melde dein Interesse an.',
-    href: '/mitmachen?team=u23',
+    name: '2. Herren-Mannschaft',
+    badge: '2. Herren',
+    description: 'Im Aufbau. Der Entwicklungspool für die Erste Mannschaft — für Spieler, die regelmäßig Spielpraxis sammeln und sich beweisen wollen. Interesse jetzt anmelden.',
+    href: '/mitmachen?team=2herren',
   },
   {
-    name: 'Damen-Team',
+    name: 'Frauenfußball',
     badge: 'Frauen',
-    description: 'Wir bauen unser Frauen-Fußballprogramm auf. Interesse? Melde dich jetzt vor.',
+    description: 'Perspektivisch im Aufbau. Wir planen ein eigenständiges Frauenteam. Interesse? Meld dich jetzt vor — du formst, wie dieses Team aussieht.',
     href: '/mitmachen?team=frauen',
   },
 ]
@@ -55,13 +55,14 @@ export default function TeamsPage() {
                   </h2>
                   <span className="badge-gold text-xs">Aktiv</span>
                 </div>
-                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Kreisliga B Berlin · Saison 2025/26</p>
+                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Aufbau für BFV-Spielbetrieb · Saison 2026/27</p>
                 <p className="text-text-muted text-sm leading-relaxed max-w-xl">
-                  Die repräsentative Spielfläche des Vereins. Die Erste Mannschaft verkörpert alles,
-                  wofür SC Metropolis 25 steht: Ehrgeiz, Teamgeist und Berliner DNA.
+                  Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns
+                  aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit
+                  lizenzierten Trainern, strukturiertem Training und klarer Entwicklungsperspektive.
                 </p>
                 <div className="flex flex-wrap gap-6 mt-4">
-                  {[['Trainer', 'Makendi Amos'], ['Gegründet', '2025'], ['Liga', 'Kreisliga B']].map(([k, v]) => (
+                  {[['Trainer', 'Makendi Amos'], ['Spieler', '23 aktiv'], ['Ziel', 'BFV 2026/27']].map(([k, v]) => (
                     <div key={k}>
                       <span className="text-text-muted text-xs uppercase tracking-wider">{k}: </span>
                       <span className="text-white text-xs font-semibold">{v}</span>

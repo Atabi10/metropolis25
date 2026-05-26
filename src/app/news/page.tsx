@@ -9,15 +9,66 @@ export const metadata: Metadata = {
 
 const categories = ['Alle', 'Vereinsnews', 'Spielberichte', 'Akademie', 'Sponsoring', 'Community']
 
-// Mock data — replace with Sanity CMS
 const allNews: NewsItem[] = [
-  { id: '7', slug: 'symposium-mboa-turnier-2026', title: 'Starker Auftritt beim Symposium Mboa Turnier 2026', excerpt: 'SC Metropolis 25 zeigt beim Symposium Mboa Fußballturnier am 23. und 24. Mai 2026 in Berlin eine beeindruckende Vorstellung: Drei Spiele, zwei Siege, ein Unentschieden — ungeschlagen durch die Gruppenphase.', category: 'Spielberichte', publishedAt: '2026-05-24', featured: true, image: '/images/symposium-mboa-team.jpeg', imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026' },
-  { id: '1', slug: 'vereinsgruendung-2025', title: 'SC Metropolis 25 Berlin offiziell gegründet', excerpt: 'Ein neues Kapitel im Berliner Fußball beginnt: SC Metropolis 25 Berlin e.V. ist offiziell eingetragen und startet in die erste Saison.', category: 'Vereinsnews', publishedAt: '2025-01-15' },
-  { id: '2', slug: 'intarp-hauptsponsor', title: 'Intarp GmbH wird Hauptsponsor', excerpt: 'Wir freuen uns, Intarp GmbH als unseren offiziellen Hauptsponsor begrüßen zu dürfen. Eine starke Partnerschaft für die Zukunft.', category: 'Sponsoring', publishedAt: '2025-02-01' },
-  { id: '3', slug: 'jugendakademie-startet', title: 'Jugendakademie nimmt Betrieb auf', excerpt: 'Unser Nachwuchsprogramm startet durch: Die Jugendakademie von SC Metropolis 25 sucht Talente zwischen 8 und 18 Jahren.', category: 'Akademie', publishedAt: '2025-03-10' },
-  { id: '4', slug: 'erster-sieg', title: 'Erster Sieg in der Kreisliga B', excerpt: 'Historischer Moment: SC Metropolis 25 holt beim ersten Ligaspiel drei Punkte. 3:1 gegen SV Lichtenberg 47.', category: 'Spielberichte', publishedAt: '2025-08-23' },
-  { id: '5', slug: 'auswärtssieg-berlin-ost', title: 'Auswärtssieg bei FC Berlin-Ost', excerpt: 'Starke Leistung auswärts: SC Metropolis 25 gewinnt 2:1 bei FC Berlin-Ost und festigt den zweiten Tabellenplatz.', category: 'Spielberichte', publishedAt: '2025-08-30' },
-  { id: '6', slug: 'community-training', title: 'Offenes Community-Training jeden Samstag', excerpt: 'Wir öffnen unsere Tore: Jeden Samstag können alle Berliner am offenen Community-Training teilnehmen.', category: 'Community', publishedAt: '2025-04-05' },
+  {
+    id: '7',
+    slug: 'symposium-mboa-turnier-2026',
+    title: 'Starker Auftritt beim Symposium Mboa Turnier 2026',
+    excerpt: 'SC Metropolis 25 zeigt beim Symposium Mboa Fußballturnier am 23. und 24. Mai 2026 in Berlin eine beeindruckende Vorstellung: Drei Spiele, zwei Siege, ein Unentschieden — ungeschlagen durch die Gruppenphase.',
+    category: 'Spielberichte',
+    publishedAt: '2026-05-24',
+    featured: true,
+    image: '/images/symposium-mboa-team.jpeg',
+    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+  },
+  {
+    id: '5',
+    slug: 'gemeinnuetzigkeit-60a-ao',
+    title: 'Gemeinnützigkeit §60a AO offiziell bestätigt',
+    excerpt: 'Das Berliner Finanzamt hat am 30. April 2026 die vorläufige Anerkennung der Gemeinnützigkeit nach §60a AO ausgesprochen. Damit ist SC Metropolis 25 berechtigt, steuerlich absetzbare Spendenbescheinigungen auszustellen.',
+    category: 'Vereinsnews',
+    publishedAt: '2026-04-30',
+  },
+  {
+    id: '6',
+    slug: 'herrenmannschaft-im-aufbau',
+    title: '1. Herren auf dem Weg in den BFV-Spielbetrieb',
+    excerpt: 'Der Kader wächst: 23 aktive Feldspieler trainieren regelmäßig unter Cheftrainer Makendi Amos. Das Ziel ist klar — Anmeldung zum offiziellen BFV-Spielbetrieb ab Saison 2026/27.',
+    category: 'Vereinsnews',
+    publishedAt: '2026-03-15',
+  },
+  {
+    id: '1',
+    slug: 'vereinseintragung-dezember-2025',
+    title: 'SC Metropolis 25 offiziell im Vereinsregister eingetragen',
+    excerpt: 'Am 22. Dezember 2025 wurde SC Metropolis 25 Berlin e.V. offiziell ins Vereinsregister eingetragen — ein entscheidender Meilenstein für den Aufbau eines stabilen, rechtssicheren Vereins in Berlin-Lichtenberg.',
+    category: 'Vereinsnews',
+    publishedAt: '2025-12-22',
+  },
+  {
+    id: '2',
+    slug: 'vereinsgruendung-november-2025',
+    title: 'Gründungsversammlung: SC Metropolis 25 entsteht',
+    excerpt: 'Am 26. November 2025 versammelten sich die Gründungsmitglieder in Berlin-Lichtenberg: SC Metropolis 25 Berlin e.V. wird ins Leben gerufen — mit Vorstand, Satzung und einer klaren Vision für Berliner Fußball.',
+    category: 'Vereinsnews',
+    publishedAt: '2025-11-26',
+  },
+  {
+    id: '3',
+    slug: 'intarp-hauptsponsor',
+    title: 'Intarp GmbH wird Hauptsponsor',
+    excerpt: 'Wir freuen uns, Intarp GmbH als unseren offiziellen Hauptsponsor begrüßen zu dürfen. Eine starke Partnerschaft, die den Aufbau des Vereins maßgeblich unterstützt.',
+    category: 'Sponsoring',
+    publishedAt: '2026-01-10',
+  },
+  {
+    id: '4',
+    slug: 'frauenfussball-geplant',
+    title: 'Frauenfußball — wir planen ein eigenes Team',
+    excerpt: 'SC Metropolis 25 setzt auf Frauenfußball: Wir planen perspektivisch ein eigenständiges Frauenteam und suchen jetzt bereits Interessierte, die dieses Team mitgestalten wollen.',
+    category: 'Vereinsnews',
+    publishedAt: '2026-02-20',
+  },
 ]
 
 export default function NewsPage() {

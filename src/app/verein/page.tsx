@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { MapPin, Calendar, Users, Trophy, Heart, Target } from 'lucide-react'
+import { MapPin, Calendar, Users, Trophy, ShieldCheck, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Über uns — SC Metropolis 25 Berlin',
-  description: 'Die Geschichte, Mission und Werte von SC Metropolis 25 Berlin e.V. — Berlins ambitioniertester Fußballclub aus Lichtenberg.',
+  description: 'SC Metropolis 25 Berlin e.V. — gegründet 26. November 2025, eingetragen 22. Dezember 2025. Gemeinnütziger Fußballverein aus Lichtenberg für Herren-, Perspektiv- und Frauenfußball.',
 }
 
 const milestones = [
-  { year: '2024', event: 'Idee & Gründungsplanung', desc: 'Eine Gruppe Berliner Fußballenthusiasten fasst den Entschluss, einen neuen Verein zu gründen.' },
-  { year: '2025', event: 'Vereinsgründung', desc: 'SC Metropolis 25 Berlin e.V. wird offiziell im Vereinsregister eingetragen.' },
-  { year: '2025', event: 'Erste Mannschaft', desc: 'Die erste Mannschaft nimmt am Berliner Amateurfußball teil.' },
-  { year: '2025', event: 'Jugendakademie', desc: 'Die Jugendakademie startet mit Nachwuchsförderung für 8–18-Jährige.' },
-  { year: '2026', event: 'Wachstum & Expansion', desc: 'Erweiterung auf mehrere Teams, neue Sponsoren und wachsende Community.' },
+  { year: '2025', event: 'Gründungsversammlung', desc: 'Am 26. November 2025 gründen Berliner Fußballenthusiasten aus Lichtenberg und Marzahn-Hellersdorf den SC Metropolis 25 Berlin e.V.' },
+  { year: 'Dez. 2025', event: 'Eintragung ins Vereinsregister', desc: 'Am 22. Dezember 2025 wird der Verein offiziell ins Vereinsregister eingetragen — Grundlage für alle weiteren Schritte.' },
+  { year: 'Apr. 2026', event: 'Gemeinnützigkeit §60a AO', desc: 'Das Finanzamt bestätigt am 30. April 2026 die vorläufige Anerkennung der Gemeinnützigkeit nach §60a AO (Abgabenordnung).' },
+  { year: 'Mai 2026', event: 'Symposium Mboa Turnier', desc: 'Die Herrenmannschaft tritt beim Symposium Mboa Turnier an — 3 Spiele, 2 Siege, 1 Unentschieden, ungeschlagen durch die Gruppenphase.' },
+  { year: '2026/27', event: 'BFV-Spielbetrieb in Vorbereitung', desc: 'Anmeldung zum regulären Berliner Fußball-Verband (BFV) Spielbetrieb. Aufbau des 2. Herren-Teams und perspektivisch Frauenfußball.' },
 ]
 
 const boardMembers = [
@@ -43,8 +43,8 @@ export default function VereinPage() {
           </h1>
           <div className="w-16 h-1 bg-gold mb-6" />
           <p className="section-subtitle max-w-2xl text-ivory/70 text-lg">
-            Gegründet 2025 in Lichtenberg, Berlin. Ein Fußballclub für alle,
-            der die DNA der Hauptstadt trägt und Fußball als soziale Kraft versteht.
+            Gegründet am 26. November 2025 in Berlin-Lichtenberg. Eingetragener,
+            gemeinnütziger Fußballverein für Herren-, Perspektiv- und Frauenfußball.
           </p>
         </div>
       </section>
@@ -62,22 +62,23 @@ export default function VereinPage() {
                 subtitle=""
               />
               <p className="text-text-secondary leading-relaxed mb-6">
-                SC Metropolis 25 Berlin e.V. entstand aus der Überzeugung, dass Berlin
-                mehr Räume braucht, wo Fußball gelebt wird — nicht nur gespielt.
-                Wo junge Talente gefördert werden, unabhängig von Herkunft oder
-                finanziellem Hintergrund.
+                SC Metropolis 25 Berlin e.V. wurde am 26. November 2025 gegründet —
+                aus der Überzeugung, dass Berlin einen Verein braucht, der Fußball
+                und gesellschaftliche Verantwortung zusammendenkt. Verwurzelt in
+                Lichtenberg und Marzahn-Hellersdorf, offen für ganz Berlin.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mb-8">
-                Wir glauben an Fußball als Sprache, die Menschen verbindet. Als
-                Werkzeug für Integration, als Motor für Persönlichkeitsentwicklung
-                und als Ausdruck der einzigartigen Berliner Stadtkultur.
+                Wir sind ein eingetragener, gemeinnütziger Verein (§60a AO) und
+                bauen unsere Herrenmannschaft für den BFV-Spielbetrieb ab Saison 2026/27 auf.
+                Langfristig planen wir ein 2. Herren-Team und Frauenfußball —
+                Fußball für die ganze Stadt, nicht nur für Wenige.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Calendar, label: 'Gegründet', value: '2025' },
-                  { icon: MapPin,   label: 'Standort',  value: 'Lichtenberg, Berlin' },
-                  { icon: Users,    label: 'Mitglieder',value: '60+' },
-                  { icon: Trophy,   label: 'Liga',       value: 'Kreisliga Berlin' },
+                  { icon: Calendar,     label: 'Gegründet',      value: '26.11.2025' },
+                  { icon: MapPin,       label: 'Standort',       value: 'Lichtenberg, Berlin' },
+                  { icon: Users,        label: 'Mitglieder',     value: '37+' },
+                  { icon: ShieldCheck,  label: 'Gemeinnützig',   value: '§60a AO' },
                 ].map(item => (
                   <div key={item.label} className="card p-4 flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-gold shrink-0" />
@@ -95,15 +96,15 @@ export default function VereinPage() {
                 <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-gold translate-x-2 translate-y-2" />
                 <h3 className="font-heading font-semibold text-gold text-xs uppercase tracking-widest mb-4">Vision 2030</h3>
                 <p className="font-heading text-xl text-white uppercase leading-relaxed mb-6">
-                  Berlins anerkanntester Nachwuchs-Fußballclub — mit Spielern in höheren Ligen
-                  und einer Community, die die Stadt bewegt.
+                  Ein anerkannter Berliner Fußballverein — mit mehreren Teams,
+                  gesicherten Sportstätten und einer Community, die die Stadt bewegt.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    'Mehrere Teams in verschiedenen Altersklassen',
-                    'Eigener Trainingsplatz in Lichtenberg',
-                    'Anerkannte Jugendakademie',
-                    'Internationale Kooperationen',
+                    'BFV-Spielbetrieb Herren ab Saison 2026/27',
+                    '2. Herren-Team & Frauenfußball im Aufbau',
+                    'Gesicherte Sportstätte in Lichtenberg',
+                    'Anerkennung durch Berliner Sportverbände (lsb)',
                   ].map(goal => (
                     <li key={goal} className="flex items-start gap-2 text-text-secondary text-sm">
                       <span className="w-1.5 h-1.5 bg-gold rounded-full mt-2 shrink-0" />
@@ -208,13 +209,22 @@ export default function VereinPage() {
       {/* CTA */}
       <section className="py-16 bg-navy text-center">
         <div className="container-custom">
-          <h2 className="section-title text-3xl mb-4">Teil der Familie werden</h2>
+          <h2 className="section-title text-3xl mb-4">Teil von Metropolis 25 werden</h2>
           <p className="text-ivory/70 text-sm mb-8 max-w-lg mx-auto">
-            Ob als Spieler, Unterstützer oder Mitglied — bei uns ist jeder willkommen.
+            Ob als Spieler, Ehrenamtlicher, Sponsor oder Mitglied — wir bauen diesen
+            Verein gemeinsam auf. Jede Unterstützung zählt.
           </p>
-          <Link href="/mitgliedschaft" className="btn-primary btn btn-lg">
-            Mitglied werden
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/mitmachen" className="btn-primary btn btn-lg">
+              Mitspielen / Probetraining
+            </Link>
+            <Link href="/mitgliedschaft" className="btn-outline btn btn-lg">
+              Mitglied werden
+            </Link>
+            <Link href="/kontakt" className="btn-outline btn btn-lg">
+              Kontakt aufnehmen
+            </Link>
+          </div>
         </div>
       </section>
     </div>

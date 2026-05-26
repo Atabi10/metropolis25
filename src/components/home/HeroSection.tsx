@@ -109,85 +109,70 @@ export function HeroSection() {
           >
             <div className="w-8 h-px bg-gold" />
             <span className="text-gold font-heading font-semibold text-sm uppercase tracking-[0.3em]">
-              Sport-Club Metropolis 25 Berlin e.V.
+              Berlin-Lichtenberg · Gegründet 2025
             </span>
           </div>
 
           {/* Main Headline */}
           <h1
             className={clsx(
-              'font-display leading-none uppercase mb-4 transition-all duration-700 delay-100',
+              'font-display leading-[0.95] uppercase mb-5 transition-all duration-700 delay-100',
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
-            style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)' }}
+            style={{ fontSize: 'clamp(2.6rem, 7.5vw, 7rem)' }}
           >
-            <span className="block text-white">WO BERLIN</span>
-            <span className="block text-gold-gradient">PULSIERT</span>
+            <span className="block text-white">SC Metropolis 25</span>
+            <span className="block text-gold-gradient">Berlin e.V.</span>
           </h1>
 
           {/* Sub headline */}
-          <div
-            className={clsx(
-              'flex items-center gap-4 mb-3 transition-all duration-700 delay-200',
-              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            )}
-          >
-            <div className="w-16 h-px bg-gold/50" aria-hidden="true" />
-            <p className="font-display text-3xl md:text-5xl text-white/80 uppercase tracking-wide">
-              wächst unsere Stärke
-            </p>
-          </div>
-
-          {/* Campaign line */}
           <p
             className={clsx(
-              'text-ivory/60 font-heading text-sm md:text-base uppercase tracking-[0.4em] mb-10 transition-all duration-700 delay-300',
+              'text-ivory/75 font-heading text-base md:text-lg leading-relaxed max-w-xl mb-10 transition-all duration-700 delay-200',
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
           >
-            Die Stärke aus der Hauptstadt
+            Aufbau eines gemeinnützigen Fußballvereins für Herren-, Perspektiv- und Frauenfußball in Berlin.
           </p>
 
           {/* CTAs */}
           <div
             className={clsx(
-              'flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-400',
+              'flex flex-col sm:flex-row gap-3 transition-all duration-700 delay-300',
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
           >
-            <Link
-              href="/mitmachen"
-              className="btn-primary btn btn-lg group inline-flex"
-            >
-              <span>Jetzt Mitmachen</span>
+            <Link href="/mitmachen" className="btn-primary btn btn-lg group inline-flex">
+              <span>Mitmachen</span>
               <span className="ml-1 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </Link>
-            <Link
-              href="/teams"
-              className="btn-outline btn btn-lg"
-            >
-              Teams entdecken
+            <Link href="/verein" className="btn-outline btn btn-lg">
+              Über den Verein
+            </Link>
+            <Link href="/kontakt" className="btn-outline btn btn-lg">
+              Kontakt aufnehmen
             </Link>
           </div>
 
           {/* Quick stats strip */}
           <div
             className={clsx(
-              'flex items-center gap-6 mt-12 pt-8 border-t border-white/10 transition-all duration-700 delay-500',
+              'flex flex-wrap items-center gap-x-6 gap-y-3 mt-12 pt-8 border-t border-white/10 transition-all duration-700 delay-500',
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
           >
             {[
-              { value: '2025', label: 'Gegründet' },
-              { value: '60+', label: 'Mitglieder' },
-              { value: 'Berlin', label: 'Lichtenberg' },
+              { value: 'e.V.', label: 'Eingetragener Verein' },
+              { value: '§60a', label: 'Gemeinnützigkeit AO' },
+              { value: '37+', label: 'Mitglieder' },
+              { value: 'BFV', label: '2026/27 in Vorbereitung' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4">
                 <div>
-                  <div className="font-display text-gold text-2xl leading-none">{item.value}</div>
+                  <div className="font-display text-gold text-xl leading-none">{item.value}</div>
                   <div className="text-text-muted text-xs font-heading uppercase tracking-wider mt-0.5">{item.label}</div>
                 </div>
-                {i < 2 && <div className="w-px h-8 bg-dark-border" aria-hidden="true" />}
+                {i < 3 && <div className="w-px h-6 bg-dark-border hidden sm:block" aria-hidden="true" />}
               </div>
             ))}
           </div>

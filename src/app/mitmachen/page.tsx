@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { CheckCircle, ArrowRight, Users, Calendar, MapPin } from 'lucide-react'
+import { CheckCircle, ArrowRight, Users, Info } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Mitspielen / Probetraining — SC Metropolis 25 Berlin',
@@ -9,18 +9,12 @@ export const metadata: Metadata = {
 }
 
 const benefits = [
-  'Professionelles Training unter erfahrenen Trainern',
-  'Spielbetrieb in Berliner Ligen',
-  'Moderne Trainingsphilosophie',
+  'Professionelles Training unter lizenzierten Trainern',
+  'Aufbau für BFV-Spielbetrieb ab Saison 2026/27',
+  'Moderne, entwicklungsorientierte Trainingsphilosophie',
   'Multikulturelle, integrative Gemeinschaft',
-  'Jugendförderung und Talententwicklung',
+  'Gemeinnütziger Verein mit §60a AO Anerkennung',
   'Netzwerk in der Berliner Fußball-Community',
-]
-
-const trials = [
-  { day: 'Dienstag',   time: '19:00 – 21:00 Uhr', team: '1. Mannschaft & U23' },
-  { day: 'Donnerstag', time: '18:00 – 20:00 Uhr', team: 'Jugend U14–U18' },
-  { day: 'Samstag',    time: '10:00 – 12:00 Uhr', team: 'Jugend U8–U13' },
 ]
 
 export default function MitmachenPage() {
@@ -64,37 +58,21 @@ export default function MitmachenPage() {
                 subtitle=""
               />
               <p className="text-text-secondary leading-relaxed mb-8">
-                Du willst bei SC Metropolis 25 mitspielen? Komm einfach zu einem
-                unserer offenen Probetrainings. Keine Voranmeldung nötig — wir
-                freuen uns auf jeden, der Lust auf Fußball hat.
+                Du willst bei SC Metropolis 25 mitspielen? Füll das Formular aus und
+                wir melden uns bei dir innerhalb von 48 Stunden — mit allen Infos zu
+                Probetraining, Zeiten und Treffpunkt.
               </p>
 
-              {/* Training Times */}
-              <div className="space-y-3 mb-8">
-                <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-widest mb-4">
-                  Trainingszeiten
-                </h3>
-                {trials.map(t => (
-                  <div key={t.day} className="card p-4 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-4 h-4 text-gold shrink-0" />
-                      <div>
-                        <p className="font-heading text-white text-sm uppercase tracking-wide">{t.day}</p>
-                        <p className="text-text-muted text-xs">{t.time}</p>
-                      </div>
-                    </div>
-                    <span className="badge-gold text-xs shrink-0">{t.team}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Location */}
-              <div className="card p-4 flex items-start gap-3 mb-8">
-                <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+              {/* Training Notice */}
+              <div className="card p-5 flex items-start gap-4 mb-8 border-gold/20 bg-navy/20">
+                <Info className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-heading text-white text-sm uppercase tracking-wide mb-1">Trainingsstandort</p>
-                  <p className="text-text-secondary text-sm">Lichtenberg, Berlin</p>
-                  <p className="text-text-muted text-xs mt-1">Genaue Adresse wird nach Anmeldung mitgeteilt</p>
+                  <p className="font-heading text-white text-sm uppercase tracking-wide mb-1">Trainingszeiten & Treffpunkt</p>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    Trainingszeiten und Treffpunkte werden nach Anmeldung persönlich mitgeteilt,
+                    solange die offizielle Sportstättenüberlassung noch in Abstimmung ist.
+                    Melde dich jetzt an — wir setzen uns zeitnah mit dir in Verbindung.
+                  </p>
                 </div>
               </div>
 
@@ -124,71 +102,80 @@ export default function MitmachenPage() {
                 </p>
 
                 <form
-                  action="/api/trial-registration"
+                  action="https://formspree.io/f/xbdbzjkl"
                   method="POST"
                   className="space-y-4"
                   aria-label="Anmeldeformular Probetraining"
                 >
+                  {/* Hidden subject tag for Formspree */}
+                  <input type="hidden" name="_subject" value="Neue Mitspieler-Anfrage — SC Metropolis 25" />
+
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="form-label">Vorname *</label>
-                      <input type="text" id="firstName" name="firstName" required className="form-input" placeholder="Max" />
+                      <input type="text" id="firstName" name="vorname" required className="form-input" placeholder="Max" />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="form-label">Nachname *</label>
-                      <input type="text" id="lastName" name="lastName" required className="form-input" placeholder="Mustermann" />
+                      <input type="text" id="lastName" name="nachname" required className="form-input" placeholder="Mustermann" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="age" className="form-label">Alter *</label>
+                      <input type="number" id="age" name="alter" required min="14" max="60" className="form-input" placeholder="25" />
+                    </div>
+                    <div>
+                      <label htmlFor="position" className="form-label">Position (optional)</label>
+                      <select id="position" name="position" className="form-input">
+                        <option value="">Bitte auswählen...</option>
+                        <option value="torwart">Torwart</option>
+                        <option value="verteidigung">Verteidigung</option>
+                        <option value="mittelfeld">Mittelfeld</option>
+                        <option value="sturm">Sturm</option>
+                      </select>
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="form-label">E-Mail Adresse *</label>
-                    <input type="email" id="email" name="email" required className="form-input" placeholder="max@example.de" />
+                    <label htmlFor="phone" className="form-label">Telefon / WhatsApp *</label>
+                    <input type="tel" id="phone" name="telefon" required className="form-input" placeholder="+49 151 ..." />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="form-label">Telefonnummer</label>
-                    <input type="tel" id="phone" name="phone" className="form-input" placeholder="+49 30 ..." />
+                    <label htmlFor="currentClub" className="form-label">Aktueller Verein (optional)</label>
+                    <input type="text" id="currentClub" name="aktueller_verein" className="form-input" placeholder="Vereinsname oder 'Vereinslos'" />
                   </div>
 
+                  {/* Interest checkboxes */}
                   <div>
-                    <label htmlFor="birthYear" className="form-label">Geburtsjahr *</label>
-                    <input type="number" id="birthYear" name="birthYear" required min="1990" max="2020" className="form-input" placeholder="2000" />
-                  </div>
-
-                  <div>
-                    <label htmlFor="team" className="form-label">Interessiert an Team *</label>
-                    <select id="team" name="team" required className="form-input">
-                      <option value="">Bitte auswählen...</option>
-                      <option value="erste">1. Mannschaft / U23</option>
-                      <option value="u18">Jugend U18</option>
-                      <option value="u16">Jugend U16</option>
-                      <option value="u14">Jugend U14</option>
-                      <option value="u12">Jugend U12</option>
-                      <option value="u10">Jugend U10</option>
-                      <option value="u8">Jugend U8</option>
-                      <option value="frauen">Damen (Coming Soon)</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="position" className="form-label">Position (optional)</label>
-                    <select id="position" name="position" className="form-input">
-                      <option value="">Bitte auswählen...</option>
-                      <option value="torwart">Torwart</option>
-                      <option value="verteidigung">Verteidigung</option>
-                      <option value="mittelfeld">Mittelfeld</option>
-                      <option value="sturm">Sturm</option>
-                    </select>
+                    <p className="form-label mb-2">Interesse an *</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { id: 'int-1herren',    name: 'interesse_1_herren',    label: '1. Herren' },
+                        { id: 'int-2herren',    name: 'interesse_2_herren',    label: '2. Herren' },
+                        { id: 'int-frauen',     name: 'interesse_frauen',      label: 'Frauenfußball' },
+                        { id: 'int-ehrenamt',   name: 'interesse_ehrenamt',    label: 'Ehrenamt' },
+                        { id: 'int-trainer',    name: 'interesse_trainer',     label: 'Trainer / Coach' },
+                        { id: 'int-sponsoring', name: 'interesse_sponsoring',  label: 'Sponsoring' },
+                      ].map(opt => (
+                        <label key={opt.id} htmlFor={opt.id} className="flex items-center gap-2 text-text-secondary text-sm cursor-pointer">
+                          <input type="checkbox" id={opt.id} name={opt.name} value="ja" className="accent-gold" />
+                          {opt.label}
+                        </label>
+                      ))}
+                    </div>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="form-label">Nachricht (optional)</label>
-                    <textarea id="message" name="message" rows={3} className="form-input resize-none" placeholder="Erfahrungen, Fragen oder Anmerkungen..." />
+                    <textarea id="message" name="nachricht" rows={3} className="form-input resize-none" placeholder="Erfahrungen, Fragen oder Anmerkungen..." />
                   </div>
 
                   {/* Privacy consent */}
                   <div className="flex items-start gap-3">
-                    <input type="checkbox" id="privacy" name="privacy" required className="mt-1 accent-gold" />
+                    <input type="checkbox" id="privacy" name="datenschutz" required className="mt-1 accent-gold" />
                     <label htmlFor="privacy" className="text-text-muted text-xs leading-relaxed">
                       Ich habe die{' '}
                       <Link href="/datenschutz" className="text-gold hover:underline">Datenschutzerklärung</Link>
