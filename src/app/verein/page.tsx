@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { MapPin, Calendar, Users, Trophy, ShieldCheck, Star } from 'lucide-react'
+import { MapPin, Calendar, Users, ShieldCheck, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Über uns — SC Metropolis 25 Berlin',
@@ -9,11 +9,12 @@ export const metadata: Metadata = {
 }
 
 const milestones = [
-  { year: '2025', event: 'Gründungsversammlung', desc: 'Am 26. November 2025 gründen Berliner Fußballenthusiasten aus Lichtenberg und Marzahn-Hellersdorf den SC Metropolis 25 Berlin e.V.' },
-  { year: 'Dez. 2025', event: 'Eintragung ins Vereinsregister', desc: 'Am 22. Dezember 2025 wird der Verein offiziell ins Vereinsregister eingetragen — Grundlage für alle weiteren Schritte.' },
-  { year: 'Apr. 2026', event: 'Gemeinnützigkeit §60a AO', desc: 'Das Finanzamt bestätigt am 30. April 2026 die vorläufige Anerkennung der Gemeinnützigkeit nach §60a AO (Abgabenordnung).' },
-  { year: 'Mai 2026', event: 'Symposium Mboa Turnier', desc: 'Die Herrenmannschaft tritt beim Symposium Mboa Turnier an — 3 Spiele, 2 Siege, 1 Unentschieden, ungeschlagen durch die Gruppenphase.' },
-  { year: '2026/27', event: 'BFV-Spielbetrieb in Vorbereitung', desc: 'Anmeldung zum regulären Berliner Fußball-Verband (BFV) Spielbetrieb. Aufbau des 2. Herren-Teams und perspektivisch Frauenfußball.' },
+  { year: '2019', event: 'Der erste Samstag', desc: 'Sieben Studenten treffen sich auf einem Berliner Bolzplatz. Was als lockere Runde beginnt, wird Woche für Woche zur Gemeinschaft. Der Grundstein ist gelegt.' },
+  { year: '2019–2024', event: 'Wachstum & Turniere', desc: 'Die Gruppe wächst auf 133+ Community-Mitglieder. Auftritte bei Berliner Integrations-Turnieren und dem Symposium Mboa. 2024: Finaleinzug beim Symposium Mboa.' },
+  { year: '26. Nov. 2025', event: 'Vereinsgründung', desc: '22 Mitglieder bei der Gründungsversammlung. SC Metropolis 25 Berlin e.V. entsteht offiziell — mit Vorstand, Satzung und einer klaren Zukunftsvision.' },
+  { year: '22. Dez. 2025', event: 'Eintragung ins Vereinsregister', desc: 'Das Amtsgericht Berlin-Charlottenburg trägt den Verein ein. Die rechtliche Grundlage für alles Weitere ist geschaffen.' },
+  { year: '30. Apr. 2026', event: 'Gemeinnützigkeit §60a AO', desc: 'Das Finanzamt erkennt die Gemeinnützigkeit vorläufig an. Spenden sind steuerlich absetzbar. Der Verein ist auf institutionellem Kurs.' },
+  { year: '2026/27', event: 'BFV-Spielbetrieb in Vorbereitung', desc: 'Anmeldung zum Berliner Fußball-Verband Spielbetrieb. Aufbau des 2. Herren-Teams und perspektivisch Frauenfußball.' },
 ]
 
 const boardMembers = [
@@ -156,7 +157,7 @@ export default function VereinPage() {
             label="Vereinsgeschichte"
             title="Unsere"
             titleHighlight="Geschichte"
-            subtitle="Von der Idee bis zum Berliner Fußball — die Geschichte von SC Metropolis 25."
+            subtitle="Nicht gegründet auf dem Papier — sondern gewachsen auf Berliner Bolzplätzen. Seit 2019."
           />
           <div className="relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-dark-border md:-translate-x-0.5" aria-hidden="true" />
@@ -176,6 +177,13 @@ export default function VereinPage() {
                 </div>
               ))}
             </div>
+          </div>
+          {/* Link to full story */}
+          <div className="text-center mt-12">
+            <Link href="/verein/geschichte" className="btn-outline btn btn-lg group inline-flex">
+              <span>Vollständige Geschichte lesen</span>
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
