@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Oswald, Bebas_Neue } from 'next/font/google'
 import '@/styles/globals.css'
-import { Navbar } from '@/components/layout/Navbar'
-import { Footer } from '@/components/layout/Footer'
-import { CookieBanner } from '@/components/layout/CookieBanner'
 
 // ─── FONTS ───────────────────────────────────────────────────────────────────
 const inter = Inter({
@@ -95,7 +92,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sc-metropolis25.de',
     languages: {
-      'de-DE': 'https://sc-metropolis25.de/de',
+      'de-DE': 'https://sc-metropolis25.de',
       'en-US': 'https://sc-metropolis25.de/en',
       'fr-FR': 'https://sc-metropolis25.de/fr',
     },
@@ -113,6 +110,8 @@ export const viewport: Viewport = {
 }
 
 // ─── ROOT LAYOUT ────────────────────────────────────────────────────────────
+// This is the minimal shell. Navbar, Footer and locale context live in
+// src/app/[locale]/layout.tsx which next-intl middleware always routes through.
 export default function RootLayout({
   children,
 }: {
@@ -125,10 +124,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Preconnect to external services */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://cdn.sanity.io" />
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -166,22 +163,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-dark antialiased">
-        {/* Skip to content - accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] btn-primary btn text-sm"
-        >
-          Zum Hauptinhalt springen
-        </a>
-
-        <Navbar />
-
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
-
-        <Footer />
-        <CookieBanner />
+        {children}
       </body>
     </html>
   )

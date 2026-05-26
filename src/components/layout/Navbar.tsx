@@ -1,36 +1,39 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { clsx } from 'clsx'
-
-// ─── NAV ITEMS ───────────────────────────────────────────────────────────────
-const navItems = [
-  { label: 'Verein', href: '/verein' },
-  {
-    label: 'Teams',
-    href: '/teams',
-    children: [
-      { label: '1. Mannschaft', href: '/teams/erste-mannschaft' },
-      { label: '2. Herren (bald)', href: '/mitmachen?team=2herren' },
-      { label: 'Frauen (bald)', href: '/mitmachen?team=frauen' },
-    ],
-  },
-  { label: 'Spielbetrieb', href: '/spielbetrieb' },
-  { label: 'News', href: '/news' },
-  { label: 'Galerie', href: '/galerie' },
-  { label: 'Sponsoren', href: '/sponsoren' },
-]
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Navbar() {
+  const t = useTranslations('nav')
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Build nav items from translations
+  const navItems = [
+    { label: t('verein'), href: '/verein' },
+    {
+      label: t('teams'),
+      href: '/teams',
+      children: [
+        { label: t('teamsDropdown.ersteM'), href: '/teams/erste-mannschaft' },
+        { label: t('teamsDropdown.zweiteM'), href: '/mitmachen?team=2herren' },
+        { label: t('teamsDropdown.frauen'), href: '/mitmachen?team=frauen' },
+      ],
+    },
+    { label: t('spielbetrieb'), href: '/spielbetrieb' },
+    { label: t('news'), href: '/news' },
+    { label: t('galerie'), href: '/galerie' },
+    { label: t('sponsoren'), href: '/sponsoren' },
+  ]
 
   // Scroll detection
   useEffect(() => {
@@ -106,7 +109,7 @@ export function Navbar() {
                       onClick={() => setActiveDropdown(activeDropdown === item.href ? null : item.href)}
                       className={clsx(
                         'nav-link flex items-center gap-1 px-4 py-2 rounded-sm',
-                        pathname.startsWith(item.href) && 'text-gold'
+                        pathname.includes(item.href) && 'text-gold'
                       )}
                       aria-expanded={activeDropdown === item.href}
                       aria-haspopup="true"
@@ -140,7 +143,7 @@ export function Navbar() {
                     href={item.href}
                     className={clsx(
                       'nav-link px-4 py-2 rounded-sm block',
-                      pathname === item.href || pathname.startsWith(item.href + '/') ? 'text-gold' : ''
+                      pathname === item.href || pathname.includes(item.href + '/') ? 'text-gold' : ''
                     )}
                   >
                     {item.label}
@@ -149,23 +152,27 @@ export function Navbar() {
               </div>
             ))}
 
-            {/* CTA */}
-            <div className="ml-4 flex items-center gap-2">
+            {/* CTA + Language Switcher */}
+            <div className="ml-4 flex items-center gap-3">
               <Link href="/mitmachen" className="btn-outline btn text-xs px-5 py-2.5">
-                Mitmachen
+                {t('mitmachen')}
               </Link>
+              <LanguageSwitcher />
             </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-text-primary hover:text-gold transition-colors duration-200"
-            aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: Language switcher + hamburger */}
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-text-primary hover:text-gold transition-colors duration-200"
+              aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Gold underline on scroll */}
@@ -212,7 +219,7 @@ export function Navbar() {
           {/* Nav Items */}
           <nav className="flex-1 overflow-y-auto py-6 px-6" aria-label="Mobile Navigation">
             <div className="space-y-1">
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <div key={item.href}>
                   {item.children ? (
                     <div>
@@ -259,7 +266,7 @@ export function Navbar() {
           {/* Mobile CTA */}
           <div className="p-6 border-t border-dark-border space-y-3">
             <Link href="/mitmachen" className="btn-primary btn w-full text-center text-xs">
-              Jetzt Mitmachen
+              {t('mitmachen')}
             </Link>
             <Link href="/kontakt" className="btn-outline btn w-full text-center text-xs">
               Kontakt

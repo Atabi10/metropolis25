@@ -1,48 +1,31 @@
-import { ShieldCheck, Users, Trophy, Star, CheckCircle } from 'lucide-react'
+'use client'
 
-const badges = [
-  {
-    icon: ShieldCheck,
-    value: 'e.V.',
-    label: 'Eingetragener Verein',
-    detail: 'Amtsgericht Berlin-Charlottenburg · Eingetragen 22.12.2025',
-  },
-  {
-    icon: CheckCircle,
-    value: '§60a AO',
-    label: 'Gemeinnützigkeit',
-    detail: 'Vorläufig anerkannt durch das Finanzamt · April 2026',
-  },
-  {
-    icon: Trophy,
-    value: 'BFV',
-    label: '2026/27 in Vorbereitung',
-    detail: 'Anmeldung zum Berliner Fußball-Verband Spielbetrieb',
-  },
-  {
-    icon: Users,
-    value: '37+',
-    label: 'Mitglieder',
-    detail: 'Davon 23 aktive Feldspieler',
-  },
-  {
-    icon: Star,
-    value: 'Berlin',
-    label: 'Verwurzelt in Lichtenberg',
-    detail: 'Lichtenberg · Marzahn-Hellersdorf und darüber hinaus',
-  },
-]
+import { ShieldCheck, Users, Trophy, Star, CheckCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+
+const icons = [ShieldCheck, CheckCircle, Trophy, Users, Star]
+const keys = ['ev', 'gemeinnuetzig', 'bfv', 'members', 'berlin'] as const
 
 export function TrustSection() {
+  const t = useTranslations('trust')
+  const tb = useTranslations('trust.badges')
+
+  const badges = keys.map((key, i) => ({
+    icon: icons[i],
+    value: tb(`${key}.value`),
+    label: tb(`${key}.label`),
+    detail: tb(`${key}.detail`),
+  }))
+
   return (
-    <section className="py-14 bg-dark-surface border-y border-dark-border" aria-label="Vereinsstatus & Vertrauenssignale">
+    <section className="py-14 bg-dark-surface border-y border-dark-border" aria-label="Club status">
       <div className="container-custom">
 
         {/* Section Label */}
         <div className="text-center mb-10">
-          <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-2">Offiziell &amp; anerkannt</p>
+          <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-2">{t('label')}</p>
           <h2 className="font-display text-2xl md:text-3xl text-white uppercase">
-            Ein Verein mit <span className="text-gold-gradient">Substanz</span>
+            {t('title')} <span className="text-gold-gradient">{t('titleHighlight')}</span>
           </h2>
         </div>
 
@@ -65,8 +48,7 @@ export function TrustSection() {
 
         {/* Bottom note */}
         <p className="text-center text-text-muted text-xs mt-8 max-w-xl mx-auto leading-relaxed">
-          SC Metropolis 25 Berlin e.V. ist ein gemeinnütziger Verein im Aufbau.
-          Sportstätten und Trainingszeiten befinden sich aktuell in organisatorischer Abstimmung.
+          {t('subtitle')}
         </p>
       </div>
     </section>

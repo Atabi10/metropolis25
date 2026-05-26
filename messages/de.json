@@ -1,0 +1,466 @@
+{
+  "nav": {
+    "verein": "Verein",
+    "teams": "Teams",
+    "spielbetrieb": "Spielbetrieb",
+    "news": "News",
+    "galerie": "Galerie",
+    "sponsoren": "Sponsoren",
+    "mitmachen": "Mitmachen",
+    "teamsDropdown": {
+      "ersteM": "1. Mannschaft",
+      "zweiteM": "2. Herren (bald)",
+      "frauen": "Frauen (bald)"
+    }
+  },
+  "footer": {
+    "tagline": "Berliner Fußball. Echte Gemeinschaft.",
+    "clubInfo": "Eingetragener gemeinnütziger Verein · Lichtenberg, Berlin",
+    "sections": {
+      "verein": "Verein",
+      "teams": "Teams",
+      "mitmachen": "Mitmachen"
+    },
+    "links": {
+      "uberUns": "Über uns",
+      "geschichte": "Geschichte",
+      "vorstand": "Vorstand",
+      "ersteM": "1. Mannschaft",
+      "sponsoren": "Sponsoren",
+      "news": "News",
+      "mitspielen": "Mitspielen",
+      "mitgliedschaft": "Mitgliedschaft",
+      "kontakt": "Kontakt",
+      "spielbetrieb": "Spielbetrieb",
+      "galerie": "Galerie"
+    },
+    "legal": {
+      "disclaimer": "Sportstätten und Trainingszeiten befinden sich aktuell in organisatorischer Abstimmung.",
+      "impressum": "Impressum",
+      "datenschutz": "Datenschutz",
+      "satzung": "Satzung"
+    },
+    "copyright": "SC Metropolis 25 Berlin e.V. Alle Rechte vorbehalten."
+  },
+  "hero": {
+    "label": "Berlin · Gegründet 2025",
+    "title": "SC Metropolis 25",
+    "subtitle": "Berlin e.V.",
+    "description": "Berliner Fußball. Echte Gemeinschaft. Gemeinsam groß werden.",
+    "ctaPrimary": "Jetzt Mitspielen",
+    "ctaSecondary": "Unser Verein"
+  },
+  "statsBar": {
+    "members": "Mitglieder",
+    "players": "Aktive Spieler",
+    "nationalities": "Nationalitäten",
+    "founded": "Gegründet"
+  },
+  "trust": {
+    "label": "Offiziell & transparent",
+    "title": "Ein Verein",
+    "titleHighlight": "dem man vertrauen kann",
+    "subtitle": "SC Metropolis 25 Berlin e.V. — eingetragen, gemeinnützig, BFV-ready.",
+    "badges": {
+      "ev": {
+        "value": "e.V.",
+        "label": "Eingetragener Verein",
+        "detail": "Amtsgericht Berlin-Charlottenburg · Eingetragen 22.12.2025"
+      },
+      "gemeinnuetzig": {
+        "value": "§60a AO",
+        "label": "Gemeinnützigkeit",
+        "detail": "Vorläufig anerkannt · April 2026"
+      },
+      "bfv": {
+        "value": "BFV",
+        "label": "2026/27 in Vorbereitung",
+        "detail": "Berliner Fußball-Verband · Spielbetrieb ab Saison 2026/27"
+      },
+      "members": {
+        "value": "37+",
+        "label": "Mitglieder",
+        "detail": "Davon 23 aktive Feldspieler"
+      },
+      "berlin": {
+        "value": "Berlin",
+        "label": "Verwurzelt in Lichtenberg",
+        "detail": "Zuhause in Lichtenberg & Marzahn-Hellersdorf"
+      }
+    }
+  },
+  "clubIdentity": {
+    "label": "Wer wir sind",
+    "title": "Fußball",
+    "titleHighlight": "& Gemeinschaft",
+    "body1": "SC Metropolis 25 Berlin e.V. ist kein Startprojekt — wir sind eine Gemeinschaft, die seit 2019 auf Berliner Bolzplätzen gewachsen ist. 133+ Menschen aus über 11 Nationen.",
+    "body2": "Jetzt, als eingetragener und gemeinnütziger Verein, treten wir in den BFV-Spielbetrieb ein. Mit einem Kader, der Berlins Vielfalt widerspiegelt.",
+    "ctaVerein": "Unser Verein",
+    "ctaMitmachen": "Mitmachen",
+    "stat1": "Mitglieder",
+    "stat2": "Nationalitäten",
+    "stat3": "Jahre Community"
+  },
+  "teamsSection": {
+    "label": "Unsere Teams",
+    "title": "Mannschaften",
+    "titleHighlight": "überblick",
+    "subtitle": "Aktuell spielen wir mit unserer 1. Mannschaft im Berliner Amateurfußball. Weitere Teams folgen.",
+    "ersteM": {
+      "title": "1. Mannschaft",
+      "badge": "Aktiv",
+      "league": "Aufbau für BFV-Spielbetrieb · Saison 2026/27",
+      "description": "Unser Aushängeschild. 23 aktive Feldspieler bereiten sich auf den regulären BFV-Spielbetrieb vor — trainiert von Makendi Amos.",
+      "cta": "Zum Team"
+    },
+    "comingSoon": {
+      "badge": "Bald",
+      "description": "Im Aufbau — Interesse vormerken lassen.",
+      "cta": "Interesse anmelden",
+      "zweiteH": "2. Herren-Mannschaft",
+      "frauen": "Frauenfußball"
+    }
+  },
+  "sponsor": {
+    "label": "Partner",
+    "cta": "Sponsor werden"
+  },
+  "mitmachen": {
+    "meta": {
+      "title": "Mitspielen & Mitmachen — SC Metropolis 25 Berlin",
+      "description": "Spieler gesucht. Tritt der 1. Mannschaft von SC Metropolis 25 Berlin e.V. bei."
+    },
+    "hero": {
+      "label": "Jetzt einsteigen",
+      "title": "Werde Teil",
+      "titleHighlight": "des Teams",
+      "description": "Wir suchen Spieler, die mehr als nur kicken wollen — die einen echten Berliner Verein mitaufbauen."
+    },
+    "trainingNotice": "Trainingszeiten und Treffpunkte werden nach Anmeldung persönlich mitgeteilt, solange die offizielle Sportstättenüberlassung noch in Abstimmung ist.",
+    "form": {
+      "title": "Anmeldung",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "age": "Alter",
+      "position": "Position",
+      "phone": "Telefon / WhatsApp",
+      "currentClub": "Aktueller Verein (falls vorhanden)",
+      "interest": "Ich interessiere mich für",
+      "submit": "Anfrage absenden",
+      "submitting": "Wird gesendet…",
+      "successTitle": "Anfrage eingegangen!",
+      "successBody": "Wir melden uns in den nächsten Tagen bei dir. Willkommen in der Metropolis-Familie!",
+      "errorTitle": "Fehler beim Senden",
+      "errorBody": "Bitte versuche es erneut oder schreibe uns direkt an info@scmetropolis25.de"
+    },
+    "positions": {
+      "torhuter": "Torwart",
+      "abwehr": "Abwehr",
+      "mittelfeld": "Mittelfeld",
+      "sturm": "Sturm",
+      "flexible": "Flexibel"
+    },
+    "interests": {
+      "ersteH": "1. Herren",
+      "zweiteH": "2. Herren (Aufbau)",
+      "frauen": "Frauen (Aufbau)",
+      "ehrenamt": "Ehrenamt / Organisation",
+      "trainer": "Trainer / Co-Trainer",
+      "sponsoring": "Sponsoring / Partnerschaft"
+    },
+    "whyJoin": {
+      "label": "Warum Metropolis 25?",
+      "title": "Fußball mit",
+      "titleHighlight": "Bedeutung",
+      "subtitle": "Wir sind nicht nur ein Verein — wir sind eine Bewegung. Berliner Fußball. Echte Gemeinschaft.",
+      "reason1Title": "Echter Berliner Verein",
+      "reason1Body": "Eingetragen, gemeinnützig, mit Zukunft. Kein Hobbyteam, sondern ein ernsthafter Sportverein mit BFV-Ambitionen.",
+      "reason2Title": "Diverse Community",
+      "reason2Body": "11+ Nationalitäten, ein Team. Bei uns zählt der Charakter, nicht der Pass.",
+      "reason3Title": "Entwicklungsperspektive",
+      "reason3Body": "Lizenzierter Trainer. Strukturiertes Training. Klare Entwicklungsperspektive für jeden Spieler."
+    }
+  },
+  "verein": {
+    "meta": {
+      "title": "Über uns — SC Metropolis 25 Berlin",
+      "description": "SC Metropolis 25 Berlin e.V. — gegründet 26. November 2025. Gemeinnütziger Fußballverein aus Lichtenberg."
+    },
+    "hero": {
+      "label": "Unser Verein",
+      "title": "SC Metropolis 25",
+      "titleHighlight": "Berlin e.V.",
+      "description": "Gegründet am 26. November 2025 in Berlin-Lichtenberg. Eingetragener, gemeinnütziger Fußballverein für Herren-, Perspektiv- und Frauenfußball."
+    },
+    "mission": {
+      "label": "Mission",
+      "title": "Warum es uns",
+      "titleHighlight": "gibt",
+      "body1": "SC Metropolis 25 Berlin e.V. wurde am 26. November 2025 gegründet — aus der Überzeugung, dass Berlin einen Verein braucht, der Fußball und gesellschaftliche Verantwortung zusammendenkt.",
+      "body2": "Wir sind ein eingetragener, gemeinnütziger Verein (§60a AO) und bauen unsere Herrenmannschaft für den BFV-Spielbetrieb ab Saison 2026/27 auf.",
+      "infoGrundet": "Gegründet",
+      "infoStandort": "Standort",
+      "infoStandortValue": "Lichtenberg, Berlin",
+      "infoMitglieder": "Mitglieder",
+      "infoGemeinnuetzig": "Gemeinnützig"
+    },
+    "vision": {
+      "title": "Vision 2030",
+      "body": "Ein anerkannter Berliner Fußballverein — mit mehreren Teams, gesicherten Sportstätten und einer Community, die die Stadt bewegt.",
+      "goal1": "BFV-Spielbetrieb Herren ab Saison 2026/27",
+      "goal2": "2. Herren-Team & Frauenfußball im Aufbau",
+      "goal3": "Gesicherte Sportstätte in Lichtenberg",
+      "goal4": "Anerkennung durch Berliner Sportverbände (lsb)"
+    },
+    "values": {
+      "label": "Was uns antreibt",
+      "title": "Unsere",
+      "titleHighlight": "Werte",
+      "subtitle": "Diese Werte sind nicht nur Worte — sie sind die Grundlage jeder Entscheidung, die wir als Verein treffen.",
+      "gemeinschaft": "Gemeinschaft",
+      "jugend": "Jugendförderung",
+      "diversitat": "Diversität",
+      "fairPlay": "Fair Play",
+      "respekt": "Respekt",
+      "teamgeist": "Teamgeist",
+      "disziplin": "Disziplin",
+      "ambition": "Ambition",
+      "integration": "Integration",
+      "verantwortung": "Verantwortung"
+    },
+    "history": {
+      "label": "Vereinsgeschichte",
+      "title": "Unsere",
+      "titleHighlight": "Geschichte",
+      "subtitle": "Nicht gegründet auf dem Papier — sondern gewachsen auf Berliner Bolzplätzen. Seit 2019.",
+      "readMore": "Vollständige Geschichte lesen"
+    },
+    "board": {
+      "label": "Führung",
+      "title": "Vorstand &",
+      "titleHighlight": "Leitung",
+      "subtitle": "Die Menschen hinter SC Metropolis 25 Berlin — engagiert, leidenschaftlich und berlinverbunden.",
+      "interest": "Interesse am Vorstand?",
+      "contactUs": "Melde dich bei uns."
+    },
+    "cta": {
+      "title": "Teil von Metropolis 25 werden",
+      "body": "Ob als Spieler, Ehrenamtlicher, Sponsor oder Mitglied — wir bauen diesen Verein gemeinsam auf.",
+      "mitspielen": "Mitspielen / Probetraining",
+      "mitglied": "Mitglied werden",
+      "kontakt": "Kontakt aufnehmen"
+    }
+  },
+  "teams": {
+    "meta": {
+      "title": "Teams — SC Metropolis 25 Berlin",
+      "description": "Alle Mannschaften von SC Metropolis 25 Berlin."
+    },
+    "hero": {
+      "label": "Mannschaften",
+      "title": "Unsere",
+      "titleHighlight": "Teams"
+    },
+    "ersteM": {
+      "title": "1. Mannschaft",
+      "badge": "Aktiv",
+      "league": "Aufbau für BFV-Spielbetrieb · Saison 2026/27",
+      "description": "Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit lizenzierten Trainern, strukturiertem Training und klarer Entwicklungsperspektive.",
+      "trainerLabel": "Trainer",
+      "spielerLabel": "Spieler",
+      "spielerValue": "23 aktiv",
+      "zielLabel": "Ziel",
+      "zielValue": "BFV 2026/27",
+      "cta": "Team ansehen"
+    },
+    "zweiteH": {
+      "name": "2. Herren-Mannschaft",
+      "description": "Im Aufbau. Der Entwicklungspool für die Erste Mannschaft — für Spieler, die regelmäßig Spielpraxis sammeln und sich beweisen wollen.",
+      "badge": "Bald",
+      "cta": "Interesse anmelden"
+    },
+    "frauen": {
+      "name": "Frauenfußball",
+      "description": "Perspektivisch im Aufbau. Wir planen ein eigenständiges Frauenteam.",
+      "badge": "Bald",
+      "cta": "Interesse anmelden"
+    }
+  },
+  "kontakt": {
+    "meta": {
+      "title": "Kontakt — SC Metropolis 25 Berlin",
+      "description": "Kontaktieren Sie SC Metropolis 25 Berlin e.V."
+    },
+    "hero": {
+      "label": "Kontakt",
+      "title": "In",
+      "titleHighlight": "Kontakt treten"
+    },
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…"
+    },
+    "info": {
+      "emailLabel": "E-Mail",
+      "locationLabel": "Standort",
+      "locationValue": "Berlin-Lichtenberg"
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "News — SC Metropolis 25 Berlin",
+      "description": "Aktuelle Neuigkeiten von SC Metropolis 25 Berlin e.V."
+    },
+    "hero": {
+      "label": "Aktuelles",
+      "title": "News &",
+      "titleHighlight": "Updates"
+    },
+    "readMore": "Weiterlesen",
+    "latestLabel": "Neueste Meldung"
+  },
+  "spielbetrieb": {
+    "meta": {
+      "title": "Spielbetrieb — SC Metropolis 25 Berlin",
+      "description": "Spielplan und Ergebnisse von SC Metropolis 25 Berlin."
+    },
+    "hero": {
+      "label": "Spielbetrieb",
+      "title": "Spiele &",
+      "titleHighlight": "Ergebnisse"
+    },
+    "preparing": "Wir befinden uns aktuell im Aufbau für den BFV-Spielbetrieb ab Saison 2026/27.",
+    "noGames": "Noch keine Pflichtspiele. Saison 2026/27 in Vorbereitung."
+  },
+  "galerie": {
+    "meta": {
+      "title": "Galerie — SC Metropolis 25 Berlin",
+      "description": "Fotos und Impressionen von SC Metropolis 25 Berlin."
+    },
+    "hero": {
+      "label": "Galerie",
+      "title": "Bilder &",
+      "titleHighlight": "Impressionen"
+    }
+  },
+  "sponsoren": {
+    "meta": {
+      "title": "Sponsoren & Partner — SC Metropolis 25 Berlin",
+      "description": "Werden Sie Sponsor von SC Metropolis 25 Berlin e.V."
+    },
+    "hero": {
+      "label": "Partnership",
+      "title": "Sponsoren &",
+      "titleHighlight": "Partner",
+      "description": "Investieren Sie in den Berliner Fußball. Werden Sie Teil einer Bewegung, die Berliner Talente fördert."
+    },
+    "mainSponsor": "Unser Hauptsponsor",
+    "mainSponsorThanks": "Herzlichen Dank an Intarp GmbH für die Unterstützung von SC Metropolis 25 Berlin.",
+    "whyLabel": "Warum uns unterstützen",
+    "whyTitle": "Die Stärke aus",
+    "whyHighlight": "der Hauptstadt",
+    "whySubtitle": "Als Sponsor von SC Metropolis 25 erreichen Sie eine junge, engagierte und diverse Berliner Community.",
+    "packagesLabel": "Sponsoring-Pakete",
+    "packagesTitle": "Finden Sie",
+    "packagesHighlight": "Ihr Paket",
+    "packagesSubtitle": "Maßgeschneiderte Pakete für jeden Bedarf.",
+    "packagesNote": "Alle Pakete sind verhandelbar. Kontaktieren Sie uns für ein individuelles Angebot.",
+    "sendRequest": "Anfrage senden",
+    "recommended": "Empfohlen",
+    "onRequest": "Auf Anfrage",
+    "stats": {
+      "members": "Mitglieder",
+      "followers": "Social Follower",
+      "nationalities": "Nationalitäten",
+      "founded": "Gegründet"
+    }
+  },
+  "mitgliedschaft": {
+    "meta": {
+      "title": "Mitgliedschaft — SC Metropolis 25 Berlin",
+      "description": "Werde Mitglied bei SC Metropolis 25 Berlin e.V."
+    },
+    "hero": {
+      "label": "Mitgliedschaft",
+      "title": "Mitglied",
+      "titleHighlight": "werden"
+    }
+  },
+  "geschichte": {
+    "meta": {
+      "title": "Unsere Geschichte — SC Metropolis 25 Berlin",
+      "description": "Wie SC Metropolis 25 Berlin e.V. aus einer Gruppe von Studenten auf einem Bolzplatz entstand."
+    },
+    "hero": {
+      "pullQuote": "Samstage. Fußball. Gemeinschaft. Berlin.",
+      "label": "Seit 2019",
+      "title": "Unsere Geschichte",
+      "subtitle": "Wie aus sieben Freunden auf einem Berliner Bolzplatz ein eingetragener Verein wurde — und warum es uns gibt."
+    },
+    "chapter1": {
+      "label": "Kapitel 1 — Der Anfang",
+      "title": "Samstage. Fußball. Gemeinschaft.",
+      "p1": "Es begann ohne Plan, ohne Vereinsregister, ohne Trikots. Im Jahr 2019 trafen sich sieben Studenten auf einem Berliner Bolzplatz — mit einem Ball und dem simplen Wunsch, zu spielen. Was niemand ahnte: Diese Samstage würden zu etwas viel Größerem werden.",
+      "p2": "Woche für Woche kamen mehr Leute. Nicht durch Anzeigen oder Social Media — sondern durch Mundpropaganda, durch das Gefühl, das auf dem Platz herrschte. Einer brachte seinen Bruder. Ein anderer seinen Kommilitonen. Bald waren es 15, 20, 30. Menschen aus Kamerun, dem Libanon, Deutschland, Frankreich, Tunesien, Algerien, Marokko, Syrien, den USA. Alle vereint durch diese eine Sprache, die keine Übersetzung braucht.",
+      "p3": "Berliner Bolzplätze sind ehrliche Orte. Hier zählt nicht, woher du kommst oder was du studierst. Hier zählt, wie du spielst — und wie du mit deinen Mitspielern umgehst. Dieses Ethos prägte uns von Anfang an."
+    },
+    "chapter2": {
+      "label": "Kapitel 2 — Wachstum",
+      "title": "133 Menschen. Ein Gefühl.",
+      "p1": "Zwischen 2019 und 2024 wuchs unsere Community auf über 133 Menschen an. Wir traten bei Berliner Integrations-Turnieren an, repräsentierten Berlin beim Symposium Mboa — einem der wichtigsten afrikanischen Kulturfestivals Berlins.",
+      "p2": "2024 war das Jahr, das alles veränderte: Wir erreichten das Finale beim Symposium Mboa. Silber. Aber mehr als eine Medaille war es ein Beweis: Dass wir konkurrenzfähig sind. Dass wir zusammenhalten. Dass wir bereit sind für den nächsten Schritt.",
+      "p3": "Der nächste Schritt hieß: eingetragener Verein. Strukturiert. Professionell. Nachhaltig. Nicht mehr nur Freundeskreis — sondern Institution."
+    },
+    "chapter3": {
+      "label": "Kapitel 3 — Der Verein",
+      "title": "26. November 2025.",
+      "p1": "22 Mitglieder versammelten sich zur Gründungsversammlung. Ein Vorstand wurde gewählt. Eine Satzung verabschiedet. SC Metropolis 25 Berlin e.V. war offiziell geboren.",
+      "p2": "Vier Wochen später, am 22. Dezember 2025, trug das Amtsgericht Berlin-Charlottenburg uns ins Vereinsregister ein. Die rechtliche Grundlage war geschaffen. Und am 30. April 2026 anerkannte das Finanzamt die Gemeinnützigkeit nach §60a AO — ein Meilenstein, der Spenden steuerlich absetzbar macht und das Vertrauen der Öffentlichkeit unterstreicht.",
+      "p3": "Heute bereiten wir uns auf den BFV-Spielbetrieb ab Saison 2026/27 vor. Mit 23 aktiven Feldspielern, einem lizenzierten Trainer und dem Fundament von sechs Jahren gelebter Gemeinschaft."
+    },
+    "manifesto": {
+      "opening": "Wir sind kein Startup. Wir sind kein Projekt.",
+      "body": "Wir sind eine Gemeinschaft, die auf Berliner Bolzplätzen gewachsen ist — aus dem einfachen Wunsch heraus, zusammen zu spielen. Jetzt tragen wir diese Gemeinschaft in den offiziellen Fußball. Mit Respekt für jeden Spieler. Mit Verantwortung gegenüber der Stadt. Mit dem Ziel, Berliner Fußball zu prägen.",
+      "closing": "Das ist Metropolis 25."
+    },
+    "founding": {
+      "label": "Die Gründung",
+      "date1": "26. November 2025",
+      "date1Label": "Gründungsversammlung",
+      "date1Detail": "22 Gründungsmitglieder. Vorstand gewählt. Satzung verabschiedet.",
+      "date2": "22. Dezember 2025",
+      "date2Label": "Eintragung ins Vereinsregister",
+      "date2Detail": "Amtsgericht Berlin-Charlottenburg. Offiziell eingetragen.",
+      "date3": "30. April 2026",
+      "date3Label": "Gemeinnützigkeit §60a AO",
+      "date3Detail": "Vom Finanzamt anerkannt. Spenden steuerlich absetzbar."
+    },
+    "timeline": {
+      "title": "Die Reise",
+      "y2019": "Sieben Studenten. Ein Bolzplatz. Berlin.",
+      "y20192024": "Wachstum auf 133+ Mitglieder. Berliner Integrations-Turniere. Symposium Mboa.",
+      "y2024": "Finale Symposium Mboa. Silber. Berlin hat ein neues Team.",
+      "y2025": "Vereinsgründung. 22 Mitglieder. SC Metropolis 25 Berlin e.V. entsteht.",
+      "y2026a": "Gemeinnützigkeit §60a AO anerkannt.",
+      "y2026b": "BFV-Spielbetrieb in Vorbereitung. Saison 2026/27."
+    },
+    "cta": {
+      "join": "Teil der Geschichte werden",
+      "back": "Zurück zum Verein"
+    }
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "backToHome": "Zurück zur Startseite",
+    "contactUs": "Kontakt aufnehmen",
+    "register": "Anmelden",
+    "soon": "Bald",
+    "active": "Aktiv",
+    "onRequest": "Auf Anfrage",
+    "all": "Alle"
+  }
+}

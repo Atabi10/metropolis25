@@ -1,21 +1,26 @@
-import Link from 'next/link'
+'use client'
+
 import { ArrowRight, Star } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-
-const comingSoon = [
-  { name: '2. Herren-Mannschaft', badge: '2. Herren', href: '/mitmachen?team=2herren' },
-  { name: 'Frauenfußball', badge: 'Frauen', href: '/mitmachen?team=frauen' },
-]
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export function TeamsSection() {
+  const t = useTranslations('teamsSection')
+
+  const comingSoon = [
+    { name: t('comingSoon.zweiteH'), href: '/mitmachen?team=2herren' },
+    { name: t('comingSoon.frauen'),  href: '/mitmachen?team=frauen' },
+  ]
+
   return (
     <section className="section-padding bg-dark-surface" aria-labelledby="teams-title">
       <div className="container-custom">
         <SectionHeader
-          label="Unsere Teams"
-          title="Mannschaften"
-          titleHighlight="überblick"
-          subtitle="Aktuell spielen wir mit unserer 1. Mannschaft im Berliner Amateurfußball. Weitere Teams folgen."
+          label={t('label')}
+          title={t('title')}
+          titleHighlight={t('titleHighlight')}
+          subtitle={t('subtitle')}
           id="teams-title"
         />
 
@@ -23,7 +28,7 @@ export function TeamsSection() {
         <Link
           href="/teams/erste-mannschaft"
           className="group relative card overflow-hidden border border-gold hover:border-gold/80 transition-all duration-300 hover:-translate-y-1 block mb-6"
-          aria-label="1. Mannschaft"
+          aria-label={t('ersteM.title')}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy-800 opacity-80" aria-hidden="true" />
           <div className="absolute inset-0 opacity-5" aria-hidden="true"
@@ -42,19 +47,18 @@ export function TeamsSection() {
               <div>
                 <div className="flex items-center gap-3 mb-2">
                   <h3 className="font-display text-4xl text-white uppercase group-hover:text-gold transition-colors duration-300">
-                    1. Mannschaft
+                    {t('ersteM.title')}
                   </h3>
-                  <span className="badge-gold text-xs">Aktiv</span>
+                  <span className="badge-gold text-xs">{t('ersteM.badge')}</span>
                 </div>
-                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Aufbau für BFV-Spielbetrieb · Saison 2026/27</p>
+                <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">{t('ersteM.league')}</p>
                 <p className="text-text-muted text-sm leading-relaxed max-w-xl">
-                  Unser Aushängeschild. 23 aktive Feldspieler bereiten sich auf den regulären BFV-Spielbetrieb vor —
-                  trainiert von Makendi Amos.
+                  {t('ersteM.description')}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2 text-gold text-xs font-heading font-semibold uppercase tracking-widest shrink-0">
-              <span>Zum Team</span>
+              <span>{t('ersteM.cta')}</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-250 group-hover:translate-x-2" aria-hidden="true" />
             </div>
           </div>
@@ -67,12 +71,12 @@ export function TeamsSection() {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <h4 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">{team.name}</h4>
-                  <span className="text-[10px] font-heading uppercase tracking-wider text-text-muted border border-dark-border px-2 py-0.5">Bald</span>
+                  <span className="text-[10px] font-heading uppercase tracking-wider text-text-muted border border-dark-border px-2 py-0.5">{t('comingSoon.badge')}</span>
                 </div>
-                <p className="text-text-muted text-xs">Im Aufbau — Interesse vormerken lassen.</p>
+                <p className="text-text-muted text-xs">{t('comingSoon.description')}</p>
               </div>
               <Link href={team.href} className="btn-outline btn btn-sm shrink-0 text-xs">
-                Interesse anmelden
+                {t('comingSoon.cta')}
               </Link>
             </div>
           ))}

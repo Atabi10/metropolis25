@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { Play, ChevronDown } from 'lucide-react'
 import { clsx } from 'clsx'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export function HeroSection() {
+  const t = useTranslations('hero')
   const [loaded, setLoaded] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const heroRef = useRef<HTMLElement>(null)
@@ -109,7 +111,7 @@ export function HeroSection() {
           >
             <div className="w-8 h-px bg-gold" />
             <span className="text-gold font-heading font-semibold text-sm uppercase tracking-[0.3em]">
-              Berlin-Lichtenberg · Gegründet 2025
+              {t('label')}
             </span>
           </div>
 
@@ -121,8 +123,8 @@ export function HeroSection() {
             )}
             style={{ fontSize: 'clamp(2.6rem, 7.5vw, 7rem)' }}
           >
-            <span className="block text-white">SC Metropolis 25</span>
-            <span className="block text-gold-gradient">Berlin e.V.</span>
+            <span className="block text-white">{t('title')}</span>
+            <span className="block text-gold-gradient">{t('subtitle')}</span>
           </h1>
 
           {/* Sub headline */}
@@ -132,7 +134,7 @@ export function HeroSection() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
           >
-            Aufbau eines gemeinnützigen Fußballvereins für Herren-, Perspektiv- und Frauenfußball in Berlin.
+            {t('description')}
           </p>
 
           {/* CTAs */}
@@ -143,14 +145,11 @@ export function HeroSection() {
             )}
           >
             <Link href="/mitmachen" className="btn-primary btn btn-lg group inline-flex">
-              <span>Mitmachen</span>
+              <span>{t('ctaPrimary')}</span>
               <span className="ml-1 group-hover:translate-x-1 transition-transform duration-200">→</span>
             </Link>
             <Link href="/verein" className="btn-outline btn btn-lg">
-              Über den Verein
-            </Link>
-            <Link href="/kontakt" className="btn-outline btn btn-lg">
-              Kontakt aufnehmen
+              {t('ctaSecondary')}
             </Link>
           </div>
 
