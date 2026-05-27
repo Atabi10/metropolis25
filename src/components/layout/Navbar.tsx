@@ -19,7 +19,15 @@ export function Navbar() {
 
   // Build nav items from translations
   const navItems = [
-    { label: t('verein'), href: '/verein' },
+    {
+      label: t('verein'),
+      href: '/verein',
+      children: [
+        { label: t('vereinDropdown.uberUns'),    href: '/verein' },
+        { label: t('vereinDropdown.geschichte'), href: '/verein/geschichte' },
+        { label: t('vereinDropdown.vorstand'),   href: '/verein/vorstand' },
+      ],
+    },
     {
       label: t('teams'),
       href: '/teams',

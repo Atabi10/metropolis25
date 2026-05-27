@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 }
 
 const benefits = [
-  'Professionelles Training unter lizenzierten Trainern',
-  'Aufbau für BFV-Spielbetrieb ab Saison 2026/27',
-  'Moderne, entwicklungsorientierte Trainingsphilosophie',
+  'Strukturierter Trainings- und Teamaufbau im Amateurfußball',
+  'Vorbereitung auf den Berliner Ligabetrieb ab Saison 2026/27',
+  'Sportliche Entwicklung im Team — ambitioniert und bodenständig',
   'Multikulturelle, integrative Gemeinschaft',
   'Gemeinnütziger Verein mit §60a AO Anerkennung',
   'Netzwerk in der Berliner Fußball-Community',

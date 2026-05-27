@@ -5,7 +5,7 @@ import { CheckCircle, ArrowRight, Star, Clock, Users, Award, Target } from 'luci
 
 export const metadata: Metadata = {
   title: 'Jugendakademie — SC Metropolis 25 Berlin',
-  description: 'Die Jugendakademie von SC Metropolis 25 Berlin fördert Berliner Talente von 8–18 Jahren. Professionelles Training, Wertebildung und Berliner Fußball-Kultur.',
+  description: 'Die Jugendakademie von SC Metropolis 25 Berlin fördert Berliner Talente von 8–18 Jahren. Strukturierte Förderung, Wertebildung und Berliner Fußball-Kultur.',
 }
 
 const ageGroups = [

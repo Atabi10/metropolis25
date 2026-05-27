@@ -11,6 +11,11 @@
       "ersteM": "1ère équipe",
       "zweiteM": "2e Hommes (bientôt)",
       "frauen": "Femmes (bientôt)"
+    },
+    "vereinDropdown": {
+      "uberUns": "À propos",
+      "geschichte": "Notre Histoire",
+      "vorstand": "Bureau"
     }
   },
   "footer": {
@@ -48,7 +53,8 @@
     "subtitle": "Berlin e.V.",
     "description": "Football berlinois. Vraie communauté. Grandir ensemble.",
     "ctaPrimary": "Rejoindre l'équipe",
-    "ctaSecondary": "Notre club"
+    "ctaSecondary": "Découvrir le club",
+    "ctaHistory": "Notre Histoire"
   },
   "statsBar": {
     "members": "Membres",
@@ -178,7 +184,7 @@
       "reason2Title": "Communauté diverse",
       "reason2Body": "11+ nationalités, une équipe. Le caractère compte ici, pas votre passeport.",
       "reason3Title": "Parcours de développement",
-      "reason3Body": "Entraîneur licencié. Entraînement structuré. Parcours de développement clair pour chaque joueur."
+      "reason3Body": "Entraînement structuré. Esprit d'équipe. Développement sportif pour chaque joueur."
     }
   },
   "verein": {
@@ -265,7 +271,7 @@
       "title": "1ère équipe",
       "badge": "Actif",
       "league": "Préparation BFV · Saison 2026/27",
-      "description": "La première équipe masculine est le cœur du club. Nous nous préparons activement pour le championnat BFV officiel à partir de la saison 2026/27 — avec des entraîneurs licenciés et une progression claire.",
+      "description": "La première équipe masculine est le cœur du club. Nous nous préparons activement pour l'entrée dans le championnat berlinois officiel à partir de la saison 2026/27 — avec des entraîneurs licenciés et une progression claire.",
       "trainerLabel": "Entraîneur",
       "spielerLabel": "Joueurs",
       "spielerValue": "23 actifs",
@@ -413,14 +419,14 @@
       "title": "133 personnes. Un sentiment.",
       "p1": "Entre 2019 et 2024, notre communauté a grandi pour dépasser 133 personnes. Nous avons participé à des tournois d'intégration berlinois, représenté Berlin au Symposium Mboa — l'un des plus importants festivals culturels africains de Berlin.",
       "p2": "2024 fut l'année qui changea tout : nous atteignîmes la finale du Symposium Mboa. Argent. Mais plus qu'une médaille, c'était une preuve : que nous sommes compétitifs. Que nous nous soutenons mutuellement. Que nous sommes prêts pour la prochaine étape.",
-      "p3": "La prochaine étape : une association déclarée. Structurée. Professionnelle. Durable. Plus seulement un groupe d'amis — mais une institution."
+      "p3": "La prochaine étape : une association déclarée. Structurée. Durable. Ancrée dans le réel. Plus seulement un groupe d'amis — mais une institution."
     },
     "chapter3": {
       "label": "Chapitre 3 — Le club",
       "title": "26 novembre 2025.",
       "p1": "22 membres se sont réunis pour l'assemblée fondatrice. Un conseil a été élu. Des statuts ont été adoptés. SC Metropolis 25 Berlin e.V. était officiellement né.",
       "p2": "Quatre semaines plus tard, le 22 décembre 2025, le tribunal d'arrondissement de Berlin-Charlottenburg nous a inscrits au registre des associations. La base juridique était établie. Et le 30 avril 2026, l'administration fiscale a reconnu notre statut d'utilité publique selon §60a AO — une étape qui rend les dons déductibles des impôts.",
-      "p3": "Aujourd'hui, nous nous préparons pour le championnat BFV à partir de la saison 2026/27. Avec 23 joueurs de champ actifs, un entraîneur licencié et le fondement de six années de communauté vécue."
+      "p3": "Aujourd'hui, nous nous préparons pour le championnat berlinois à partir de la saison 2026/27. Avec 23 joueurs de champ actifs, un encadrement dédié et le fondement de six années de communauté vécue."
     },
     "manifesto": {
       "opening": "Nous ne sommes pas une startup. Nous ne sommes pas un projet.",

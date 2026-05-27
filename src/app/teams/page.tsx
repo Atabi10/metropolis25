@@ -58,8 +58,8 @@ export default function TeamsPage() {
                 <p className="text-gold text-xs font-heading uppercase tracking-widest mb-3">Aufbau für BFV-Spielbetrieb · Saison 2026/27</p>
                 <p className="text-text-muted text-sm leading-relaxed max-w-xl">
                   Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns
-                  aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit
-                  lizenzierten Trainern, strukturiertem Training und klarer Entwicklungsperspektive.
+                  aktiv auf den Einstieg in den Berliner Ligabetrieb ab Saison 2026/27 vor — mit
+                  strukturiertem Trainings- und Teamaufbau und klarer sportlicher Perspektive.
                 </p>
                 <div className="flex flex-wrap gap-6 mt-4">
                   {[['Trainer', 'Makendi Amos'], ['Spieler', '23 aktiv'], ['Ziel', 'BFV 2026/27']].map(([k, v]) => (

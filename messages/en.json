@@ -11,6 +11,11 @@
       "ersteM": "1st Team",
       "zweiteM": "2nd Men (soon)",
       "frauen": "Women (soon)"
+    },
+    "vereinDropdown": {
+      "uberUns": "About us",
+      "geschichte": "Our Story",
+      "vorstand": "Board"
     }
   },
   "footer": {
@@ -48,7 +53,8 @@
     "subtitle": "Berlin e.V.",
     "description": "Berlin Football. Real Community. Growing together.",
     "ctaPrimary": "Join the Team",
-    "ctaSecondary": "Our Club"
+    "ctaSecondary": "Discover the club",
+    "ctaHistory": "Our Story"
   },
   "statsBar": {
     "members": "Members",
@@ -94,7 +100,7 @@
     "title": "Football",
     "titleHighlight": "& Community",
     "body1": "SC Metropolis 25 Berlin e.V. is not a startup — we are a community that has grown since 2019 on Berlin's public pitches. 133+ people from over 11 nations.",
-    "body2": "Now, as a registered non-profit club, we are entering the BFV league system — with a squad that reflects Berlin's diversity.",
+    "body2": "Now, as a registered non-profit club, we are preparing for entry into the Berlin league system — with a squad that reflects Berlin's diversity.",
     "ctaVerein": "Our Club",
     "ctaMitmachen": "Join Us",
     "stat1": "Members",
@@ -110,7 +116,7 @@
       "title": "1st Team",
       "badge": "Active",
       "league": "Preparing for BFV · Season 2026/27",
-      "description": "Our flagship. 23 active field players preparing for official BFV competition — coached by Makendi Amos.",
+      "description": "Our flagship. 23 active field players preparing for Berlin league competition — led by Makendi Amos.",
       "cta": "View Team"
     },
     "comingSoon": {
@@ -174,11 +180,11 @@
       "titleHighlight": "purpose",
       "subtitle": "We are not just a club — we are a movement. Berlin football. Real community.",
       "reason1Title": "A real Berlin club",
-      "reason1Body": "Registered, non-profit, with a future. Not a hobby team — a serious sports club with BFV ambitions.",
+      "reason1Body": "Registered, non-profit, with a future. Not a hobby team — a serious sports club preparing for Berlin leagues.",
       "reason2Title": "Diverse community",
       "reason2Body": "11+ nationalities, one team. Character matters here, not your passport.",
       "reason3Title": "Development pathway",
-      "reason3Body": "Licensed coach. Structured training. Clear development pathway for every player."
+      "reason3Body": "Structured training. Team spirit. Sporting development for every player."
     }
   },
   "verein": {
@@ -265,7 +271,7 @@
       "title": "1st Team",
       "badge": "Active",
       "league": "Preparing for BFV · Season 2026/27",
-      "description": "The first men's team is the heart of the club. We are actively preparing for official BFV competition from season 2026/27 — with licensed coaches, structured training and a clear development pathway.",
+      "description": "The first men's team is the heart of the club. We are actively preparing for entry into Berlin league competition from season 2026/27 — with structured training, team cohesion and real sporting ambition.",
       "trainerLabel": "Coach",
       "spielerLabel": "Players",
       "spielerValue": "23 active",
@@ -333,7 +339,7 @@
       "title": "Fixtures &",
       "titleHighlight": "Results"
     },
-    "preparing": "We are currently preparing for BFV competition starting season 2026/27.",
+    "preparing": "We are currently preparing for entry into Berlin league competition starting season 2026/27.",
     "noGames": "No official fixtures yet. Season 2026/27 in preparation."
   },
   "galerie": {

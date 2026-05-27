@@ -11,6 +11,11 @@
       "ersteM": "1. Mannschaft",
       "zweiteM": "2. Herren (bald)",
       "frauen": "Frauen (bald)"
+    },
+    "vereinDropdown": {
+      "uberUns": "Über uns",
+      "geschichte": "Unsere Geschichte",
+      "vorstand": "Vorstand"
     }
   },
   "footer": {
@@ -48,7 +53,8 @@
     "subtitle": "Berlin e.V.",
     "description": "Berliner Fußball. Echte Gemeinschaft. Gemeinsam groß werden.",
     "ctaPrimary": "Jetzt Mitspielen",
-    "ctaSecondary": "Unser Verein"
+    "ctaSecondary": "Den Verein entdecken",
+    "ctaHistory": "Unsere Geschichte"
   },
   "statsBar": {
     "members": "Mitglieder",
@@ -265,7 +271,7 @@
       "title": "1. Mannschaft",
       "badge": "Aktiv",
       "league": "Aufbau für BFV-Spielbetrieb · Saison 2026/27",
-      "description": "Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit lizenzierten Trainern, strukturiertem Training und klarer Entwicklungsperspektive.",
+      "description": "Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit strukturiertem Trainings- und Teamaufbau und klarer sportlicher Perspektive.",
       "trainerLabel": "Trainer",
       "spielerLabel": "Spieler",
       "spielerValue": "23 aktiv",
@@ -413,7 +419,7 @@
       "title": "133 Menschen. Ein Gefühl.",
       "p1": "Zwischen 2019 und 2024 wuchs unsere Community auf über 133 Menschen an. Wir traten bei Berliner Integrations-Turnieren an, repräsentierten Berlin beim Symposium Mboa — einem der wichtigsten afrikanischen Kulturfestivals Berlins.",
       "p2": "2024 war das Jahr, das alles veränderte: Wir erreichten das Finale beim Symposium Mboa. Silber. Aber mehr als eine Medaille war es ein Beweis: Dass wir konkurrenzfähig sind. Dass wir zusammenhalten. Dass wir bereit sind für den nächsten Schritt.",
-      "p3": "Der nächste Schritt hieß: eingetragener Verein. Strukturiert. Professionell. Nachhaltig. Nicht mehr nur Freundeskreis — sondern Institution."
+      "p3": "Der nächste Schritt hieß: eingetragener Verein. Strukturiert. Nachhaltig. Bodenständig. Nicht mehr nur Freundeskreis — sondern Institution."
     },
     "chapter3": {
       "label": "Kapitel 3 — Der Verein",
