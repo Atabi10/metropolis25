@@ -50,6 +50,21 @@ export function TrustSection() {
         <p className="text-center text-text-muted text-xs mt-8 max-w-xl mx-auto leading-relaxed">
           {t('subtitle')}
         </p>
+
+        {/* Vereinsfarben */}
+        <div className="flex items-center justify-center gap-4 mt-6 pt-6 border-t border-dark-border">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-navy border border-dark-border" title="Navy" />
+            <div className="w-3 h-3 rounded-full bg-gold" title="Gold" />
+            <div className="w-3 h-3 rounded-full bg-ivory" title="Ivory" />
+          </div>
+          <p className="text-text-muted text-xs">
+            Vereinsfarben: <span className="text-ivory/70">Navy</span>,{' '}
+            <span className="text-gold">Gold</span> &{' '}
+            <span className="text-ivory">Ivory</span>{' '}
+            — Zusammenhalt, Ambition und Fairness.
+          </p>
+        </div>
       </div>
     </section>
   )

@@ -3,60 +3,99 @@ import { ArrowRight, Calendar } from 'lucide-react'
 import { FixtureCard, type Fixture } from '@/components/ui/FixtureCard'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
-// ─── MOCK DATA — Replace with Sanity CMS data ────────────────────────────────
-const mockFixtures: Fixture[] = [
+// ─── REAL MATCH DATA ─────────────────────────────────────────────────────────
+// All matches are friendlies / community games.
+// Official BFV Spielbetrieb begins season 2026/27.
+const fixtures: Fixture[] = [
+  // ── Upcoming ──────────────────────────────────────────────────────────────
   {
-    id: '1',
+    id: 'u1',
     homeTeam: 'SC Metropolis 25',
-    awayTeam: 'BSV Al-Dersimspor',
-    date: '2025-09-06',
-    time: '15:00',
-    venue: 'Sportplatz Lichtenberg',
-    competition: 'Kreisliga B',
+    awayTeam: 'Lichtenberg Kmer',
+    date: '2026-06-14',
+    venue: 'Poststadion Berlin',
+    competition: 'Testspiel',
+    tag: 'Heimspiel',
     status: 'upcoming',
     isHomeGame: true,
   },
   {
-    id: '2',
-    homeTeam: 'FC Berlin-Ost',
-    awayTeam: 'SC Metropolis 25',
-    date: '2025-08-30',
-    time: '13:00',
-    venue: 'Sportpark Friedrichsfelde',
-    competition: 'Kreisliga B',
+    id: 'u2',
+    homeTeam: 'SC Metropolis 25',
+    awayTeam: 'ARNDÉ FC',
+    date: '2026-06-21',
+    venue: 'Poststadion Berlin',
+    competition: 'Testspiel',
+    tag: 'Heimspiel',
+    status: 'upcoming',
+    isHomeGame: true,
+  },
+  // ── Past results ──────────────────────────────────────────────────────────
+  {
+    id: 'r1',
+    homeTeam: 'SC Metropolis 25',
+    awayTeam: 'Flambeau FC',
+    date: '2026-05-17',
+    venue: 'Poststadion Berlin',
+    competition: 'Testspiel',
+    tag: 'Heimspiel',
     status: 'finished',
-    homeScore: 1,
-    awayScore: 2,
-    isHomeGame: false,
+    homeScore: 4,
+    awayScore: 3,
+    isHomeGame: true,
   },
   {
-    id: '3',
+    id: 'r2',
     homeTeam: 'SC Metropolis 25',
-    awayTeam: 'SV Lichtenberg 47',
-    date: '2025-08-23',
-    time: '16:00',
-    venue: 'Sportplatz Lichtenberg',
-    competition: 'Kreisliga B',
+    awayTeam: 'New Star Berlin SC',
+    date: '2026-04-27',
+    competition: 'Community Match',
     status: 'finished',
-    homeScore: 3,
-    awayScore: 1,
+    homeScore: 1,
+    awayScore: 0,
     isHomeGame: true,
+  },
+  {
+    id: 'r3',
+    homeTeam: 'SC Metropolis 25',
+    awayTeam: 'Lichtenberg Kmer',
+    date: '2026-04-19',
+    venue: 'Hauffstraße 13–20, 10317 Berlin',
+    competition: 'Community Match',
+    tag: 'Heimspiel',
+    status: 'finished',
+    homeScore: 4,
+    awayScore: 2,
+    isHomeGame: true,
+  },
+  {
+    id: 'r4',
+    homeTeam: 'Flambeau FC',
+    awayTeam: 'SC Metropolis 25',
+    date: '2026-03-15',
+    venue: 'Poststadion Berlin',
+    competition: 'Testspiel',
+    tag: 'Auswärtsspiel',
+    status: 'finished',
+    homeScore: 2,
+    awayScore: 2,
+    isHomeGame: false,
   },
 ]
 
 export function FixturesPreview() {
-  const upcoming = mockFixtures.filter(f => f.status === 'upcoming')
-  const recent   = mockFixtures.filter(f => f.status === 'finished').slice(0, 2)
+  const upcoming = fixtures.filter(f => f.status === 'upcoming')
+  const recent   = fixtures.filter(f => f.status === 'finished').slice(0, 3)
 
   return (
     <section className="section-padding bg-dark" aria-labelledby="fixtures-title">
       <div className="container-custom">
 
         <SectionHeader
-          label="Spielbetrieb"
-          title="Spieltage &"
-          titleHighlight="Ergebnisse"
-          subtitle="Aktuelle Spielpläne, Ergebnisse und Tabellen — immer auf dem neuesten Stand."
+          label="Testspiele & Community Matches"
+          title="Spielpraxis vor dem"
+          titleHighlight="Ligastart"
+          subtitle="Bevor der offizielle BFV-Spielbetrieb beginnt, sammeln wir bereits Spielpraxis durch Freundschaftsspiele und Community Matches in Berlin."
           id="fixtures-title"
         />
 
@@ -67,7 +106,7 @@ export function FixturesPreview() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-6 bg-gold" aria-hidden="true" />
               <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
-                Nächste Spiele
+                Kommende Spiele
               </h3>
             </div>
             <div className="space-y-3">
@@ -77,7 +116,7 @@ export function FixturesPreview() {
                 ))
               ) : (
                 <div className="card p-6 text-center">
-                  <Calendar className="w-8 h-8 text-text-muted mx-auto mb-2" />
+                  <Calendar className="w-8 h-8 text-text-muted mx-auto mb-2" aria-hidden="true" />
                   <p className="text-text-muted text-sm">Keine anstehenden Spiele</p>
                 </div>
               )}
@@ -106,8 +145,8 @@ export function FixturesPreview() {
             href="/spielbetrieb"
             className="btn-outline btn group inline-flex items-center gap-2"
           >
-            Gesamten Spielplan ansehen
-            <ArrowRight className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1" />
+            Alle Spiele & Ergebnisse
+            <ArrowRight className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
       </div>

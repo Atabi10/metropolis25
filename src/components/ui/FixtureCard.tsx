@@ -12,6 +12,7 @@ export interface Fixture {
   time?: string
   venue?: string
   competition: string
+  tag?: string          // e.g. 'Testspiel', 'Community Match', 'Auswärtsspiel'
   status: 'upcoming' | 'live' | 'finished'
   homeScore?: number
   awayScore?: number
@@ -72,7 +73,14 @@ export function FixtureCard({ fixture, compact = false }: FixtureCardProps) {
       <div className="pl-3">
         {/* Competition + Status */}
         <div className="flex items-center justify-between mb-3">
-          <span className="badge-gold text-xs">{fixture.competition}</span>
+          <div className="flex items-center gap-2">
+            <span className="badge-gold text-xs">{fixture.competition}</span>
+            {fixture.tag && (
+              <span className="text-[10px] font-heading uppercase tracking-wider text-text-muted border border-dark-border px-2 py-0.5">
+                {fixture.tag}
+              </span>
+            )}
+          </div>
           {isLive && (
             <span className="flex items-center gap-1.5 text-gold text-xs font-semibold uppercase tracking-wider animate-pulse">
               <span className="w-2 h-2 rounded-full bg-gold" />
