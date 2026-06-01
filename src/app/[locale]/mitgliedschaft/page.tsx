@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, ArrowRight, Heart } from 'lucide-react'
+import { CheckCircle, ArrowRight, Heart, Smartphone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Mitgliedschaft — SC Metropolis 25 Berlin',
@@ -10,28 +11,28 @@ export const metadata: Metadata = {
 const membershipTypes = [
   {
     name: 'Aktiv-Mitglied',
-    price: 'Ab 15 €',
+    price: 'Ab 10 €',
     period: '/ Monat',
-    description: 'Für alle, die aktiv mitspielen möchten.',
-    features: ['Spielberechtigung in allen Teams', 'Nutzung aller Trainingseinheiten', 'Vereinsausweis', 'Mitspracherecht bei der Jahreshauptversammlung', 'Mitgliederrabatte auf Merchandise'],
+    description: 'Für alle, die aktiv mitspielen und am Vereinsleben teilnehmen.',
+    features: ['Spielberechtigung in allen Teams', 'Nutzung aller Trainingseinheiten', 'Vereinsausweis', 'Stimmberechtigung bei der Jahreshauptversammlung', 'Teil der Vereinsgemeinschaft'],
     cta: 'Aktiv beitreten',
     featured: true,
   },
   {
-    name: 'Förder-Mitglied',
-    price: 'Ab 10 €',
+    name: 'Förder- / Passiv-Mitglied',
+    price: 'Ab 5 €',
     period: '/ Monat',
     description: 'Unterstütze den Verein ohne aktiv zu spielen.',
-    features: ['Unterstützung des Vereins', 'Mitgliedsausweis', 'Newsletter', 'Mitspracherecht', 'Einladungen zu Events'],
+    features: ['Unterstützung des Vereins', 'Mitgliedsausweis', 'Vereins-Newsletter', 'Einladungen zu Vereinsevents', 'Förderer des Berliner Grassroots-Fußballs'],
     cta: 'Förderer werden',
     featured: false,
   },
   {
     name: 'Jugend-Mitglied',
-    price: 'Ab 8 €',
+    price: 'Ab 5 €',
     period: '/ Monat',
-    description: 'Für Spieler unter 18 Jahren.',
-    features: ['Spielberechtigung Jugendteams', 'Akademieprogramm', 'Vereinsausweis', 'Alle Trainingseinheiten', 'Jugend-Events'],
+    description: 'Für Spielerinnen und Spieler unter 18 Jahren.',
+    features: ['Spielberechtigung in Jugendteams', 'Vereinsausweis', 'Alle Trainingseinheiten', 'Teil der Vereinsgemeinschaft', 'Jugend-Vereinsevents'],
     cta: 'Jetzt anmelden',
     featured: false,
   },
@@ -85,11 +86,88 @@ export default function MitgliedschaftPage() {
               </div>
             ))}
           </div>
-          <div className="mt-10 card p-6 flex items-center gap-4 border-gold/20">
-            <Heart className="w-8 h-8 text-gold shrink-0" />
+          {/* PayPal Payment Section */}
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+
+            {/* QR Code card */}
+            <div className="card p-6 border-gold/20 flex flex-col items-center text-center">
+              <div className="flex items-center gap-2 mb-4">
+                <Smartphone className="w-4 h-4 text-gold" aria-hidden="true" />
+                <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+                  Mitgliedsbeitrag bezahlen
+                </h3>
+              </div>
+              <p className="text-text-muted text-xs leading-relaxed mb-5 max-w-xs">
+                Scanne den QR-Code mit deiner PayPal-App oder Kamera, um deinen
+                monatlichen Mitgliedsbeitrag direkt zu überweisen.
+              </p>
+
+              {/* QR Code */}
+              <div className="bg-white p-3 inline-block mb-4">
+                <Image
+                  src="/images/paypal-qr.png"
+                  alt="PayPal QR-Code — SC Metropolis 25 Berlin Mitgliedsbeitrag"
+                  width={200}
+                  height={200}
+                  className="block"
+                />
+              </div>
+
+              <p className="text-gold text-xs font-heading uppercase tracking-wider mb-1">
+                PayPal · SC Metropolis 25 Berlin e.V.
+              </p>
+              <p className="text-text-muted text-[10px] leading-relaxed">
+                Bitte deinen Namen und "Mitgliedsbeitrag" im Verwendungszweck angeben.
+              </p>
+            </div>
+
+            {/* Instructions card */}
+            <div className="card p-6 border-gold/20 flex flex-col justify-between">
+              <div>
+                <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-widest mb-4">
+                  So geht es
+                </h3>
+                <ol className="space-y-4">
+                  {[
+                    { step: '01', text: 'Melde dich über das Kontaktformular an und teile uns deine gewählte Mitgliedschaft mit.' },
+                    { step: '02', text: 'Scanne den PayPal QR-Code oder überweise deinen Beitrag manuell über PayPal.' },
+                    { step: '03', text: 'Gib im Verwendungszweck deinen Namen und "Mitgliedsbeitrag" an.' },
+                    { step: '04', text: 'Du erhältst eine Bestätigung und deinen Mitgliedsausweis per E-Mail.' },
+                  ].map(item => (
+                    <li key={item.step} className="flex items-start gap-4">
+                      <span className="font-display text-gold/40 text-2xl leading-none shrink-0 w-8">
+                        {item.step}
+                      </span>
+                      <p className="text-text-secondary text-xs leading-relaxed pt-1">
+                        {item.text}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-dark-border">
+                <p className="text-text-muted text-xs leading-relaxed">
+                  Fragen zur Mitgliedschaft?{' '}
+                  <Link href="/kontakt" className="text-gold hover:underline">
+                    Schreib uns direkt.
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Volunteer card */}
+          <div className="mt-6 card p-6 flex items-center gap-4 border-gold/20">
+            <Heart className="w-8 h-8 text-gold shrink-0" aria-hidden="true" />
             <div>
-              <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wide mb-1">Ehrenamtliche Unterstützung</h3>
-              <p className="text-text-muted text-xs">Du möchtest ohne Mitgliedsbeitrag helfen? Wir freuen uns über jeden freiwilligen Helfer. <Link href="/kontakt" className="text-gold hover:underline">Melde dich bei uns.</Link></p>
+              <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wide mb-1">
+                Ehrenamtliche Unterstützung
+              </h3>
+              <p className="text-text-muted text-xs">
+                Du möchtest ohne Mitgliedsbeitrag helfen? Wir freuen uns über jeden freiwilligen Helfer.{' '}
+                <Link href="/kontakt" className="text-gold hover:underline">Melde dich bei uns.</Link>
+              </p>
             </div>
           </div>
         </div>
