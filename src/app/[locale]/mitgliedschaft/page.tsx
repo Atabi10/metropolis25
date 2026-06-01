@@ -116,8 +116,21 @@ export default function MitgliedschaftPage() {
               <p className="text-gold text-xs font-heading uppercase tracking-wider mb-1">
                 PayPal · SC Metropolis 25 Berlin e.V.
               </p>
-              <p className="text-text-muted text-[10px] leading-relaxed">
+              <p className="text-text-muted text-[10px] leading-relaxed mb-4">
                 Bitte deinen Namen und "Mitgliedsbeitrag" im Verwendungszweck angeben.
+              </p>
+
+              {/* Direct PayPal link */}
+              <a
+                href="https://www.paypal.com/send?email=kontakt@sc-metropolis25.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary btn btn-sm text-xs w-full justify-center mb-2"
+              >
+                Direkt via PayPal bezahlen →
+              </a>
+              <p className="text-text-muted text-[10px]">
+                kontakt@sc-metropolis25.de
               </p>
             </div>
 
