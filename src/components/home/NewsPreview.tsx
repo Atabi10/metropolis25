@@ -3,76 +3,97 @@ import { ArrowRight } from 'lucide-react'
 import { NewsCard, type NewsItem } from '@/components/ui/NewsCard'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
-// ─── MOCK DATA — Replace with Sanity CMS data ────────────────────────────────
-const mockNews: NewsItem[] = [
+// ─── REAL CLUB NEWS — most recent 4 ──────────────────────────────────────────
+const latestNews: NewsItem[] = [
   {
-    id: '1',
-    slug: 'vereinsgruendung-2025',
-    title: 'SC Metropolis 25 Berlin offiziell gegründet',
-    excerpt: 'Ein neues Kapitel im Berliner Fußball beginnt: SC Metropolis 25 Berlin e.V. ist offiziell eingetragen und startet in die erste Saison.',
-    category: 'Vereinsnews',
-    publishedAt: '2025-01-15',
+    id: 'n-mboa-2026',
+    slug: 'symposium-mboa-turnier-2026',
+    title: 'Starker Auftritt beim Symposium Mboa 2026',
+    excerpt:
+      'Ungeschlagen durch die Gruppenphase, Viertelfinalsieg gegen FÉE-FÉE FC — erst im Halbfinale im Elfmeterschießen ausgeschieden. Ein Auftritt, der zeigt: Dieser Verein ist angekommen.',
+    category: 'Spielberichte',
+    type: 'news',
+    publishedAt: '2026-05-24',
     featured: true,
+    image: '/images/symposium-mboa-team.jpeg',
+    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
   },
   {
-    id: '2',
-    slug: 'intarp-hauptsponsor',
-    title: 'Intarp GmbH wird Hauptsponsor von SC Metropolis 25',
-    excerpt: 'Wir freuen uns, Intarp GmbH als unseren offiziellen Hauptsponsor begrüßen zu dürfen. Eine starke Partnerschaft für die Zukunft.',
-    category: 'Sponsoring',
-    publishedAt: '2025-02-01',
+    id: 'n-flambeau2',
+    slug: 'fortschritt-sichtbar-metropolis-gewinnt-4-3',
+    title: 'Fortschritt sichtbar: 4:3-Sieg gegen Flambeau FC',
+    excerpt:
+      'Im März noch 2:2 — diesmal ein klarer 4:3-Sieg. Die Entwicklung der Mannschaft ist nicht zu übersehen.',
+    category: 'Spielberichte',
+    type: 'news',
+    matchResult: '4:3',
+    publishedAt: '2026-05-17',
+    video: '/videos/m25-vs-flambeau.mp4',
   },
   {
-    id: '3',
-    slug: 'jugendakademie-startet',
-    title: 'Jugendakademie nimmt Betrieb auf',
-    excerpt: 'Unser Nachwuchsprogramm startet durch: Die Jugendakademie von SC Metropolis 25 sucht Talente zwischen 8 und 18 Jahren.',
-    category: 'Akademie',
-    publishedAt: '2025-03-10',
+    id: 'n-gemeinnuetzig',
+    slug: 'gemeinnuetzigkeit-60a-ao',
+    title: 'Meilenstein: Gemeinnützigkeit §60a AO bestätigt',
+    excerpt:
+      'Das Berliner Finanzamt hat die vorläufige Gemeinnützigkeit anerkannt. Ein wichtiger Schritt für die Zukunft des Vereins.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-04-30',
+  },
+  {
+    id: 'b-berlin-samstag',
+    slug: 'berlin-samstag-fussball',
+    title: 'Berlin. Samstag. Fußball.',
+    excerpt:
+      'Unterschiedliche Menschen. Unterschiedliche Länder. Dieselbe Leidenschaft. Die Geschichte, wie wöchentlicher Samstagsfußball zum Fundament eines Vereins wurde.',
+    category: 'Berichte',
+    type: 'bericht',
+    readTime: '6 min',
+    publishedAt: '2026-05-15',
+    image: '/images/symposium-mboa-team.jpeg',
   },
 ]
 
 export function NewsPreview() {
-  const [featured, ...rest] = mockNews
+  const [featured, ...rest] = latestNews
 
   return (
     <section className="section-padding bg-dark-surface" aria-labelledby="news-title">
       <div className="container-custom">
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <div className="section-label">Aktuelles</div>
-            <h2 id="news-title" className="section-title text-4xl text-white mb-0">
-              News &{' '}
-              <span className="text-gold-gradient">Berichte</span>
-            </h2>
-          </div>
-          <Link
-            href="/news"
-            className="hidden md:flex items-center gap-2 text-gold text-xs font-heading font-semibold uppercase tracking-widest hover:gap-3 transition-all duration-250"
-          >
-            Alle News
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        <SectionHeader
+          label="News & Berichte"
+          title="Aktuelles vom"
+          titleHighlight="Verein"
+          subtitle="Spielberichte, Vereinsmeilensteine und die Geschichte hinter SC Metropolis 25 Berlin."
+          id="news-title"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Featured */}
-          <div className="md:col-span-2">
+        <div className="grid lg:grid-cols-3 gap-6">
+          {/* Featured — takes 2 columns */}
+          <div className="lg:col-span-2">
             <NewsCard article={featured} featured />
           </div>
 
-          {/* Secondary */}
+          {/* Side articles */}
           <div className="flex flex-col gap-6">
-            {rest.map(article => (
-              <NewsCard key={article.id} article={article} className="flex-1" />
+            {rest.slice(0, 2).map(article => (
+              <NewsCard key={article.id} article={article} />
             ))}
           </div>
         </div>
 
-        {/* Mobile CTA */}
-        <div className="text-center mt-8 md:hidden">
-          <Link href="/news" className="btn-outline btn">
-            Alle News ansehen
+        {/* 4th article full width teaser */}
+        <div className="mt-6">
+          <NewsCard article={rest[2]} />
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/news"
+            className="btn-outline btn group inline-flex items-center gap-2"
+          >
+            Alle News & Berichte
+            <ArrowRight className="w-4 h-4 transition-transform duration-250 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
       </div>
