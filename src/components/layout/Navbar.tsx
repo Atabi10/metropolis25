@@ -26,6 +26,7 @@ export function Navbar() {
         { label: t('vereinDropdown.uberUns'),    href: '/verein' },
         { label: t('vereinDropdown.geschichte'), href: '/verein/geschichte' },
         { label: t('vereinDropdown.vorstand'),   href: '/verein/vorstand' },
+        { label: t('vereinDropdown.ausstattung'), href: '/ausstattung' },
       ],
     },
     {
