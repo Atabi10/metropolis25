@@ -54,9 +54,24 @@ const timeline = [
   {
     year: 'Mai 2026',
     label: 'Symposium Mboa — Ungeschlagen',
-    text: 'Drei Spiele, zwei Siege, ein Unentschieden. SC Metropolis 25 geht ungeschlagen durch die Gruppenphase. Die Energie auf dem Platz erzählt, was die Zahlen allein nicht können.',
+    text: 'Drei Spiele, zwei Siege, ein Unentschieden. SC Metropolis 25 geht ungeschlagen durch die Gruppenphase, gewinnt das Viertelfinale gegen FÉE-FÉE FC mit 1:0 und scheidet erst im Halbfinale gegen Gambia im Elfmeterschießen aus.',
     image: '/images/symposium-mboa-team.jpeg',
     imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+  },
+  {
+    year: 'Frühjahr 2026',
+    label: 'BFV-Aufnahmeantrag eingereicht',
+    text: 'SC Metropolis 25 Berlin e.V. stellt den offiziellen Aufnahmeantrag beim Berliner Fußball-Verband (BFV). Ein entscheidender Schritt auf dem Weg in den organisierten Berliner Ligabetrieb ab Saison 2026/27.',
+    image: null,
+    imageAlt: null,
+  },
+  {
+    year: 'Sommer 2026',
+    label: 'Antrag auf sportliche Förderungswürdigkeit',
+    text: 'Der Verein reicht den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung ein. Die Anerkennung bildet eine wesentliche Grundlage für die Nutzung öffentlicher Sportanlagen. Der Antrag befindet sich in Bearbeitung.',
+    image: null,
+    imageAlt: null,
+    pending: true,
   },
 ]
 
@@ -288,13 +303,27 @@ export default function GeschichtePage() {
               <div className="space-y-10">
                 {timeline.map((item, i) => (
                   <div key={i} className="relative flex gap-8">
-                    {/* Dot */}
-                    <div className="shrink-0 w-10 flex justify-center">
-                      <div className="w-3 h-3 bg-gold rounded-full mt-1.5 shadow-[0_0_8px_rgba(224,161,6,0.5)]" />
+                    {/* Dot — pulsing for pending items */}
+                    <div className="shrink-0 w-10 flex justify-center pt-1.5">
+                      {(item as { pending?: boolean }).pending ? (
+                        <span className="relative flex w-3 h-3">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-50" />
+                          <span className="relative inline-flex rounded-full w-3 h-3 bg-gold/60 border border-gold" />
+                        </span>
+                      ) : (
+                        <div className="w-3 h-3 bg-gold rounded-full shadow-[0_0_8px_rgba(224,161,6,0.5)]" />
+                      )}
                     </div>
                     {/* Content */}
                     <div className="pb-2 flex-1">
-                      <span className="font-display text-gold text-sm leading-none block mb-1">{item.year}</span>
+                      <div className="flex items-center gap-3 mb-1">
+                        <span className="font-display text-gold text-sm leading-none">{item.year}</span>
+                        {(item as { pending?: boolean }).pending && (
+                          <span className="text-[10px] font-heading uppercase tracking-wider text-gold/60 border border-gold/30 px-2 py-0.5">
+                            In Bearbeitung
+                          </span>
+                        )}
+                      </div>
                       <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wide mb-2">
                         {item.label}
                       </h3>

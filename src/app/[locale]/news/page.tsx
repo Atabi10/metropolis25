@@ -25,6 +25,16 @@ const newsItems: NewsItem[] = [
     imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
   },
   {
+    id: 'n-foerderung',
+    slug: 'antrag-sportliche-foerderungswuerdigkeit',
+    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
+    excerpt:
+      'SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht. Ein weiterer struktureller Meilenstein auf dem Weg zum etablierten Berliner Fußballverein.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-06-01',
+  },
+  {
     id: 'n-flambeau2',
     slug: 'fortschritt-sichtbar-metropolis-gewinnt-4-3',
     title: 'Fortschritt sichtbar: Metropolis gewinnt 4:3',

@@ -190,6 +190,19 @@ const articles: Article[] = [
       'Heute ist SC Metropolis 25 ein eingetragener, gemeinnütziger Fußballverein mit über 37 Mitgliedern und dem klaren Ziel, ab Saison 2026/27 im organisierten Berliner Ligabetrieb anzutreten.',
     ],
   },
+  {
+    slug: 'antrag-sportliche-foerderungswuerdigkeit',
+    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
+    category: 'Vereinsnews',
+    type: 'news' as const,
+    publishedAt: '2026-06-01',
+    body: [
+      'Der SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht.',
+      'Die Anerkennung der sportlichen Förderungswürdigkeit ist ein wichtiger Schritt für Berliner Sportvereine und bildet eine wesentliche Grundlage für die Nutzung öffentlicher Sportanlagen sowie die weitere institutionelle Entwicklung des Vereins.',
+      'Mit der Antragstellung setzt SC Metropolis 25 seinen strukturierten Vereinsaufbau konsequent fort. Nach der Vereinsgründung (November 2025), der Eintragung ins Vereinsregister (Dezember 2025), der Anerkennung der Gemeinnützigkeit nach §60a AO (April 2026) und dem BFV-Aufnahmeantrag ist dies der nächste formale Meilenstein.',
+      'Der Antrag befindet sich derzeit in Bearbeitung. SC Metropolis 25 berichtet transparent über alle weiteren Schritte.',
+    ],
+  },
   // ── BERICHTE ───────────────────────────────────────────────────────────────
   {
     slug: 'berlin-samstag-fussball',
@@ -281,8 +294,8 @@ const articles: Article[] = [
     publishedAt: '2025-12-15',
     body: [
       'SC Metropolis 25 ist transparent über seinen Weg. Hier ist der aktuelle Stand.',
-      'Erreicht: Vereinsgründung (November 2025), Vereinseintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), erste Testspiele im organisierten Rahmen, Kader mit 23 aktiven Feldspielern, Hauptsponsor Intarp GmbH.',
-      'In Arbeit: Sportstättensuche für festen Trainings- und Spielbetrieb, Kontaktaufnahme mit dem BFV, Spielerlizenzierungen, Aufbau der Vereinsstruktur.',
+      'Erreicht: Vereinsgründung (November 2025), Vereinseintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), BFV-Aufnahmeantrag (Frühjahr 2026), Antrag auf sportliche Förderungswürdigkeit (Sommer 2026), erste Testspiele, 23 aktive Feldspieler, Hauptsponsor Intarp GmbH.',
+      'In Bearbeitung: Anerkennung der sportlichen Förderungswürdigkeit (Senatsverwaltung), Sportstättensuche, Spielerlizenzierungen, Aufbau der Vereinsstruktur.',
       'Ziel: Einstieg in den Berliner Ligabetrieb zur Saison 2026/27. Realistisch, wenn die organisatorischen Voraussetzungen rechtzeitig erfüllt sind.',
       'Wir berichten weiter — ehrlich, transparent und ohne Übertreibungen. Der Weg ist der Weg. Und wir gehen ihn.',
     ],
