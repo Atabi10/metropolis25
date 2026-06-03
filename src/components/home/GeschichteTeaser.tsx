@@ -6,7 +6,7 @@ import { Link } from '@/i18n/navigation'
 
 const milestones = [
   { year: '2019', text: 'Erste Ballkontakte auf Berliner Bolzplätzen — sieben Studenten, ein Samstag' },
-  { year: '2024', text: 'Finale beim Symposium Mboa — Silber. Der Moment, der alles veränderte.' },
+  { year: '2024', text: 'Finalist beim Symposium Mboa — 0:1 im Finale gegen Flambeau FC. 🥈 Silber. Der Wendepunkt.' },
   { year: '2025', text: 'Vereinsgründung: SC Metropolis 25 Berlin e.V.' },
   { year: '2026', text: 'Gemeinnützigkeit §60a AO · BFV-Antrag · Förderungswürdigkeit beantragt' },
 ]

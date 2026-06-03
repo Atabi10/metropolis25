@@ -104,6 +104,16 @@ interface TournamentMatch {
   note?: string
 }
 
+const mboa2024: TournamentMatch[] = [
+  { round: 'Gruppenphase',  opponent: 'Santé Biesdorf', scoreM25: 1, scoreOpp: 0, result: 'win' },
+  { round: 'Gruppenphase',  opponent: 'Benin',          scoreM25: 1, scoreOpp: 1, result: 'draw' },
+  { round: 'Gruppenphase',  opponent: 'Leipzig',        scoreM25: 2, scoreOpp: 1, result: 'win' },
+  { round: 'Viertelfinale', opponent: 'Ghana',          scoreM25: 2, scoreOpp: 0, result: 'win' },
+  { round: 'Halbfinale',    opponent: 'Algeria',        scoreM25: 1, scoreOpp: 0, result: 'win' },
+  { round: 'Finale',        opponent: 'Flambeau FC',    scoreM25: 0, scoreOpp: 1, result: 'loss',
+    note: 'Finalist — 🥈 Silber. Der Moment, der die Vereinsgründung auslöste.' },
+]
+
 const mboa2026: TournamentMatch[] = [
   { round: 'Gruppenphase',  opponent: '(3 Spiele)',      scoreM25: null, scoreOpp: null, result: 'win',      note: '2 Siege, 1 Unentschieden — ungeschlagen' },
   { round: 'Viertelfinale', opponent: 'FÉE-FÉE FC',      scoreM25: 1,    scoreOpp: 0,    result: 'win' },
@@ -341,6 +351,81 @@ export default function SpielbetriebPage() {
                 <div className="text-text-muted text-xs font-heading uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Symposium Mboa 2024 ──────────────────── */}
+      <section className="section-padding bg-dark border-b border-dark-border">
+        <div className="container-custom">
+
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-2xl" aria-hidden="true">🥈</span>
+                <p className="text-gold font-heading text-xs uppercase tracking-[0.3em]">
+                  Historisches Turnier
+                </p>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl text-white uppercase leading-none">
+                Symposium Mboa{' '}
+                <span className="text-gold-gradient">2024</span>
+              </h2>
+              <div className="w-12 h-1 bg-gold mt-4" />
+            </div>
+            <div className="sm:text-right">
+              <p className="text-text-muted text-xs font-heading uppercase tracking-wider mb-2">
+                Berlin 2024
+              </p>
+              <p className="text-ivory/80 text-sm font-heading font-semibold">
+                🥈 Finalist — Silber
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed max-w-xs sm:ml-auto mt-1">
+                5 Siege, 1 Unentschieden, 1 Niederlage im Finale.
+                Der Moment, der die Vereinsgründung auslöste.
+              </p>
+            </div>
+          </div>
+
+          {/* Stats strip */}
+          <div className="grid grid-cols-4 gap-3 mb-6">
+            {[
+              { label: 'Spiele',     value: '6' },
+              { label: 'Siege',      value: '4', accent: true },
+              { label: 'Unentsch.', value: '1' },
+              { label: 'Tore',       value: '7:3', accent: true },
+            ].map(s => (
+              <div key={s.label} className="card p-3 text-center">
+                <div className={`font-display text-2xl leading-none mb-0.5 ${s.accent ? 'text-gold' : 'text-white'}`}>
+                  {s.value}
+                </div>
+                <div className="text-text-muted text-[10px] font-heading uppercase tracking-wider">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* All 6 matches */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {mboa2024.map(m => (
+              <TournamentRow key={`2024-${m.round}-${m.opponent}`} m={m} />
+            ))}
+          </div>
+
+          {/* Emotional note */}
+          <div className="border border-gold/20 bg-navy/30 p-5 flex items-start gap-4">
+            <span className="text-gold text-2xl shrink-0" aria-hidden="true">🥈</span>
+            <div>
+              <p className="text-white font-heading font-semibold text-sm mb-1">
+                Der erste große Erfolg — und der Beginn von etwas Größerem
+              </p>
+              <p className="text-text-muted text-xs leading-relaxed">
+                Das Finale beim Symposium Mboa 2024 war der Wendepunkt. 0:1 gegen Flambeau FC.
+                Silber. Für viele Spieler war genau dieser Moment der Auslöser: aus der losen
+                Fußballgemeinschaft einen echten Verein zu gründen. Wenige Monate später entstand
+                SC Metropolis 25 Berlin e.V.
+              </p>
+            </div>
           </div>
         </div>
       </section>

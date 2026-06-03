@@ -9,6 +9,20 @@ export const metadata: Metadata = {
 
 // ─── NEWS ARTICLES ────────────────────────────────────────────────────────────
 const newsItems: NewsItem[] = [
+  // ── 2024 — Historisches Turnier ───────────────────────────────────────────
+
+  {
+    id: 'n-mboa-2024',
+    slug: 'finalist-symposium-mboa-2024',
+    title: 'Der erste große Erfolg: Finale beim Symposium Mboa 2024',
+    excerpt:
+      'Gruppenphase ungeschlagen. Viertelfinale gewonnen. Halbfinale gewonnen. Und dann: das Finale gegen Flambeau FC — 0:1. Silber beim Symposium Mboa 2024. Der Moment, der die Gründung von SC Metropolis 25 Berlin e.V. auslöste.',
+    category: 'Spielberichte',
+    type: 'news',
+    publishedAt: '2024-07-01',
+    image: '/images/trophy for 2nd place.jpeg',
+    imageAlt: 'SC Metropolis 25 — Trophäe und Medaillen Symposium Mboa 2024',
+  },
   // ── 2026 ──────────────────────────────────────────────────────────────────
 
   {

@@ -26,7 +26,7 @@ const timeline = [
   {
     year: '2024',
     label: 'Symposium Mboa — Das Finale',
-    text: 'Beim Symposium Mboa 2024 erreicht das Team das Finale — und verpasst den Titel nur knapp. Silber. Für viele ist das der Moment, der alles verändert: Aus einer Freizeitgruppe ist längst eine echte Mannschaft geworden.',
+    text: 'Gruppenphase ungeschlagen (1:0 Santé Biesdorf · 1:1 Benin · 2:1 Leipzig). Viertelfinale: 2:0 gegen Ghana. Halbfinale: 1:0 gegen Algeria. Finale: 0:1 gegen Flambeau FC. Silber. Dieser Tag veränderte alles — und legte den Grundstein für die Vereinsgründung.',
     image: '/images/trophy for 2nd place.jpeg',
     imageAlt: 'Trophäenübergabe für den 2. Platz beim Symposium Mboa 2024',
   },

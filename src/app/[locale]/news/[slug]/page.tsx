@@ -26,6 +26,24 @@ interface Article {
 const articles: Article[] = [
   // ── SPIELBERICHTE ──────────────────────────────────────────────────────────
   {
+    slug: 'finalist-symposium-mboa-2024',
+    title: 'Der erste große Erfolg: Finale beim Symposium Mboa 2024',
+    category: 'Spielberichte',
+    type: 'news',
+    publishedAt: '2024-07-01',
+    image: '/images/trophy for 2nd place.jpeg',
+    imageAlt: 'SC Metropolis 25 — Trophäe und Medaillen Symposium Mboa 2024',
+    body: [
+      'Das Symposium Mboa 2024 war kein gewöhnliches Turnier. Es war der Moment, der alles veränderte.',
+      'In der Gruppenphase legte die Mannschaft den Grundstein: 1:0 gegen Santé Biesdorf, 1:1 gegen Benin, 2:1 gegen Leipzig. Drei Spiele, zwei Siege, ein Unentschieden — ungeschlagen durch die erste Runde.',
+      'Im Viertelfinale folgte ein klarer 2:0-Sieg gegen Ghana. Im Halbfinale, dem härtesten Spiel des Turniers, gewann die Mannschaft 1:0 gegen Algeria — kampfbetont, konzentriert, verdient.',
+      'Und dann das Finale. Flambeau FC. 0:1. Silber.',
+      'Die Niederlage tat weh. Aber was an diesem Tag auf dem Platz stand, war keine lockere Freizeitgruppe mehr. Es war eine Mannschaft. Eine echte Mannschaft, die das Finale eines der bedeutendsten afrikanischen Kulturturniere Berlins erreicht hatte.',
+      'Für viele Spieler war genau dieser Moment der Auslöser. Wenn wir das schaffen können — was wäre möglich, wenn wir einen richtigen Verein hätten? Wenige Monate später, im November 2025, gründeten 22 Mitglieder SC Metropolis 25 Berlin e.V.',
+      'Das Symposium Mboa 2024 war nicht nur ein Turnierergebnis. Es war der Beginn von etwas Größerem.',
+    ],
+  },
+  {
     slug: 'symposium-mboa-turnier-2026',
     title: 'Starker Auftritt beim Symposium Mboa 2026',
     category: 'Spielberichte',
