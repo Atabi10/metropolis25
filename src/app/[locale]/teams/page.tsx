@@ -85,7 +85,11 @@ export default async function TeamsPage() {
           {/* Coming Soon */}
           <div className="grid sm:grid-cols-2 gap-4">
             {comingSoon.map((team, i) => (
-              <div key={team.name} className="card border-dashed border-dark-muted p-6 flex flex-col justify-between gap-4">
+              <Link
+                key={team.name}
+                href={team.href}
+                className="card border-dashed border-dark-muted p-6 flex flex-col justify-between gap-4 hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-200 block"
+              >
                 <div className="flex items-start gap-4">
                   <div className="font-display text-4xl text-dark-muted leading-none w-10 shrink-0">
                     {String(i + 2).padStart(2, '0')}
@@ -99,9 +103,9 @@ export default async function TeamsPage() {
                   </div>
                 </div>
                 <div className="pl-14">
-                  <Link href={team.href} className="btn-outline btn btn-sm text-xs">{team.cta}</Link>
+                  <span className="btn-outline btn btn-sm text-xs pointer-events-none">{team.cta}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

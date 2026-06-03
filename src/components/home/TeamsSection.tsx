@@ -67,7 +67,11 @@ export function TeamsSection() {
         {/* Coming Soon */}
         <div className="grid sm:grid-cols-2 gap-4">
           {comingSoon.map(team => (
-            <div key={team.name} className="card border-dashed border-dark-muted p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <Link
+              key={team.name}
+              href={team.href}
+              className="card border-dashed border-dark-muted p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-gold/40 hover:-translate-y-0.5 transition-all duration-200 block"
+            >
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <h4 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">{team.name}</h4>
@@ -75,10 +79,10 @@ export function TeamsSection() {
                 </div>
                 <p className="text-text-muted text-xs">{t('comingSoon.description')}</p>
               </div>
-              <Link href={team.href} className="btn-outline btn btn-sm shrink-0 text-xs">
+              <span className="btn-outline btn btn-sm shrink-0 text-xs pointer-events-none">
                 {t('comingSoon.cta')}
-              </Link>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
       </div>
