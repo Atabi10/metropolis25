@@ -31,8 +31,8 @@ const articles: Article[] = [
     category: 'Spielberichte',
     type: 'news',
     publishedAt: '2026-05-24',
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+    image: '/images/medals after Symposium final.jpeg',
+    imageAlt: 'SC Metropolis 25 — Medaillen beim Symposium Mboa 2026',
     body: [
       'Am 23. und 24. Mai 2026 trat SC Metropolis 25 Berlin e.V. erstmals als eingetragener Verein beim Symposium Mboa Fußballturnier an — einem der bedeutendsten afrikanischen Kulturfestivals Berlins.',
       'Die Gruppenphase verlief stark: Drei Spiele, zwei Siege, ein Unentschieden. Die Mannschaft blieb ungeschlagen und zog souverän in die K.o.-Runde ein.',
@@ -62,6 +62,8 @@ const articles: Article[] = [
     type: 'news',
     publishedAt: '2026-04-19',
     matchResult: '4:2',
+    image: '/images/team photo before game against Kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
     body: [
       'Am 19. April 2026 gewann SC Metropolis 25 mit 4:2 gegen Lichtenberg Kmer an der Hauffstraße in Berlin-Lichtenberg — in der eigenen Nachbarschaft.',
       'Ein dominanter Auftritt. Die Mannschaft übernahm früh das Spielgeschehen und belohnte sich mit vier Toren.',
@@ -174,6 +176,8 @@ const articles: Article[] = [
     category: 'Community',
     type: 'news',
     publishedAt: '2025-12-10',
+    image: '/images/team spirit.jpeg',
+    imageAlt: 'SC Metropolis 25 — Mannschaftsgeist in der Kabine',
     body: [
       '2019 begann alles mit sieben Studenten und einem Bolzplatz. Heute zählt die Community über 133 Menschen aus mehr als elf Nationen.',
       'Was als spontanes Samstagsfußball im Viktor-Jara-Wohnheim begann, wuchs über Jahre zu einer echten Gemeinschaft.',
@@ -212,8 +216,8 @@ const articles: Article[] = [
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2026-05-15',
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 — Teammoment',
+    image: '/images/team spirit.jpeg',
+    imageAlt: 'SC Metropolis 25 — Gemeinschaft in der Kabine vor dem Spiel',
     body: [
       'Es ist Samstagmorgen in Berlin-Lichtenberg. Jemand schreibt in die WhatsApp-Gruppe: "Heute um 10 auf dem Platz?" Zwei Minuten später: fünf Daumen nach oben. Dann zehn.',
       'Diese Nachricht wurde hunderte Male geschrieben. Seit 2019. Jede Woche. Manchmal mit sieben Leuten, manchmal mit zwanzig. Manchmal bei Sonnenschein, manchmal im Berliner Novemberregen.',
@@ -229,8 +233,8 @@ const articles: Article[] = [
     type: 'bericht',
     readTime: '8 min',
     publishedAt: '2026-04-01',
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 — Vereinsgeschichte',
+    image: '/images/trophy for 2nd place.jpeg',
+    imageAlt: 'SC Metropolis 25 — Trophäenübergabe Symposium Mboa 2024',
     body: [
       '2019. Viktor-Jara-Wohnheim, Berlin-Lichtenberg. Internationale Studierende, eine gemeinsame Leidenschaft: Fußball.',
       'Es begann ohne Plan. Eine Woche später kamen mehr. Dann noch mehr. Zwischen 2019 und 2024 wuchs die Community auf über 133 Menschen.',

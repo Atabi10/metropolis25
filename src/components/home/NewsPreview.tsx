@@ -15,8 +15,8 @@ const latestNews: NewsItem[] = [
     type: 'news',
     publishedAt: '2026-05-24',
     featured: true,
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+    image: '/images/medals after Symposium final.jpeg',
+    imageAlt: 'SC Metropolis 25 — Medaillen beim Symposium Mboa 2026',
   },
   {
     id: 'n-flambeau2',
@@ -28,7 +28,8 @@ const latestNews: NewsItem[] = [
     type: 'news',
     matchResult: '4:3',
     publishedAt: '2026-05-17',
-    video: '/videos/m25-vs-flambeau.mp4',
+    image: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+    imageAlt: 'SC Metropolis 25 — Spieltag-Atmosphäre',
   },
   {
     id: 'n-gemeinnuetzig',
@@ -50,7 +51,7 @@ const latestNews: NewsItem[] = [
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2026-05-15',
-    image: '/images/symposium-mboa-team.jpeg',
+    image: '/images/team spirit.jpeg',
   },
 ]
 

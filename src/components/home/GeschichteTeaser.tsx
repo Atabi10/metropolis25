@@ -1,13 +1,14 @@
 'use client'
 
-import { ArrowRight, Clock } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
 const milestones = [
-  { year: '2019', text: 'Erste Ballkontakte auf Berliner Bolzplätzen' },
-  { year: '2022', text: 'Gewinn des Symposium Mboa Turniers — der Kern wächst zusammen' },
+  { year: '2019', text: 'Erste Ballkontakte auf Berliner Bolzplätzen — sieben Studenten, ein Samstag' },
+  { year: '2024', text: 'Finale beim Symposium Mboa — Silber. Der Moment, der alles veränderte.' },
   { year: '2025', text: 'Vereinsgründung: SC Metropolis 25 Berlin e.V.' },
-  { year: '2026', text: 'Gemeinnützigkeit §60a AO · 37+ Mitglieder · BFV in Vorbereitung' },
+  { year: '2026', text: 'Gemeinnützigkeit §60a AO · BFV-Antrag · Förderungswürdigkeit beantragt' },
 ]
 
 export function GeschichteTeaser() {
@@ -16,21 +17,7 @@ export function GeschichteTeaser() {
       className="relative overflow-hidden bg-navy"
       aria-labelledby="geschichte-teaser-title"
     >
-      {/* Decorative top line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        aria-hidden="true"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, rgba(224,161,6,0.4) 0, rgba(224,161,6,0.4) 1px, transparent 0, transparent 50%)',
-          backgroundSize: '12px 12px',
-        }}
-      />
-
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-gold/5 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
 
       <div className="container-custom relative z-10 py-20 md:py-28">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -69,42 +56,49 @@ export function GeschichteTeaser() {
             </Link>
           </div>
 
-          {/* Right — Mini timeline */}
+          {/* Right — Photo + mini timeline */}
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-[18px] top-4 bottom-4 w-px bg-gradient-to-b from-gold/60 via-gold/20 to-transparent" aria-hidden="true" />
+            {/* Real club photo */}
+            <div className="relative mb-6 overflow-hidden border border-gold/20">
+              <div className="relative h-64 md:h-72">
+                <Image
+                  src="/images/medals after Symposium final.jpeg"
+                  alt="SC Metropolis 25 — Medaillen beim Symposium Mboa"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-white text-xs font-heading italic leading-relaxed">
+                    &ldquo;Was 2019 mit sieben Studenten begann, ist heute eine wachsende Berliner Fußballgemeinschaft.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            <ol className="space-y-8" aria-label="Vereins-Meilensteine">
-              {milestones.map((m, i) => (
-                <li key={m.year} className="flex items-start gap-5">
-                  {/* Dot */}
-                  <div
-                    className="w-9 h-9 shrink-0 border border-gold/40 bg-dark-surface flex items-center justify-center relative z-10"
-                    aria-hidden="true"
-                  >
-                    <div className={`w-2 h-2 rounded-full ${i === milestones.length - 1 ? 'bg-gold' : 'bg-gold/50'}`} />
-                  </div>
-
-                  <div className="pt-1.5">
-                    <div className="font-display text-gold text-lg leading-none mb-1">{m.year}</div>
-                    <p className="text-text-secondary text-sm leading-relaxed">{m.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            {/* "More" nudge */}
-            <div className="flex items-center gap-3 mt-10 pl-14">
-              <Clock className="w-4 h-4 text-gold/40" aria-hidden="true" />
-              <span className="text-text-muted text-xs font-heading uppercase tracking-wider">
-                Mehr erfahren auf der Vereinsseite
-              </span>
+            {/* Mini timeline */}
+            <div className="relative pl-4 border-l border-gold/30">
+              <ol className="space-y-5" aria-label="Vereins-Meilensteine">
+                {milestones.map((m, i) => (
+                  <li key={m.year} className="flex items-start gap-4">
+                    <div
+                      className="w-2 h-2 rounded-full mt-1.5 shrink-0 -ml-5"
+                      style={{ background: i === milestones.length - 1 ? 'rgba(224,161,6,0.6)' : '#E0A106' }}
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <span className="font-display text-gold text-sm leading-none block mb-0.5">{m.year}</span>
+                      <p className="text-text-secondary text-xs leading-relaxed">{m.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative bottom line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
     </section>
   )

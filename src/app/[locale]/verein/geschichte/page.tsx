@@ -26,9 +26,9 @@ const timeline = [
   {
     year: '2024',
     label: 'Symposium Mboa — Das Finale',
-    text: 'Beim Symposium Mboa 2024 erreicht das Team das Finale — und verpasst den Titel nur knapp. Für viele ist das der Moment, der alles verändert: Aus einer Freizeitgruppe ist längst eine echte Mannschaft geworden.',
-    image: '/images/geschichte-medal-ceremony.jpeg',
-    imageAlt: 'Medaillenübergabe beim Symposium Mboa Turnier',
+    text: 'Beim Symposium Mboa 2024 erreicht das Team das Finale — und verpasst den Titel nur knapp. Silber. Für viele ist das der Moment, der alles verändert: Aus einer Freizeitgruppe ist längst eine echte Mannschaft geworden.',
+    image: '/images/trophy for 2nd place.jpeg',
+    imageAlt: 'Trophäenübergabe für den 2. Platz beim Symposium Mboa 2024',
   },
   {
     year: '26. Nov. 2025',
@@ -55,8 +55,8 @@ const timeline = [
     year: 'Mai 2026',
     label: 'Symposium Mboa — Ungeschlagen',
     text: 'Drei Spiele, zwei Siege, ein Unentschieden. SC Metropolis 25 geht ungeschlagen durch die Gruppenphase, gewinnt das Viertelfinale gegen FÉE-FÉE FC mit 1:0 und scheidet erst im Halbfinale gegen Gambia im Elfmeterschießen aus.',
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+    image: '/images/medals after Symposium final.jpeg',
+    imageAlt: 'SC Metropolis 25 — Team mit Medaillen nach dem Symposium Mboa 2026',
   },
   {
     year: 'Frühjahr 2026',

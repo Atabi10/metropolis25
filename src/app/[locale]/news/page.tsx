@@ -21,8 +21,8 @@ const newsItems: NewsItem[] = [
     type: 'news',
     publishedAt: '2026-05-24',
     featured: true,
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 beim Symposium Mboa Turnier 2026',
+    image: '/images/medals after Symposium final.jpeg',
+    imageAlt: 'SC Metropolis 25 — Medaillen beim Symposium Mboa 2026',
   },
   {
     id: 'n-foerderung',
@@ -44,7 +44,8 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '4:3',
     publishedAt: '2026-05-17',
-    video: '/videos/m25-vs-flambeau.mp4',
+    image: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+    imageAlt: 'SC Metropolis 25 — Aufwärmen vor dem Spiel',
   },
   {
     id: 'n-kollektion',
@@ -76,6 +77,8 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '1:0',
     publishedAt: '2026-04-27',
+    image: '/images/Integration-tournament-team.jpeg',
+    imageAlt: 'SC Metropolis 25 — Teamgeist nach dem Sieg',
   },
   {
     id: 'n-lichtenberg',
@@ -87,6 +90,8 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '4:2',
     publishedAt: '2026-04-19',
+    image: '/images/team photo before game against Kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
   },
   {
     id: 'n-farben',
@@ -171,14 +176,14 @@ const berichte: NewsItem[] = [
     id: 'b-berlin-samstag',
     slug: 'berlin-samstag-fussball',
     title: 'Berlin. Samstag. Fußball.',
+    image: '/images/team spirit.jpeg',
+    imageAlt: 'SC Metropolis 25 — Gemeinschaft in der Kabine',
     excerpt:
       'Es ist Samstagmorgen. Unterschiedliche Menschen aus unterschiedlichen Ländern kommen auf einem Berliner Bolzplatz zusammen — und spielen Fußball. Was banal klingt, ist das Fundament von SC Metropolis 25. Diese Geschichte ist die Geschichte aller, die dabei waren.',
     category: 'Berichte',
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2026-05-15',
-    image: '/images/symposium-mboa-team.jpeg',
-    imageAlt: 'SC Metropolis 25 — Teammoment',
     featured: true,
   },
   {
