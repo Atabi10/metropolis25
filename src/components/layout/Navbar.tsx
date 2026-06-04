@@ -42,6 +42,7 @@ export function Navbar() {
     { label: t('news'), href: '/news' },
     { label: t('galerie'), href: '/galerie' },
     { label: t('sponsoren'), href: '/sponsoren' },
+    { label: t('partnerWerden'), href: '/partner-werden' },
   ]
 
   // Scroll detection
