@@ -50,13 +50,16 @@
     "copyright": "SC Metropolis 25 Berlin e.V. All rights reserved."
   },
   "hero": {
-    "label": "Berlin · Founded 2025",
+    "label": "Berlin · Lichtenberg · Since 2019",
     "title": "SC Metropolis 25",
     "subtitle": "Berlin e.V.",
-    "description": "Berlin Football. Real Community. Growing together.",
-    "ctaPrimary": "Join the Team",
-    "ctaSecondary": "Discover the club",
-    "ctaHistory": "Our Story"
+    "description": "SC Metropolis 25 is more than a football club. We are a community — built from passion, discipline, and the belief that Berlin deserves something of its own.",
+    "ctaPrimary": "Join M25",
+    "ctaSecondary": "Explore Teams",
+    "ctaHistory": "Our Story",
+    "slogan1": "Where Berlin pulses,",
+    "slogan2": "our strength grows.",
+    "tagline": "The strength from the capital"
   },
   "statsBar": {
     "members": "Members",

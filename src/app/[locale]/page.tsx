@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
 import { HeroSection }         from '@/components/home/HeroSection'
 import { StatsBar }            from '@/components/ui/StatsBar'
 import { TrustSection }        from '@/components/home/TrustSection'
+import { ManifestoSection }    from '@/components/home/ManifestoSection'
 import { GeschichteTeaser }    from '@/components/home/GeschichteTeaser'
 import { ClubIdentitySection } from '@/components/home/ClubIdentitySection'
 import { TeamsSection }        from '@/components/home/TeamsSection'
@@ -13,45 +13,47 @@ import { SponsorCarousel }     from '@/components/ui/SponsorCarousel'
 import { SocialSection }       from '@/components/home/SocialSection'
 import { JoinCTASection }      from '@/components/home/JoinCTASection'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('hero')
-  return {
-    title: 'SC Metropolis 25 Berlin e.V. — Wo Berlin pulsiert, wächst unsere Stärke',
-    description: 'Eingetragener, gemeinnütziger Fußballclub aus Berlin-Lichtenberg. Jetzt mitmachen, Probetraining anmelden, die Geschichte kennenlernen.',
-  }
+export const metadata: Metadata = {
+  title: 'SC Metropolis 25 Berlin e.V. — Wo Berlin pulsiert, wächst unsere Stärke',
+  description: 'SC Metropolis 25 ist mehr als ein Fußballverein. Eingetragener, gemeinnütziger Verein aus Berlin-Lichtenberg. Jetzt mitmachen, Probetraining anfragen, Geschichte entdecken.',
 }
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Cinematic hero with real club footage */}
+      {/* Cinematic hero — slogan-first */}
       <HeroSection />
 
-      {/* 2. Trust strip — e.V., §60a, BFV, members */}
+      {/* Institutional trust */}
       <StatsBar />
       <TrustSection />
 
-      {/* 3. The founding story — made central */}
+      {/* M25 Manifesto — brand identity */}
+      <ManifestoSection />
+
+      {/* The founding story */}
       <GeschichteTeaser />
 
-      {/* 4. Club identity & values */}
+      {/* Club identity & values */}
       <ClubIdentitySection />
 
-      {/* 5. Teams */}
+      {/* Teams */}
       <TeamsSection />
 
-      {/* 6. Real footage — community & training moments */}
+      {/* Real footage */}
       <MomenteSection />
 
-      {/* 7. Fixtures & News */}
+      {/* Fixtures & News */}
       <FixturesPreview />
       <NewsPreview />
 
-      {/* 8. Sponsors & social */}
+      {/* Partner der Bewegung */}
       <SponsorCarousel />
+
+      {/* Social */}
       <SocialSection />
 
-      {/* 9. Join CTA */}
+      {/* Join CTA */}
       <JoinCTASection />
     </>
   )

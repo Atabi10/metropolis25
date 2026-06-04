@@ -248,7 +248,14 @@ const berichte: NewsItem[] = [
   },
 ]
 
-const categories = ['Alle', 'Spielberichte', 'Vereinsnews', 'Community']
+const categories = [
+  { label: 'Alle',             slug: 'alle'         },
+  { label: 'Spielberichte',    slug: 'spielberichte'},
+  { label: 'Vereinsnews',      slug: 'vereinsnews'  },
+  { label: 'Community',        slug: 'community'    },
+  { label: 'Behind the Badge', slug: 'berichte'     },
+  { label: 'Berlin Fußball',   slug: 'berlin'       },
+]
 
 export default function NewsPage() {
   const featured = newsItems.find(n => n.featured)
@@ -292,16 +299,16 @@ export default function NewsPage() {
 
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 mb-8">
-            {categories.map(cat => (
+            {categories.map((cat, i) => (
               <span
-                key={cat}
+                key={cat.slug}
                 className={`px-4 py-1.5 text-xs font-heading uppercase tracking-widest border transition-all duration-200 cursor-default ${
-                  cat === 'Alle'
+                  i === 0
                     ? 'bg-gold text-navy border-gold'
-                    : 'text-text-muted border-dark-border'
+                    : 'text-text-muted border-dark-border hover:border-gold/30 hover:text-gold/80'
                 }`}
               >
-                {cat}
+                {cat.label}
               </span>
             ))}
           </div>

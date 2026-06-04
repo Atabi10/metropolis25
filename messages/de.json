@@ -50,13 +50,16 @@
     "copyright": "SC Metropolis 25 Berlin e.V. Alle Rechte vorbehalten."
   },
   "hero": {
-    "label": "Berlin · Gegründet 2025",
+    "label": "Berlin · Lichtenberg · Seit 2019",
     "title": "SC Metropolis 25",
     "subtitle": "Berlin e.V.",
-    "description": "Berliner Fußball. Echte Gemeinschaft. Gemeinsam groß werden.",
-    "ctaPrimary": "Jetzt Mitspielen",
-    "ctaSecondary": "Den Verein entdecken",
-    "ctaHistory": "Unsere Geschichte"
+    "description": "SC Metropolis 25 ist mehr als ein Fußballverein. Wir sind eine Gemeinschaft — aufgebaut aus Leidenschaft, Disziplin und dem Glauben, dass Berlin etwas Eigenes verdient.",
+    "ctaPrimary": "Teil von M25 werden",
+    "ctaSecondary": "Teams entdecken",
+    "ctaHistory": "Unsere Geschichte",
+    "slogan1": "Wo Berlin pulsiert,",
+    "slogan2": "wächst unsere Stärke.",
+    "tagline": "Die Stärke aus der Hauptstadt"
   },
   "statsBar": {
     "members": "Mitglieder",
