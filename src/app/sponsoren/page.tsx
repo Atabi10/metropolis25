@@ -93,7 +93,7 @@ export default function SponsorenPage() {
             </div>
           </div>
           <p className="text-text-muted text-sm mt-6">
-            Herzlichen Dank an Intarp GmbH für die Unterstützung von SC Metropolis 25 Berlin.
+            Wir suchen aktiv nach unseren ersten Gründungspartnern.
           </p>
         </div>
       </section>

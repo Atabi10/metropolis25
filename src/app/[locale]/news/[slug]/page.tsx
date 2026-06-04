@@ -309,7 +309,7 @@ const articles: Article[] = [
     publishedAt: '2025-12-15',
     body: [
       'SC Metropolis 25 ist transparent über seinen Weg. Hier ist der aktuelle Stand.',
-      'Erreicht: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), BFV-Aufnahmeantrag (Frühjahr 2026), Antrag auf sportliche Förderungswürdigkeit (Sommer 2026), 23 aktive Feldspieler, Hauptsponsor Intarp GmbH.',
+      'Erreicht: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), BFV-Aufnahmeantrag (Frühjahr 2026), Antrag auf sportliche Förderungswürdigkeit (Sommer 2026), 23 aktive Feldspieler.',
       'In Bearbeitung: Anerkennung der sportlichen Förderungswürdigkeit, Sportstättensuche, Spielerlizenzierungen.',
       'Ziel: Einstieg in den Berliner Ligabetrieb zur Saison 2026/27. Wir berichten weiter — ehrlich und transparent.',
     ],

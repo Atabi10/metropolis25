@@ -139,16 +139,7 @@ const newsItems: NewsItem[] = [
     publishedAt: '2026-03-15',
     video: '/videos/m25-vs-flambeau.mp4',
   },
-  {
-    id: 'n-intarp',
-    slug: 'intarp-hauptsponsor',
-    title: 'Intarp GmbH wird Hauptsponsor von SC Metropolis 25',
-    excerpt:
-      'SC Metropolis 25 freut sich, Intarp GmbH als offiziellen Hauptsponsor begrüßen zu dürfen. Die Partnerschaft unterstützt den Aufbau des Vereins und macht den nächsten Schritt Richtung Ligabetrieb möglich.',
-    category: 'Vereinsnews',
-    type: 'news',
-    publishedAt: '2026-01-10',
-  },
+
 
   // ── 2025 ──────────────────────────────────────────────────────────────────
 

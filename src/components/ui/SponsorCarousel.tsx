@@ -12,7 +12,7 @@ export interface Sponsor {
 }
 
 const sponsors: Sponsor[] = [
-  { name: 'Intarp GmbH', tier: 'hauptsponsor', website: '#' },
+
   // Add more sponsors here as the club grows
 ]
 
@@ -64,7 +64,7 @@ export function SponsorCarousel({ minimal = false }: SponsorCarouselProps) {
         <div className="text-center mt-12">
           <div className="card p-8 max-w-md mx-auto">
             <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-              Werden Sie Teil unseres Erfolgs. Als Gründungspartner von SC Metropolis 25 Berlin
+              Werden Sie Teil unseres Erfolgs. Werden Sie der erste Gründungspartner von SC Metropolis 25 Berlin
               erreichen Sie eine junge, urbane und engagierte Community.
             </p>
             <Link href="/sponsoren#interesse" className="btn-outline btn text-xs">

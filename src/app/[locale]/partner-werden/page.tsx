@@ -435,19 +435,8 @@ export default function PartnerWerdenPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* Intarp — confirmed partner */}
-            <div className="card p-6 border-gold/30 flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-dark-surface border border-gold/20 flex items-center justify-center mb-4">
-                <Building2 className="w-8 h-8 text-gold" aria-hidden="true" />
-              </div>
-              <p className="font-heading font-bold text-white text-sm uppercase tracking-wide mb-1">Intarp GmbH</p>
-              <span className="text-[10px] font-heading uppercase tracking-wider text-gold border border-gold/30 px-2 py-0.5">
-                Hauptsponsor
-              </span>
-            </div>
-
-            {/* Placeholder slots */}
-            {[1, 2].map(i => (
+            {/* Placeholder slots — 3 reserved spots */}
+            {[1, 2, 3].map(i => (
               <div key={i} className="card border-dashed border-dark-muted p-6 flex flex-col items-center text-center hover:border-gold/30 transition-colors duration-200">
                 <div className="w-16 h-16 bg-dark-surface border border-dashed border-dark-muted flex items-center justify-center mb-4">
                   <span className="text-text-muted text-2xl font-display">?</span>

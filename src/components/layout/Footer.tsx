@@ -141,20 +141,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Gründungspartner Acknowledgment */}
-      <div className="border-t border-dark-border">
-        <div className="container-custom py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-text-muted text-xs">
-              Hauptsponsor: <span className="text-gold font-semibold">Intarp GmbH</span>
-            </p>
-            <Link href="/sponsoren" className="text-xs text-text-muted hover:text-gold transition-colors uppercase tracking-wider font-heading">
-              {t('links.sponsoren')} →
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Bottom Bar */}
       <div className="border-t border-dark-border bg-dark/50">
         <div className="container-custom py-5">
