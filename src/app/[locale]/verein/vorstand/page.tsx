@@ -24,7 +24,7 @@ const vorstand = [
     name: 'Leoni Charlize Klauß',
     role: 'Schatzmeisterin',
     initials: 'LK',
-    description: 'Verantwortlich für das Finanzmanagement des Vereins — Buchhaltung, Beiträge, Sponsorengelder und Budgetplanung.',
+    description: 'Verantwortlich für das Finanzmanagement des Vereins — Buchhaltung, Beiträge, Partnergelder und Budgetplanung.',
   },
   {
     name: 'Moustafa Ghaddar',

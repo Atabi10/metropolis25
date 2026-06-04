@@ -32,13 +32,13 @@ export function SponsorCarousel({ minimal = false }: SponsorCarouselProps) {
   }
 
   return (
-    <section className="py-16 bg-dark-surface border-y border-dark-border" aria-label="Unsere Sponsoren">
+    <section className="py-16 bg-dark-surface border-y border-dark-border" aria-label="Unsere Gründungspartner">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="section-label justify-center">Unsere Partner</div>
           <h2 className="section-title text-3xl mb-4">
-            Sponsoren & Partner
+            Gründungspartner & Partner
           </h2>
           <div className="divider-gold mx-auto" />
           <p className="section-subtitle mx-auto mt-4">
@@ -64,7 +64,7 @@ export function SponsorCarousel({ minimal = false }: SponsorCarouselProps) {
         <div className="text-center mt-12">
           <div className="card p-8 max-w-md mx-auto">
             <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-              Werden Sie Teil unseres Erfolgs. Als Sponsor von SC Metropolis 25 Berlin
+              Werden Sie Teil unseres Erfolgs. Als Gründungspartner von SC Metropolis 25 Berlin
               erreichen Sie eine junge, urbane und engagierte Community.
             </p>
             <Link href="/sponsoren#interesse" className="btn-outline btn text-xs">

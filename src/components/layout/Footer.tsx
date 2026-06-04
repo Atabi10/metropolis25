@@ -141,7 +141,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Sponsor Acknowledgment */}
+      {/* Gründungspartner Acknowledgment */}
       <div className="border-t border-dark-border">
         <div className="container-custom py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

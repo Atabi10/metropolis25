@@ -5,7 +5,7 @@
     "spielbetrieb": "Spielbetrieb",
     "news": "News",
     "galerie": "Galerie",
-    "sponsoren": "Sponsoren",
+    "sponsoren": "Gründungspartner",
     "mitmachen": "Mitmachen",
     "teamsDropdown": {
       "ersteM": "1. Mannschaft",
@@ -32,7 +32,7 @@
       "geschichte": "Geschichte",
       "vorstand": "Vorstand",
       "ersteM": "1. Mannschaft",
-      "sponsoren": "Sponsoren",
+      "sponsoren": "Gründungspartner",
       "news": "News",
       "mitspielen": "Mitspielen",
       "mitgliedschaft": "Mitgliedschaft",
@@ -130,7 +130,7 @@
   },
   "sponsor": {
     "label": "Partner",
-    "cta": "Sponsor werden"
+    "cta": "Gründungspartner werden"
   },
   "mitmachen": {
     "meta": {
@@ -252,7 +252,7 @@
     },
     "cta": {
       "title": "Teil von Metropolis 25 werden",
-      "body": "Ob als Spieler, Ehrenamtlicher, Sponsor oder Mitglied — wir bauen diesen Verein gemeinsam auf.",
+      "body": "Ob als Spieler, Ehrenamtlicher, Gründungspartner oder Mitglied — wir bauen diesen Verein gemeinsam auf.",
       "mitspielen": "Mitspielen / Probetraining",
       "mitglied": "Mitglied werden",
       "kontakt": "Kontakt aufnehmen"
@@ -356,12 +356,12 @@
   },
   "sponsoren": {
     "meta": {
-      "title": "Sponsoren & Partner — SC Metropolis 25 Berlin",
-      "description": "Werden Sie Sponsor von SC Metropolis 25 Berlin e.V."
+      "title": "Gründungspartner — SC Metropolis 25 Berlin",
+      "description": "Werden Sie Gründungspartner von SC Metropolis 25 Berlin e.V."
     },
     "hero": {
       "label": "Partnership",
-      "title": "Sponsoren &",
+      "title": "Gründungspartner &",
       "titleHighlight": "Partner",
       "description": "Investieren Sie in den Berliner Fußball. Werden Sie Teil einer Bewegung, die Berliner Talente fördert."
     },
@@ -370,7 +370,7 @@
     "whyLabel": "Warum uns unterstützen",
     "whyTitle": "Die Stärke aus",
     "whyHighlight": "der Hauptstadt",
-    "whySubtitle": "Als Sponsor von SC Metropolis 25 erreichen Sie eine junge, engagierte und diverse Berliner Community.",
+    "whySubtitle": "Als Gründungspartner von SC Metropolis 25 werden Sie Teil einer wachsenden, engagierten und diversen Berliner Fußballgemeinschaft.",
     "packagesLabel": "Sponsoring-Pakete",
     "packagesTitle": "Finden Sie",
     "packagesHighlight": "Ihr Paket",

@@ -48,7 +48,7 @@ export function JoinCTASection() {
 
         {/* Subtext */}
         <p className="section-subtitle mx-auto mb-10 text-ivory/70">
-          Ob als Spieler, Elternteil, Sponsor oder Fan — bei SC Metropolis 25 Berlin
+          Ob als Spieler, Elternteil, Gründungspartner oder Fan — bei SC Metropolis 25 Berlin
           ist Platz für alle, die Fußball lieben und Berlin bewegen wollen.
         </p>
 
@@ -66,7 +66,7 @@ export function JoinCTASection() {
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {[
             { label: 'Spieler werden',     href: '/mitmachen?role=spieler' },
-            { label: 'Sponsor werden',     href: '/sponsoren#interesse' },
+            { label: 'Gründungspartner werden', href: '/sponsoren#interesse' },
             { label: 'Mitglied werden',    href: '/mitgliedschaft' },
             { label: 'Probetraining',      href: '/mitmachen?type=probetraining' },
           ].map(item => (

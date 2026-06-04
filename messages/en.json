@@ -5,7 +5,7 @@
     "spielbetrieb": "Fixtures",
     "news": "News",
     "galerie": "Gallery",
-    "sponsoren": "Sponsors",
+    "sponsoren": "Founding Partners",
     "mitmachen": "Join Us",
     "teamsDropdown": {
       "ersteM": "1st Team",
@@ -32,7 +32,7 @@
       "geschichte": "History",
       "vorstand": "Board",
       "ersteM": "1st Team",
-      "sponsoren": "Sponsors",
+      "sponsoren": "Founding Partners",
       "news": "News",
       "mitspielen": "Play",
       "mitgliedschaft": "Membership",
@@ -130,7 +130,7 @@
   },
   "sponsor": {
     "label": "Partner",
-    "cta": "Become a Sponsor"
+    "cta": "Become a Founding Partner"
   },
   "mitmachen": {
     "meta": {

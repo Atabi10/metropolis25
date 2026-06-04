@@ -4,8 +4,8 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 import { CheckCircle, ArrowRight, Star, TrendingUp, Users, Eye } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Sponsoren & Partner — SC Metropolis 25 Berlin',
-  description: 'Werden Sie Sponsor von SC Metropolis 25 Berlin e.V. — Fördern Sie den Berliner Fußball und profitieren Sie von unserer wachsenden Community.',
+  title: 'Gründungspartner — SC Metropolis 25 Berlin',
+  description: 'Werden Sie Gründungspartner von SC Metropolis 25 Berlin e.V. — Bauen Sie gemeinsam mit uns den Berliner Fußballverein der Zukunft.',
 }
 
 const packages = [
@@ -72,7 +72,7 @@ export default function SponsorenPage() {
         <div className="container-custom relative z-10">
           <div className="section-label">Partnership</div>
           <h1 className="font-display text-5xl md:text-7xl text-white uppercase mb-4">
-            Sponsoren & <br /><span className="text-gold-gradient">Partner</span>
+            Gründungspartner &<br /><span className="text-gold-gradient">Partner</span>
           </h1>
           <div className="w-16 h-1 bg-gold mb-6" />
           <p className="section-subtitle text-ivory/70 max-w-xl">
@@ -105,7 +105,7 @@ export default function SponsorenPage() {
             label="Warum uns unterstützen"
             title="Die Stärke aus"
             titleHighlight="der Hauptstadt"
-            subtitle="Als Sponsor von SC Metropolis 25 erreichen Sie eine junge, engagierte und diverse Berliner Community."
+            subtitle="Als Gründungspartner von SC Metropolis 25 werden Sie Teil eine junge, engagierte und diverse Berliner Community."
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {stats.map(s => (
