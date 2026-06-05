@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
 const socialLinks = [
-  { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/scmetropolis25' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/metropolis25_berlin/' },
   { icon: Youtube,   label: 'YouTube',   href: 'https://www.youtube.com/channel/UCO_D6WQjb0POolLH_2FPeUA' },
   { icon: Facebook,  label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61590362822229' },
   {

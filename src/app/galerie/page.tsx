@@ -72,7 +72,7 @@ export default function GaleriePage() {
           <p className="text-center text-text-muted text-sm mt-10">
             Bilder werden regelmäßig nach Spieltagen und Events hinzugefügt.
             <br />
-            Folge uns auf <a href="https://instagram.com/scmetropolis25" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Instagram</a> für tägliche Updates.
+            Folge uns auf <a href="https://www.instagram.com/metropolis25_berlin/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Instagram</a> für tägliche Updates.
           </p>
         </div>
       </section>

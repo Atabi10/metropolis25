@@ -396,7 +396,7 @@ export default function AusstattungPage() {
               </div>
             </div>
             <a
-              href="https://instagram.com/scmetropolis25"
+              href="https://www.instagram.com/metropolis25_berlin/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline btn btn-sm text-xs shrink-0"

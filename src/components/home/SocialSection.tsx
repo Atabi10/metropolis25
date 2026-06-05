@@ -4,8 +4,8 @@ import { ExternalLink } from 'lucide-react'
 const socialChannels = [
   {
     name: 'Instagram',
-    handle: '@scmetropolis25',
-    href: 'https://instagram.com/scmetropolis25',
+    handle: '@metropolis25_berlin',
+    href: 'https://www.instagram.com/metropolis25_berlin/',
     color: 'from-purple-600 to-pink-500',
     description: 'Matchday-Fotos, Trainingseinblicke und Vereinsleben',
     icon: () => (
@@ -16,7 +16,7 @@ const socialChannels = [
   },
   {
     name: 'TikTok',
-    handle: '@scmetropolis25',
+    handle: '@metropolis25_berlin',
     href: 'https://tiktok.com/@scmetropolis25',
     color: 'from-gray-900 to-gray-800',
     description: 'Highlight-Clips, Skills und Vereinsmomente',
