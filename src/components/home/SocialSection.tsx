@@ -116,7 +116,7 @@ export function SocialSection() {
             </div>
           </div>
           <a
-            href="https://chat.whatsapp.com/scmetropolis25"
+            href="https://chat.whatsapp.com/BuPXCe7jTz5ILThCbZqEIR"
             target="_blank"
             rel="noopener noreferrer"
             className="btn bg-green-600 hover:bg-green-500 text-white btn text-xs px-5 py-2.5 transition-colors duration-250 shrink-0"

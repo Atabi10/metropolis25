@@ -38,7 +38,7 @@ export default function KontaktPage() {
                 { icon: Phone,       label: 'Telefon',   value: '+49 151 74338335', href: 'tel:+4915174338335' },
                 { icon: MapPin,      label: 'Standort',  value: 'Lichtenberg, Berlin, Germany', href: null },
                 { icon: Clock,       label: 'Erreichbar', value: 'Mo–Fr: 09:00–18:00 Uhr', href: null },
-                { icon: MessageCircle, label: 'WhatsApp', value: 'Community beitreten', href: 'https://chat.whatsapp.com/scmetropolis25' },
+                { icon: MessageCircle, label: 'WhatsApp', value: 'Community beitreten', href: 'https://chat.whatsapp.com/BuPXCe7jTz5ILThCbZqEIR' },
               ].map(item => (
                 <div key={item.label} className="card p-5 flex items-center gap-4">
                   <div className="w-10 h-10 bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
