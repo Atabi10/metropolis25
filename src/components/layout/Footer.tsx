@@ -7,7 +7,7 @@ import { Link } from '@/i18n/navigation'
 
 const socialLinks = [
   { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/scmetropolis25' },
-  { icon: Youtube,   label: 'YouTube',   href: 'https://youtube.com/@scmetropolis25' },
+  { icon: Youtube,   label: 'YouTube',   href: 'https://www.youtube.com/channel/UCO_D6WQjb0POolLH_2FPeUA' },
   { icon: Facebook,  label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61590362822229' },
   {
     icon: () => (

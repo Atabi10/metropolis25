@@ -29,7 +29,7 @@ const socialChannels = [
   {
     name: 'YouTube',
     handle: 'SC Metropolis 25',
-    href: 'https://youtube.com/@scmetropolis25',
+    href: 'https://www.youtube.com/channel/UCO_D6WQjb0POolLH_2FPeUA',
     color: 'from-red-700 to-red-600',
     description: 'Spielberichte, Interviews und Vereinsdokus',
     icon: () => (
