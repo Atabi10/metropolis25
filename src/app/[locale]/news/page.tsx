@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { NewsCard, type NewsItem } from '@/components/ui/NewsCard'
+import { NewsCategoryFilter } from '@/components/ui/NewsCategoryFilter'
 
 export const metadata: Metadata = {
   title: 'News & Berichte — SC Metropolis 25 Berlin',
@@ -248,19 +249,7 @@ const berichte: NewsItem[] = [
   },
 ]
 
-const categories = [
-  { label: 'Alle',             slug: 'alle'         },
-  { label: 'Spielberichte',    slug: 'spielberichte'},
-  { label: 'Vereinsnews',      slug: 'vereinsnews'  },
-  { label: 'Community',        slug: 'community'    },
-  { label: 'Behind the Badge', slug: 'berichte'     },
-  { label: 'Berlin Fußball',   slug: 'berlin'       },
-]
-
 export default function NewsPage() {
-  const featured = newsItems.find(n => n.featured)
-  const rest     = newsItems.filter(n => !n.featured)
-
   return (
     <div className="pt-[var(--nav-height)]">
 
@@ -276,7 +265,7 @@ export default function NewsPage() {
         <div className="container-custom relative z-10">
           <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-4">Aktuelles</p>
           <h1 className="font-display text-5xl md:text-7xl text-white uppercase mb-4 leading-none">
-            News &{' '}
+            News &{'  '}
             <span className="text-gold-gradient">Berichte</span>
           </h1>
           <div className="w-16 h-1 bg-gold mb-6" />
@@ -287,75 +276,10 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* ── News Section ─────────────────────────────────────── */}
+      {/* ── News + Berichte (with live category filter) ──────── */}
       <section className="section-padding bg-dark">
         <div className="container-custom">
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-1 h-6 bg-gold" aria-hidden="true" />
-            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
-              Vereinsnews & Spielberichte
-            </h2>
-          </div>
-
-          {/* Category filter */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            {categories.map((cat, i) => (
-              <span
-                key={cat.slug}
-                className={`px-4 py-1.5 text-xs font-heading uppercase tracking-widest border transition-all duration-200 cursor-default ${
-                  i === 0
-                    ? 'bg-gold text-navy border-gold'
-                    : 'text-text-muted border-dark-border hover:border-gold/30 hover:text-gold/80'
-                }`}
-              >
-                {cat.label}
-              </span>
-            ))}
-          </div>
-
-          {/* Featured */}
-          {featured && (
-            <div className="mb-8">
-              <NewsCard article={featured} featured />
-            </div>
-          )}
-
-          {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rest.map(article => (
-              <NewsCard key={article.id} article={article} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Berichte Section ─────────────────────────────────── */}
-      <section className="section-padding bg-dark-surface border-t border-dark-border">
-        <div className="container-custom">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-6 bg-ivory" aria-hidden="true" />
-            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
-              Hintergrundberichte
-            </h2>
-          </div>
-          <p className="text-text-muted text-sm mb-10 max-w-xl leading-relaxed">
-            Längere Artikel, die die Geschichte, Werte und Entwicklung des Vereins
-            erzählen — magazine-style, mit Tiefe.
-          </p>
-
-          {/* Featured bericht */}
-          {berichte.filter(b => b.featured).map(b => (
-            <div key={b.id} className="mb-8">
-              <NewsCard article={b} featured />
-            </div>
-          ))}
-
-          {/* Berichte grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {berichte.filter(b => !b.featured).map(b => (
-              <NewsCard key={b.id} article={b} />
-            ))}
-          </div>
+          <NewsCategoryFilter newsItems={newsItems} berichte={berichte} />
         </div>
       </section>
     </div>
