@@ -9,8 +9,8 @@ import { Link } from '@/i18n/navigation'
 // ─── PHOTO MOMENTS ────────────────────────────────────────────────────────────
 const photos = [
   {
-    src: '/images/medals after Symposium final.jpeg',
-    alt: 'SC Metropolis 25 mit Medaillen nach dem Symposium Mboa 2026',
+    src: '/images/symposium-mboa-2026-team.jpeg',
+    alt: 'SC Metropolis 25 Berlin — Team beim Symposium Mboa 2026',
     caption: 'Symposium Mboa 2026 — Halbfinale. Medaillen. Stolz.',
     tag: 'Turnier',
   },

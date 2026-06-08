@@ -16,8 +16,8 @@ const groups = [
     items: [
       {
         type: 'image' as const,
-        src: '/images/medals after Symposium final.jpeg',
-        alt: 'SC Metropolis 25 — Medaillen Symposium Mboa 2026',
+        src: '/images/symposium-mboa-2026-team.jpeg',
+        alt: 'SC Metropolis 25 Berlin — Team beim Symposium Mboa 2026',
         caption: 'Symposium Mboa 2026 — Halbfinale als eingetragener Verein.',
         wide: true,
       },
