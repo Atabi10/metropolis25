@@ -15,8 +15,8 @@ const latestNews: NewsItem[] = [
     type: 'news',
     publishedAt: '2026-05-24',
     featured: true,
-    image: '/images/medals after Symposium final.jpeg',
-    imageAlt: 'SC Metropolis 25 — Medaillen beim Symposium Mboa 2026',
+    image: '/images/symposium-mboa-2026-team.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Team beim Symposium Mboa 2026',
   },
   {
     id: 'n-flambeau2',

@@ -49,8 +49,8 @@ const articles: Article[] = [
     category: 'Spielberichte',
     type: 'news',
     publishedAt: '2026-05-24',
-    image: '/images/medals after Symposium final.jpeg',
-    imageAlt: 'SC Metropolis 25 — Medaillen beim Symposium Mboa 2026',
+    image: '/images/symposium-mboa-2026-team.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Team beim Symposium Mboa 2026',
     body: [
       'Am 23. und 24. Mai 2026 trat SC Metropolis 25 Berlin e.V. erstmals als eingetragener Verein beim Symposium Mboa Fußballturnier an — einem der bedeutendsten afrikanischen Kulturfestivals Berlins.',
       'Die Gruppenphase verlief stark: Drei Spiele, zwei Siege, ein Unentschieden. Die Mannschaft blieb ungeschlagen und zog souverän in die K.o.-Runde ein.',
