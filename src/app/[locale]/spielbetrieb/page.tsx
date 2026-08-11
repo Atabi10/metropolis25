@@ -1,261 +1,157 @@
 import type { Metadata } from 'next'
-import { Calendar, MapPin, Trophy, Info, Star } from 'lucide-react'
+import { Info, Trophy, Star, Calendar } from 'lucide-react'
 import { clsx } from 'clsx'
+import { NextMatchCard } from '@/components/ui/NextMatchCard'
+import { FixtureCard } from '@/components/ui/FixtureCard'
+import { FixtureTabs } from '@/components/ui/FixtureTabs'
+import { BrandWatermark } from '@/components/ui/BrandMark'
+import {
+  officialFixtures,
+  getNextOfficialMatch,
+  getOfficialResults,
+  getFriendlies,
+  getFriendlyRecord,
+  tournaments,
+  type TournamentMatch,
+  CURRENT_SEASON,
+  COMPETITIONS,
+} from '@/data/fixtures'
 
-export const metadata: Metadata = {
-  title: 'Testspiele & Spielbetrieb — SC Metropolis 25 Berlin',
-  description:
-    'Alle Freundschaftsspiele, Turniere und Spielergebnisse von SC Metropolis 25 Berlin e.V. — inkl. Symposium Mboa 2026. Der offizielle BFV-Spielbetrieb startet Saison 2026/27.',
+type Locale = 'de' | 'en' | 'fr'
+
+const META = {
+  de: {
+    title: `Spielplan & Ergebnisse ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
+    description: `Offizieller Spielplan von SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) und ${COMPETITIONS.cup}. Erstes Pflichtspiel am 30. August 2026 gegen SG Prenzlauer Berg FZ Kunst.`,
+  },
+  en: {
+    title: `Fixtures & Results ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
+    description: `Official fixtures of SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) and the ${COMPETITIONS.cup}. First competitive match on 30 August 2026 against SG Prenzlauer Berg FZ Kunst.`,
+  },
+  fr: {
+    title: `Calendrier & résultats ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
+    description: `Calendrier officiel du SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) et ${COMPETITIONS.cup}. Premier match officiel le 30 août 2026 contre SG Prenzlauer Berg FZ Kunst.`,
+  },
+} as const
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale: raw } = await params
+  const locale = (['de', 'en', 'fr'].includes(raw) ? raw : 'de') as Locale
+  return { title: META[locale].title, description: META[locale].description }
 }
 
-// ─── FRIENDLY / COMMUNITY MATCH DATA ─────────────────────────────────────────
-interface Match {
-  id: string
-  date: string
-  homeTeam: string
-  awayTeam: string
-  homeScore?: number
-  awayScore?: number
-  venue?: string
-  type: 'Testspiel' | 'Community Match'
-  isHomeGame: boolean
-  status: 'finished' | 'upcoming'
+const COPY = {
+  de: {
+    label: 'Spielbetrieb',
+    title: 'Spielplan &',
+    titleHighlight: 'Ergebnisse',
+    intro: `SC Metropolis 25 startet in der Saison ${CURRENT_SEASON} in den offiziellen Berliner Spielbetrieb. Die 1. Herrenmannschaft tritt im Berliner Freizeit- und Betriebsfußball an.`,
+    notice:
+      'Offizielle Pflichtspiele und historische Freundschafts- bzw. Turnierspiele werden auf dieser Seite getrennt ausgewiesen. Nicht bestätigte Anstoßzeiten oder Spielstätten werden als „noch offen“ gekennzeichnet.',
+    nextMatch: 'Nächstes Pflichtspiel',
+    officialTitle: `Offizieller Spielplan ${CURRENT_SEASON}`,
+    officialNote: `Quelle für den offiziellen Spielbetrieb ist Fußball.de. Der Staffelplan der ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) wird ergänzt, sobald er veröffentlicht ist.`,
+    resultsTitle: 'Offizielle Ergebnisse',
+    resultsEmpty: 'Noch keine offiziellen Pflichtspiele absolviert.',
+    friendliesTitle: 'Testspiele & Community Matches',
+    friendliesNote:
+      'Diese Spiele sind keine offiziellen Pflichtspiele. Sie dokumentieren die Vorbereitungs- und Gemeinschaftsphase des Vereins.',
+    recordTitle: 'Bilanz Testspiele',
+    recordNote: 'Gewertet werden ausschließlich Spiele mit dokumentiertem Ergebnis.',
+    stats: { played: 'Spiele', wins: 'Siege', draws: 'Unentschieden', losses: 'Niederlagen', goals: 'Tore' },
+    tournamentsTitle: 'Historische Turniere',
+    group: 'Gruppenphase',
+    outcome: { win: 'Sieg', draw: 'Unentschieden', loss: 'Niederlage', penalties: 'Elfmeter (ausgeschieden)' },
+  },
+  en: {
+    label: 'Competition',
+    title: 'Fixtures &',
+    titleHighlight: 'results',
+    intro: `SC Metropolis 25 enters official Berlin competition in the ${CURRENT_SEASON} season. The first men's team competes in Berlin recreational and works football.`,
+    notice:
+      'Official competitive fixtures and historic friendly or tournament matches are listed separately on this page. Unconfirmed kick-off times and venues are marked "TBC".',
+    nextMatch: 'Next official match',
+    officialTitle: `Official fixtures ${CURRENT_SEASON}`,
+    officialNote: `Fußball.de is the authoritative source for official competition. The ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) schedule will be added as soon as it is published.`,
+    resultsTitle: 'Official results',
+    resultsEmpty: 'No official competitive matches played yet.',
+    friendliesTitle: 'Friendlies & community matches',
+    friendliesNote:
+      'These are not official competitive fixtures. They document the club’s preparation and community phase.',
+    recordTitle: 'Friendly record',
+    recordNote: 'Only matches with a documented result are counted.',
+    stats: { played: 'Played', wins: 'Wins', draws: 'Draws', losses: 'Losses', goals: 'Goals' },
+    tournamentsTitle: 'Historic tournaments',
+    group: 'Group stage',
+    outcome: { win: 'Win', draw: 'Draw', loss: 'Loss', penalties: 'Penalties (eliminated)' },
+  },
+  fr: {
+    label: 'Compétition',
+    title: 'Calendrier &',
+    titleHighlight: 'résultats',
+    intro: `SC Metropolis 25 entre en compétition officielle berlinoise pour la saison ${CURRENT_SEASON}.`,
+    notice:
+      'Les matches officiels et les rencontres amicales historiques sont présentés séparément. Les horaires et stades non confirmés sont indiqués « à confirmer ».',
+    nextMatch: 'Prochain match officiel',
+    officialTitle: `Calendrier officiel ${CURRENT_SEASON}`,
+    officialNote: `Fußball.de est la source de référence pour la compétition officielle.`,
+    resultsTitle: 'Résultats officiels',
+    resultsEmpty: 'Aucun match officiel disputé pour le moment.',
+    friendliesTitle: 'Matches amicaux',
+    friendliesNote: 'Ces matches ne sont pas des rencontres officielles.',
+    recordTitle: 'Bilan amical',
+    recordNote: 'Seuls les matches avec résultat documenté sont comptabilisés.',
+    stats: { played: 'Matches', wins: 'Victoires', draws: 'Nuls', losses: 'Défaites', goals: 'Buts' },
+    tournamentsTitle: 'Tournois historiques',
+    group: 'Phase de groupes',
+    outcome: { win: 'Victoire', draw: 'Nul', loss: 'Défaite', penalties: 'Tirs au but (éliminé)' },
+  },
 }
 
-const matches: Match[] = [
-  // Upcoming
-  {
-    id: 'u1',
-    date: '2026-06-14',
-    homeTeam: 'SC Metropolis 25',
-    awayTeam: 'Lichtenberg Kmer',
-    venue: 'Poststadion Berlin',
-    type: 'Testspiel',
-    isHomeGame: true,
-    status: 'upcoming',
-  },
-  {
-    id: 'u2',
-    date: '2026-06-21',
-    homeTeam: 'SC Metropolis 25',
-    awayTeam: 'ARNDÉ FC',
-    venue: 'Poststadion Berlin',
-    type: 'Testspiel',
-    isHomeGame: true,
-    status: 'upcoming',
-  },
-  // Past results (newest first)
-  {
-    id: 'r1',
-    date: '2026-05-17',
-    homeTeam: 'SC Metropolis 25',
-    awayTeam: 'Flambeau FC',
-    homeScore: 4,
-    awayScore: 3,
-    venue: 'Poststadion Berlin',
-    type: 'Testspiel',
-    isHomeGame: true,
-    status: 'finished',
-  },
-  {
-    id: 'r2',
-    date: '2026-04-27',
-    homeTeam: 'SC Metropolis 25',
-    awayTeam: 'New Star Berlin SC',
-    homeScore: 1,
-    awayScore: 0,
-    type: 'Community Match',
-    isHomeGame: true,
-    status: 'finished',
-  },
-  {
-    id: 'r3',
-    date: '2026-04-19',
-    homeTeam: 'SC Metropolis 25',
-    awayTeam: 'Lichtenberg Kmer',
-    homeScore: 4,
-    awayScore: 2,
-    venue: 'Hauffstraße 13–20, 10317 Berlin',
-    type: 'Community Match',
-    isHomeGame: true,
-    status: 'finished',
-  },
-  {
-    id: 'r4',
-    date: '2026-03-15',
-    homeTeam: 'Flambeau FC',
-    awayTeam: 'SC Metropolis 25',
-    homeScore: 2,
-    awayScore: 2,
-    venue: 'Poststadion Berlin',
-    type: 'Testspiel',
-    isHomeGame: false,
-    status: 'finished',
-  },
-]
+type Copy = (typeof COPY)[Locale]
 
-// ─── SYMPOSIUM MBOA 2026 TOURNAMENT DATA ──────────────────────────────────────
-interface TournamentMatch {
-  round: string
-  opponent: string
-  scoreM25: number | null
-  scoreOpp: number | null
-  result: 'win' | 'draw' | 'loss' | 'penalties'
-  note?: string
-}
-
-const mboa2024: TournamentMatch[] = [
-  { round: 'Gruppenphase',  opponent: 'Santé Biesdorf', scoreM25: 1, scoreOpp: 0, result: 'win' },
-  { round: 'Gruppenphase',  opponent: 'Benin',          scoreM25: 1, scoreOpp: 1, result: 'draw' },
-  { round: 'Gruppenphase',  opponent: 'Leipzig',        scoreM25: 2, scoreOpp: 1, result: 'win' },
-  { round: 'Viertelfinale', opponent: 'Ghana',          scoreM25: 2, scoreOpp: 0, result: 'win' },
-  { round: 'Halbfinale',    opponent: 'Algeria',        scoreM25: 1, scoreOpp: 0, result: 'win' },
-  { round: 'Finale',        opponent: 'Flambeau FC',    scoreM25: 0, scoreOpp: 1, result: 'loss',
-    note: 'Finalist — 🥈 Silber. Der Moment, der die Vereinsgründung auslöste.' },
-]
-
-const mboa2026: TournamentMatch[] = [
-  { round: 'Gruppenphase',  opponent: '(3 Spiele)',      scoreM25: null, scoreOpp: null, result: 'win',      note: '2 Siege, 1 Unentschieden — ungeschlagen' },
-  { round: 'Viertelfinale', opponent: 'FÉE-FÉE FC',      scoreM25: 1,    scoreOpp: 0,    result: 'win' },
-  { round: 'Halbfinale',    opponent: 'Gambia',           scoreM25: null, scoreOpp: null, result: 'penalties', note: 'Ausgeschieden im Elfmeterschießen' },
-]
-
-// ─── HELPERS ──────────────────────────────────────────────────────────────────
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('de-DE', {
-    day: '2-digit', month: '2-digit', year: 'numeric',
-  })
-}
-
-function getResult(m: Match): 'win' | 'draw' | 'loss' | null {
-  if (m.status !== 'finished' || m.homeScore === undefined || m.awayScore === undefined) return null
-  const m25 = m.isHomeGame ? m.homeScore : m.awayScore
-  const opp = m.isHomeGame ? m.awayScore : m.homeScore
-  if (m25 > opp) return 'win'
-  if (m25 < opp) return 'loss'
-  return 'draw'
-}
-
-// ─── MATCH ROW ────────────────────────────────────────────────────────────────
-function MatchRow({ match }: { match: Match }) {
-  const result   = getResult(match)
-  const finished = match.status === 'finished'
+// ─── Tournament row ───────────────────────────────────────────────────────────
+function TournamentRow({ m, c }: { m: TournamentMatch; c: Copy }) {
+  const isGroupSummary = m.scoreM25 === null && m.outcome !== 'penalties'
 
   return (
-    <div className={clsx(
-      'bg-dark-card border overflow-hidden transition-colors duration-200',
-      result === 'win'  && 'border-l-[3px] border-l-gold border-dark-border hover:border-gold/40',
-      result === 'draw' && 'border-l-[3px] border-l-text-muted border-dark-border',
-      result === 'loss' && 'border-l-[3px] border-l-red-500/60 border-dark-border',
-      !finished         && 'border-l-[3px] border-l-navy border-dark-border hover:border-gold/30',
-    )}>
+    <div
+      className={clsx(
+        'bg-dark-card border border-dark-border overflow-hidden',
+        m.outcome === 'win'       && 'border-l-[3px] border-l-gold',
+        m.outcome === 'draw'      && 'border-l-[3px] border-l-text-muted',
+        m.outcome === 'loss'      && 'border-l-[3px] border-l-red-500/60',
+        m.outcome === 'penalties' && 'border-l-[3px] border-l-ivory/30',
+      )}
+    >
       <div className="p-5">
-        {/* Top: date + tags */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2 text-text-muted text-xs">
-            <Calendar className="w-3 h-3 text-gold" aria-hidden="true" />
-            <span>{formatDate(match.date)}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-heading uppercase tracking-wider border border-dark-border text-text-muted px-2 py-0.5">
-              {match.type}
-            </span>
-            {!match.isHomeGame && (
-              <span className="text-[10px] font-heading uppercase tracking-wider border border-navy text-gold/60 px-2 py-0.5">
-                Auswärts
-              </span>
-            )}
-            {finished && result && (
-              <span className={clsx(
-                'text-[10px] font-heading font-semibold uppercase tracking-wider px-2 py-0.5',
-                result === 'win'  && 'bg-gold/10 text-gold border border-gold/30',
-                result === 'draw' && 'bg-dark-surface text-text-muted border border-dark-border',
-                result === 'loss' && 'bg-red-500/10 text-red-400 border border-red-500/20',
-              )}>
-                {result === 'win' ? 'Sieg' : result === 'draw' ? 'Unentschieden' : 'Niederlage'}
-              </span>
-            )}
-            {!finished && (
-              <span className="text-[10px] font-heading uppercase tracking-wider bg-navy/60 text-ivory/60 border border-navy px-2 py-0.5">
-                Bevorstehend
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Teams + Score */}
-        <div className="flex items-center justify-between gap-4">
-          <p className={clsx(
-            'font-heading font-semibold text-sm uppercase tracking-wide flex-1 truncate',
-            match.isHomeGame ? 'text-white' : 'text-text-secondary'
-          )}>
-            {match.homeTeam}
-          </p>
-          {finished ? (
-            <div className="flex items-center gap-1 shrink-0">
-              <span className="font-display text-3xl w-8 text-center text-white">{match.homeScore}</span>
-              <span className="text-text-muted font-bold text-lg mx-0.5">:</span>
-              <span className="font-display text-3xl w-8 text-center text-white">{match.awayScore}</span>
-            </div>
-          ) : (
-            <span className="text-gold font-heading font-bold text-xs uppercase tracking-widest shrink-0">vs</span>
-          )}
-          <p className={clsx(
-            'font-heading font-semibold text-sm uppercase tracking-wide flex-1 truncate text-right',
-            !match.isHomeGame ? 'text-white' : 'text-text-secondary'
-          )}>
-            {match.awayTeam}
-          </p>
-        </div>
-
-        {match.venue && (
-          <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-dark-border">
-            <MapPin className="w-3 h-3 text-gold shrink-0" aria-hidden="true" />
-            <span className="text-text-muted text-xs truncate">{match.venue}</span>
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// ─── TOURNAMENT MATCH ROW ─────────────────────────────────────────────────────
-function TournamentRow({ m }: { m: TournamentMatch }) {
-  const isGroupSummary = m.scoreM25 === null && m.result !== 'penalties'
-
-  return (
-    <div className={clsx(
-      'bg-dark-card border overflow-hidden',
-      (m.result === 'win')      && 'border-l-[3px] border-l-gold border-dark-border',
-      (m.result === 'draw')     && 'border-l-[3px] border-l-text-muted border-dark-border',
-      (m.result === 'penalties')&& 'border-l-[3px] border-l-ivory/30 border-dark-border',
-    )}>
-      <div className="p-5">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between gap-3 mb-2">
           <span className="text-[10px] font-heading uppercase tracking-wider text-gold border border-gold/30 px-2 py-0.5">
             {m.round}
           </span>
-          <span className={clsx(
-            'text-[10px] font-heading font-semibold uppercase tracking-wider px-2 py-0.5',
-            m.result === 'win'       && 'bg-gold/10 text-gold border border-gold/30',
-            m.result === 'draw'      && 'bg-dark-surface text-text-muted border border-dark-border',
-            m.result === 'penalties' && 'bg-dark-surface text-ivory/50 border border-dark-border',
-          )}>
-            {m.result === 'win'       ? 'Sieg'
-           : m.result === 'draw'      ? 'Unentschieden'
-           : m.result === 'penalties' ? 'Elfmeter (ausgeschieden)'
-           : ''}
+          <span
+            className={clsx(
+              'text-[10px] font-heading font-semibold uppercase tracking-wider px-2 py-0.5 shrink-0',
+              m.outcome === 'win'       && 'bg-gold/10 text-gold border border-gold/30',
+              m.outcome === 'draw'      && 'bg-dark-surface text-text-muted border border-dark-border',
+              m.outcome === 'loss'      && 'bg-red-500/10 text-red-400 border border-red-500/20',
+              m.outcome === 'penalties' && 'bg-dark-surface text-ivory/50 border border-dark-border',
+            )}
+          >
+            {c.outcome[m.outcome]}
           </span>
         </div>
 
         <div className="flex items-center justify-between gap-4">
-          <p className="font-heading font-semibold text-sm uppercase tracking-wide text-white flex-1 truncate">
+          <p className="font-heading font-semibold text-sm uppercase tracking-wide text-white flex-1 min-w-0 truncate">
             SC Metropolis 25
           </p>
           {isGroupSummary ? (
-            <span className="text-text-muted text-xs font-heading shrink-0 italic">
-              Gruppenphase
-            </span>
+            <span className="text-text-muted text-xs font-heading shrink-0 italic">{c.group}</span>
           ) : m.scoreM25 !== null ? (
             <div className="flex items-center gap-1 shrink-0">
               <span className="font-display text-3xl w-8 text-center text-gold">{m.scoreM25}</span>
@@ -265,7 +161,7 @@ function TournamentRow({ m }: { m: TournamentMatch }) {
           ) : (
             <span className="text-text-muted text-xs font-heading shrink-0">— : —</span>
           )}
-          <p className="font-heading font-semibold text-sm uppercase tracking-wide text-text-secondary flex-1 truncate text-right">
+          <p className="font-heading font-semibold text-sm uppercase tracking-wide text-text-secondary flex-1 min-w-0 truncate text-right">
             {m.opponent}
           </p>
         </div>
@@ -280,258 +176,237 @@ function TournamentRow({ m }: { m: TournamentMatch }) {
   )
 }
 
-// ─── PAGE ─────────────────────────────────────────────────────────────────────
-export default function SpielbetriebPage() {
-  const past     = matches.filter(m => m.status === 'finished')
-  const upcoming = matches.filter(m => m.status === 'upcoming')
+// ─── Page ─────────────────────────────────────────────────────────────────────
+export default async function SpielbetriebPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale: raw } = await params
+  const locale = (['de', 'en', 'fr'].includes(raw) ? raw : 'de') as Locale
+  const c = COPY[locale]
 
-  const wins   = past.filter(m => getResult(m) === 'win').length
-  const draws  = past.filter(m => getResult(m) === 'draw').length
-  const losses = past.filter(m => getResult(m) === 'loss').length
-  const goalsFor     = past.reduce((s, m) => s + (m.isHomeGame ? (m.homeScore ?? 0) : (m.awayScore ?? 0)), 0)
-  const goalsAgainst = past.reduce((s, m) => s + (m.isHomeGame ? (m.awayScore ?? 0) : (m.homeScore ?? 0)), 0)
+  const nextMatch       = getNextOfficialMatch()
+  const officialResults = getOfficialResults()
+  const friendlies      = getFriendlies()
+  const record          = getFriendlyRecord()
 
   return (
     <div className="pt-[var(--nav-height)]">
 
-      {/* ── Page Hero ────────────────────────────── */}
+      {/* ── Page hero ───────────────────────────────────────────── */}
       <section className="relative py-20 bg-navy overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, rgba(224,161,6,0.4) 0, rgba(224,161,6,0.4) 1px, transparent 0, transparent 50%)',
-          backgroundSize: '10px 10px',
-        }} />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(45deg, rgba(224,161,6,0.4) 0, rgba(224,161,6,0.4) 1px, transparent 0, transparent 50%)',
+            backgroundSize: '10px 10px',
+          }}
+        />
+        <BrandWatermark opacity={4} className="absolute -right-20 -top-10 w-[380px] h-[380px]" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
         <div className="container-custom relative z-10">
-          <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-4">Spielbetrieb</p>
+          <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-4">{c.label}</p>
           <h1 className="font-display text-5xl md:text-7xl text-white uppercase mb-4 leading-none">
-            Spiele &{' '}
-            <span className="text-gold-gradient">Ergebnisse</span>
+            {c.title} <span className="text-gold-gradient">{c.titleHighlight}</span>
           </h1>
           <div className="w-16 h-1 bg-gold mb-6" />
           <p className="text-ivory/70 font-heading text-base max-w-2xl leading-relaxed">
-            Testspiele, Community Matches und Turnierteilnahmen — SC Metropolis 25 Berlin
-            ist bereits aktiv auf dem Platz. Der offizielle BFV-Ligabetrieb startet Saison 2026/27.
+            {c.intro}
           </p>
         </div>
       </section>
 
-      {/* ── Info Banner ──────────────────────────── */}
+      {/* ── Notice ──────────────────────────────────────────────── */}
       <section className="bg-dark-surface border-b border-dark-border py-5">
         <div className="container-custom">
           <div className="flex items-start gap-3">
             <Info className="w-4 h-4 text-gold mt-0.5 shrink-0" aria-hidden="true" />
-            <p className="text-text-secondary text-sm leading-relaxed">
-              <span className="text-white font-semibold">Hinweis:</span>{' '}
-              Alle aufgeführten Spiele sind Freundschaftsspiele, Community Matches oder
-              Turnierspiele — kein offizieller BFV-Ligabetrieb. Der Einstieg in den
-              Berliner Ligabetrieb ist für Saison 2026/27 in Vorbereitung.
-            </p>
+            <p className="text-text-secondary text-sm leading-relaxed">{c.notice}</p>
           </div>
         </div>
       </section>
 
-      {/* ── Season Stats ─────────────────────────── */}
-      <section className="py-10 bg-dark border-b border-dark-border">
-        <div className="container-custom">
-          <p className="text-gold font-heading text-xs uppercase tracking-[0.3em] mb-6">
-            Bilanz Testspiele 2025 / 2026
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-            {[
-              { label: 'Spiele',        value: past.length },
-              { label: 'Siege',         value: wins,   accent: true },
-              { label: 'Unentschieden', value: draws },
-              { label: 'Niederlagen',   value: losses },
-              { label: 'Tore',          value: `${goalsFor}:${goalsAgainst}` },
-            ].map(s => (
-              <div key={s.label} className="card p-4 text-center">
-                <div className={clsx('font-display text-3xl leading-none mb-1', s.accent ? 'text-gold' : 'text-white')}>
-                  {s.value}
-                </div>
-                <div className="text-text-muted text-xs font-heading uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Symposium Mboa 2024 ──────────────────── */}
-      <section className="section-padding bg-dark border-b border-dark-border">
-        <div className="container-custom">
-
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl" aria-hidden="true">🥈</span>
-                <p className="text-gold font-heading text-xs uppercase tracking-[0.3em]">
-                  Historisches Turnier
-                </p>
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl text-white uppercase leading-none">
-                Symposium Mboa{' '}
-                <span className="text-gold-gradient">2024</span>
+      {/* ── A. Next official match ──────────────────────────────── */}
+      {nextMatch && (
+        <section className="section-padding bg-dark border-b border-dark-border">
+          <div className="container-custom">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-1 h-6 bg-gold" aria-hidden="true" />
+              <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+                {c.nextMatch}
               </h2>
-              <div className="w-12 h-1 bg-gold mt-4" />
             </div>
-            <div className="sm:text-right">
-              <p className="text-text-muted text-xs font-heading uppercase tracking-wider mb-2">
-                Berlin 2024
-              </p>
-              <p className="text-ivory/80 text-sm font-heading font-semibold">
-                🥈 Finalist — Silber
-              </p>
-              <p className="text-text-secondary text-sm leading-relaxed max-w-xs sm:ml-auto mt-1">
-                5 Siege, 1 Unentschieden, 1 Niederlage im Finale.
-                Der Moment, der die Vereinsgründung auslöste.
-              </p>
-            </div>
+            <NextMatchCard fixture={nextMatch} locale={locale} variant="panel" />
           </div>
+        </section>
+      )}
 
-          {/* Stats strip */}
-          <div className="grid grid-cols-4 gap-3 mb-6">
-            {[
-              { label: 'Spiele',     value: '6' },
-              { label: 'Siege',      value: '4', accent: true },
-              { label: 'Unentsch.', value: '1' },
-              { label: 'Tore',       value: '7:3', accent: true },
-            ].map(s => (
-              <div key={s.label} className="card p-3 text-center">
-                <div className={`font-display text-2xl leading-none mb-0.5 ${s.accent ? 'text-gold' : 'text-white'}`}>
-                  {s.value}
-                </div>
-                <div className="text-text-muted text-[10px] font-heading uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* All 6 matches */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            {mboa2024.map(m => (
-              <TournamentRow key={`2024-${m.round}-${m.opponent}`} m={m} />
-            ))}
-          </div>
-
-          {/* Emotional note */}
-          <div className="border border-gold/20 bg-navy/30 p-5 flex items-start gap-4">
-            <span className="text-gold text-2xl shrink-0" aria-hidden="true">🥈</span>
-            <div>
-              <p className="text-white font-heading font-semibold text-sm mb-1">
-                Der erste große Erfolg — und der Beginn von etwas Größerem
-              </p>
-              <p className="text-text-muted text-xs leading-relaxed">
-                Das Finale beim Symposium Mboa 2024 war der Wendepunkt. 0:1 gegen Flambeau FC.
-                Silber. Für viele Spieler war genau dieser Moment der Auslöser: aus der losen
-                Fußballgemeinschaft einen echten Verein zu gründen. Wenige Monate später entstand
-                SC Metropolis 25 Berlin e.V.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Symposium Mboa 2026 ──────────────────── */}
+      {/* ── B. Official fixtures, tabbed ────────────────────────── */}
       <section className="section-padding bg-dark-surface border-b border-dark-border">
         <div className="container-custom">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-1 h-6 bg-gold" aria-hidden="true" />
+            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+              {c.officialTitle}
+            </h2>
+          </div>
+          <p className="text-text-muted text-xs leading-relaxed max-w-2xl mb-7">
+            {c.officialNote}
+          </p>
 
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <Star className="w-4 h-4 text-gold" aria-hidden="true" />
-                <p className="text-gold font-heading text-xs uppercase tracking-[0.3em]">
-                  Turnier
-                </p>
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl text-white uppercase leading-none">
-                Symposium Mboa{' '}
-                <span className="text-gold-gradient">2026</span>
-              </h2>
-              <div className="w-12 h-1 bg-gold mt-4" />
-            </div>
-            <div className="sm:text-right">
-              <p className="text-text-muted text-xs font-heading uppercase tracking-wider mb-1">
-                23. – 24. Mai 2026 · Berlin
-              </p>
-              <p className="text-text-secondary text-sm leading-relaxed max-w-xs sm:ml-auto">
-                Ungeschlagen durch die Gruppenphase. Viertelfinalsieg.
-                Im Halbfinale erst im Elfmeterschießen ausgeschieden.
-              </p>
-            </div>
+          <FixtureTabs fixtures={officialFixtures} locale={locale} />
+        </div>
+      </section>
+
+      {/* ── C. Official results ─────────────────────────────────── */}
+      <section className="section-padding bg-dark border-b border-dark-border">
+        <div className="container-custom">
+          <div className="flex items-center gap-3 mb-7">
+            <div className="w-1 h-6 bg-navy-400" aria-hidden="true" />
+            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+              {c.resultsTitle}
+            </h2>
           </div>
 
-          {/* Match cards */}
-          <div className="grid sm:grid-cols-3 gap-4">
-            {mboa2026.map(m => (
-              <TournamentRow key={m.round} m={m} />
+          {officialResults.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-4">
+              {officialResults.map(f => (
+                <FixtureCard key={f.id} fixture={f} locale={locale} />
+              ))}
+            </div>
+          ) : (
+            <div className="card p-8 text-center">
+              <Calendar className="w-8 h-8 text-text-muted mx-auto mb-3" aria-hidden="true" />
+              <p className="text-text-muted text-sm">{c.resultsEmpty}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── D. Pre-season / friendlies ──────────────────────────── */}
+      <section className="section-padding bg-dark-surface border-b border-dark-border">
+        <div className="container-custom">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-1 h-6 bg-dark-muted" aria-hidden="true" />
+            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+              {c.friendliesTitle}
+            </h2>
+          </div>
+          <p className="text-text-muted text-xs leading-relaxed max-w-2xl mb-7">
+            {c.friendliesNote}
+          </p>
+
+          {/* Record strip */}
+          <div className="mb-7">
+            <p className="text-gold font-heading text-[11px] uppercase tracking-[0.3em] mb-4">
+              {c.recordTitle}
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {[
+                { label: c.stats.played, value: record.played },
+                { label: c.stats.wins,   value: record.wins, accent: true },
+                { label: c.stats.draws,  value: record.draws },
+                { label: c.stats.losses, value: record.losses },
+                { label: c.stats.goals,  value: `${record.goalsFor}:${record.goalsAgainst}` },
+              ].map(s => (
+                <div key={s.label} className="card p-4 text-center">
+                  <div
+                    className={clsx(
+                      'font-display text-3xl leading-none mb-1',
+                      s.accent ? 'text-gold' : 'text-white',
+                    )}
+                  >
+                    {s.value}
+                  </div>
+                  <div className="text-text-muted text-[10px] font-heading uppercase tracking-wider">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-text-muted text-[11px] mt-3 italic">{c.recordNote}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {friendlies.map(f => (
+              <FixtureCard key={f.id} fixture={f} locale={locale} />
             ))}
           </div>
-
-          {/* Bottom note */}
-          <p className="text-text-muted text-xs mt-6 leading-relaxed">
-            Das Symposium Mboa ist eines der bedeutendsten afrikanischen Kulturfestivals
-            Berlins. SC Metropolis 25 nahm 2026 erstmals als eingetragener Verein teil —
-            und erreichte das Halbfinale.
-          </p>
         </div>
       </section>
 
-      {/* ── Testspiele & Community Matches ──────── */}
+      {/* ── E. Historic tournaments ─────────────────────────────── */}
       <section className="section-padding bg-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-1 h-6 bg-gold" aria-hidden="true" />
+            <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
+              {c.tournamentsTitle}
+            </h2>
+          </div>
 
-            {/* Kommende Spiele */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-6 bg-gold" aria-hidden="true" />
-                <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
-                  Kommende Spiele
-                </h2>
-              </div>
-              {upcoming.length > 0 ? (
-                <div className="space-y-4">
-                  {upcoming.map(m => <MatchRow key={m.id} match={m} />)}
+          <div className="space-y-14">
+            {tournaments.map(tourney => (
+              <div key={tourney.id}>
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <Star className="w-4 h-4 text-gold" aria-hidden="true" />
+                      <p className="text-gold font-heading text-xs uppercase tracking-[0.3em]">
+                        {tourney.dates}
+                      </p>
+                    </div>
+                    <h3 className="font-display text-3xl md:text-4xl text-white uppercase leading-none">
+                      {tourney.name}{' '}
+                      <span className="text-gold-gradient">{tourney.year}</span>
+                    </h3>
+                    <div className="w-12 h-1 bg-gold mt-4" />
+                  </div>
+                  <div className="sm:text-right max-w-xs sm:ml-auto">
+                    {tourney.placement && (
+                      <p className="text-ivory/80 text-sm font-heading font-semibold mb-1">
+                        {tourney.placement}
+                      </p>
+                    )}
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {tourney.summary}
+                    </p>
+                  </div>
                 </div>
-              ) : (
-                <div className="card p-8 text-center">
-                  <Calendar className="w-8 h-8 text-text-muted mx-auto mb-3" aria-hidden="true" />
-                  <p className="text-text-muted text-sm">Keine anstehenden Spiele.</p>
-                </div>
-              )}
-            </div>
 
-            {/* Vergangene Spiele */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-6 bg-dark-muted" aria-hidden="true" />
-                <h2 className="font-heading font-semibold text-white text-sm uppercase tracking-widest">
-                  Vergangene Spiele
-                </h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {tourney.matches.map(m => (
+                    <TournamentRow key={`${tourney.id}-${m.round}-${m.opponent}`} m={m} c={c} />
+                  ))}
+                </div>
               </div>
-              <div className="space-y-4">
-                {past.map(m => <MatchRow key={m.id} match={m} />)}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── BFV Banner ───────────────────────────── */}
-      <section className="py-16 bg-navy border-t border-dark-border">
-        <div className="container-custom text-center max-w-2xl mx-auto">
+      {/* ── Closing banner ──────────────────────────────────────── */}
+      <section className="py-16 bg-navy border-t border-dark-border relative overflow-hidden">
+        <BrandWatermark opacity={4} className="absolute -left-24 -bottom-24 w-[360px] h-[360px]" />
+        <div className="container-custom text-center max-w-2xl mx-auto relative z-10">
           <Trophy className="w-10 h-10 text-gold mx-auto mb-5" aria-hidden="true" />
           <h2 className="font-display text-3xl md:text-4xl text-white uppercase mb-4">
-            BFV-Spielbetrieb{' '}
-            <span className="text-gold-gradient">2026 / 27</span>
+            {locale === 'de' ? 'Offizieller Spielbetrieb' : locale === 'fr' ? 'Compétition officielle' : 'Official competition'}{' '}
+            <span className="text-gold-gradient">{CURRENT_SEASON}</span>
           </h2>
           <p className="text-ivory/70 text-sm leading-relaxed mb-6 font-heading">
-            Wir bereiten uns aktiv auf den Einstieg in den Berliner Ligabetrieb vor.
-            Strukturiertes Training, wachsende Mitgliederzahl und eine klare Perspektive —
-            der nächste Schritt ist nah.
+            {locale === 'de'
+              ? `Die 1. Herrenmannschaft tritt in der Saison ${CURRENT_SEASON} im Berliner Freizeit- und Betriebsfußball an — in der ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) und im ${COMPETITIONS.cup}.`
+              : locale === 'fr'
+              ? `L'équipe première dispute la saison ${CURRENT_SEASON} en ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) et en ${COMPETITIONS.cup}.`
+              : `The first men's team competes in the ${CURRENT_SEASON} season in the ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) and the ${COMPETITIONS.cup}.`}
           </p>
           <a href="/mitmachen" className="btn-primary btn btn-lg inline-flex">
-            Jetzt mitmachen & dabei sein →
+            {locale === 'de' ? 'Jetzt mitmachen' : locale === 'fr' ? 'Nous rejoindre' : 'Join us'} →
           </a>
         </div>
       </section>

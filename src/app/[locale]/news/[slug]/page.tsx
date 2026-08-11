@@ -13,6 +13,8 @@ export const dynamic = 'force-dynamic'
 interface Article {
   slug: string
   title: string
+  /** Optional standfirst rendered under the headline. */
+  subtitle?: string
   category: string
   type: 'news' | 'bericht'
   publishedAt: string
@@ -24,6 +26,50 @@ interface Article {
 }
 
 const articles: Article[] = [
+  // ── MEILENSTEIN: ERSTES OFFIZIELLES PFLICHTSPIEL ───────────────────────────
+  {
+    slug: 'historischer-meilenstein-erstes-offizielles-pflichtspiel',
+    title: 'Historischer Meilenstein: Unser erstes offizielles Pflichtspiel',
+    subtitle:
+      'Am 30. August 2026 beginnt für SC Metropolis 25 ein neues Kapitel im Berliner Fußball.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-11',
+    image: '/images/team-photo-kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — 1. Herrenmannschaft vor dem Spiel',
+    body: [
+      'Am Sonntag, den 30. August 2026, um 12:00 Uhr, bestreitet SC Metropolis 25 Berlin e.V. das erste offizielle Pflichtspiel seiner Vereinsgeschichte. Gegner in der Qualifikationsrunde des Yec-Sports-Pokals ist SG Prenzlauer Berg FZ Kunst. Gespielt wird im BVB-Stadion in der Siegfriedstraße 71 in 10365 Berlin, auf Kunstrasen 2.',
+      'Es ist ein Satz, der sieben Jahre gebraucht hat.',
+      '2019 trafen sich sieben Studenten auf einem Berliner Bolzplatz. Ohne Verein, ohne Trikots, ohne Plan — nur mit einem Ball und der Absicht, samstags zu spielen. Was daraus wurde, wuchs Woche für Woche: durch Mundpropaganda, durch das Gefühl auf dem Platz, durch Menschen aus mehr als elf Nationen, die eine gemeinsame Sprache fanden.',
+      'Zwischen 2019 und 2024 spielte diese Gemeinschaft bei Berliner Integrationsturnieren und beim Symposium Mboa. 2024 stand die Mannschaft im Finale — Silber. Genau dieser Moment war der Auslöser für die Frage, die alles veränderte: Was wäre möglich, wenn daraus ein richtiger Verein würde?',
+      'Am 26. November 2025 gründeten 22 Mitglieder SC Metropolis 25 Berlin e.V. Vier Wochen später, am 22. Dezember 2025, folgte die Eintragung ins Vereinsregister. Im April 2026 erkannte das Finanzamt die Gemeinnützigkeit nach §60a AO an. Parallel dazu lief die weniger sichtbare Arbeit: Satzung, Vorstand, Buchführung, Mitgliederverwaltung, Spielerlizenzierungen, Verbandskontakte, Anträge.',
+      'Diese Arbeit hat jetzt ihr Ergebnis. SC Metropolis 25 ist in den offiziellen Berliner Spielbetrieb aufgenommen. Die 1. Herrenmannschaft tritt in der Saison 2026/27 im Berliner Freizeit- und Betriebsfußball an — in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal.',
+      'Für das Spiel am 30. August hat das Bezirksamt Lichtenberg dem Verein das BVB-Stadion überlassen und die Nutzungszeit erweitert, sodass vor und nach dem Spiel ausreichend Zeit zur Verfügung steht. Wir danken dem Fachbereich Sport für die Unterstützung.',
+      'Eine dauerhafte Lösung ist damit nicht verbunden. Der Antrag des Vereins auf eine feste Trainings- und Spielstätte befindet sich weiterhin in Bearbeitung. Wir berichten transparent, sobald es dazu Neues gibt.',
+      'Am 30. August zählt aber erst einmal etwas anderes: 90 Minuten, ein Schiedsrichter, ein Spielbericht, drei Punkte oder keine. Zum ersten Mal geht es um etwas Offizielles.',
+      'Aus Freunden wurden Mitspieler. Aus Mitspielern wurde ein Verein. Jetzt beginnt der offizielle Spielbetrieb.',
+    ],
+  },
+  {
+    slug: 'gruenes-licht-fuer-unser-erstes-pflichtspiel',
+    title: 'Grünes Licht für unser erstes Pflichtspiel',
+    subtitle:
+      'Das Bezirksamt Lichtenberg hat die Spielstätte für den 30. August 2026 genehmigt.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-10',
+    image: '/images/geschichte-training.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Training',
+    body: [
+      'Das Bezirksamt Lichtenberg hat SC Metropolis 25 Berlin e.V. die Nutzung des BVB-Stadions für das erste offizielle Pflichtspiel des Vereins genehmigt.',
+      'Gespielt wird am Sonntag, den 30. August 2026, mit Anstoß um 12:00 Uhr, auf Kunstrasen 2. Die Anlage liegt in der Siegfriedstraße 71 in 10365 Berlin. Die genehmigte Nutzungszeit wurde zusätzlich erweitert, sodass dem Verein vor und nach dem Spiel ausreichend Zeit für Aufwärmen, Organisation und Nachbereitung zur Verfügung steht.',
+      'Wir danken dem Fachbereich Sport des Bezirksamts Lichtenberg für die zügige und unkomplizierte Bearbeitung. Für einen jungen Verein, der zum ersten Mal ein Pflichtspiel austrägt, ist eine gesicherte und geeignete Spielstätte keine Selbstverständlichkeit.',
+      'Wichtig für die Einordnung: Diese Überlassung gilt für dieses eine Spiel. Das BVB-Stadion ist keine dauerhafte Heimspielstätte von SC Metropolis 25.',
+      'Der Antrag des Vereins auf eine dauerhafte Trainings- und Spielstätte läuft parallel weiter und befindet sich weiterhin in Bearbeitung beim Bezirksamt Lichtenberg und weiteren zuständigen Stellen. Eine verlässliche eigene Sportstätte bleibt die zentrale strukturelle Herausforderung des Vereins.',
+      'Spielstätten für kommende Partien werden jeweils entsprechend der behördlichen Überlassung bekanntgegeben.',
+    ],
+  },
+
   // ── SPIELBERICHTE ──────────────────────────────────────────────────────────
   {
     slug: 'finalist-symposium-mboa-2024',
@@ -31,7 +77,7 @@ const articles: Article[] = [
     category: 'Spielberichte',
     type: 'news',
     publishedAt: '2024-07-01',
-    image: '/images/trophy for 2nd place.jpeg',
+    image: '/images/trophy-2nd-place.jpeg',
     imageAlt: 'SC Metropolis 25 — Trophäe und Medaillen Symposium Mboa 2024',
     body: [
       'Das Symposium Mboa 2024 war kein gewöhnliches Turnier. Es war der Moment, der alles veränderte.',
@@ -70,7 +116,7 @@ const articles: Article[] = [
       'Am 17. Mai 2026 empfing SC Metropolis 25 Flambeau FC erneut im Poststadion — diesmal mit einem anderen Ergebnis. 4:3 Sieg. Ein Ergebnis, das Entwicklung beweist.',
       'Im ersten Aufeinandertreffen am 15. März hatte es 2:2 geendet. Zwei Monate später: vier Tore, drei Punkte, volle Kontrolle im Poststadion.',
       'Die Mannschaft zeigte eine reifere Version ihrer selbst. Kombinationsspiel, Zweikampfhärte, Laufbereitschaft — alles eine Stufe besser.',
-      'Es sind noch keine offiziellen Ligaspiele. Aber jeder Spieltag bringt die Mannschaft näher an den Berliner Ligabetrieb.',
+      'Es war ein Testspiel, kein Pflichtspiel. Aber jeder dieser Spieltage brachte die Mannschaft näher an den offiziellen Berliner Spielbetrieb.',
     ],
   },
   {
@@ -80,7 +126,7 @@ const articles: Article[] = [
     type: 'news',
     publishedAt: '2026-04-19',
     matchResult: '4:2',
-    image: '/images/team photo before game against Kmer.jpeg',
+    image: '/images/team-photo-kmer.jpeg',
     imageAlt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
     body: [
       'Am 19. April 2026 gewann SC Metropolis 25 mit 4:2 gegen Lichtenberg Kmer an der Hauffstraße in Berlin-Lichtenberg — in der eigenen Nachbarschaft.',
@@ -98,7 +144,7 @@ const articles: Article[] = [
     body: [
       'Am 27. April 2026 holte SC Metropolis 25 seinen ersten Sieg des Jahres: 1:0 gegen New Star Berlin SC. Kein glamouröses Ergebnis — aber ein wichtiges.',
       'Es war ein Spiel, das mentale Stärke verlangte. Geduld in der ersten Halbzeit, Konzentration in der zweiten, die Entschlossenheit, das knappe Ergebnis zu verteidigen.',
-      'Genau diese Art Sieg baut eine Mannschaft. Wer lernt, knappe Führungen zu halten, ist bereit für den Ligabetrieb.',
+      'Genau diese Art Sieg baut eine Mannschaft. Wer lernt, knappe Führungen zu halten, ist bereit für den Pflichtspielbetrieb.',
     ],
   },
   {
@@ -117,15 +163,17 @@ const articles: Article[] = [
   // ── VEREINSNEWS ────────────────────────────────────────────────────────────
   {
     slug: 'antrag-sportliche-foerderungswuerdigkeit',
-    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
+    title: 'Sportliche Förderungswürdigkeit — Abschluss des Anerkennungsverfahrens',
+    subtitle: 'Die finale schriftliche Bestätigung wird erwartet.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-06-01',
     body: [
       'Der SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht.',
       'Die Anerkennung der sportlichen Förderungswürdigkeit ist ein wichtiger Schritt für Berliner Sportvereine und bildet eine wesentliche Grundlage für die Nutzung öffentlicher Sportanlagen sowie die weitere institutionelle Entwicklung des Vereins.',
-      'Mit der Antragstellung setzt SC Metropolis 25 seinen strukturierten Vereinsaufbau konsequent fort: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), BFV-Aufnahmeantrag (Frühjahr 2026) — und nun die Förderungswürdigkeit.',
-      'Der Antrag befindet sich derzeit in Bearbeitung. SC Metropolis 25 berichtet transparent über alle weiteren Schritte.',
+      'Mit der Antragstellung setzt SC Metropolis 25 seinen strukturierten Vereinsaufbau konsequent fort: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), Aufnahme in den offiziellen Berliner Spielbetrieb (Saison 2026/27) — und nun die Förderungswürdigkeit.',
+      'Das Anerkennungsverfahren befindet sich in der Abschlussphase. Die zuständige Stelle der Senatsverwaltung hat den Verein telefonisch darüber informiert, dass die schriftliche Anerkennung in Kürze auf dem Postweg zu erwarten ist.',
+      'Der Verein weist diesen Status bis zum Eingang des schriftlichen Bescheids ausdrücklich als „in Bearbeitung“ aus. Erst mit Vorliegen der schriftlichen Anerkennung wird der Status auf dieser Website aktualisiert.',
     ],
   },
   {
@@ -137,7 +185,7 @@ const articles: Article[] = [
     body: [
       'Die Farben sind klar: Navy, Gold, Ivory. Die Werte dahinter auch. Jetzt wird daraus eine Kollektion.',
       'Die erste offizielle Vereinsausstattung befindet sich in Vorbereitung. Heimtrikot, Auswärtstrikot und Third Kit orientieren sich an den offiziellen Vereinsfarben.',
-      'Die Kollektion soll rechtzeitig vor dem Einstieg in den Berliner Ligabetrieb zur Saison 2026/27 vorgestellt werden.',
+      'Die Kollektion soll rechtzeitig zum Start des offiziellen Spielbetriebs in der Saison 2026/27 vorgestellt werden.',
     ],
   },
   {
@@ -166,26 +214,15 @@ const articles: Article[] = [
   },
   {
     slug: 'vorbereitung-berliner-ligabetrieb',
-    title: 'Der nächste Schritt Richtung Berliner Ligabetrieb',
+    title: 'Der Weg in den organisierten Berliner Fußball',
+    subtitle: 'Ein Rückblick auf die Schritte im Frühjahr 2026.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-03-20',
     body: [
-      'SC Metropolis 25 bereitet sich aktiv auf den Einstieg in den organisierten Berliner Fußball vor.',
-      'Dazu gehören: BFV-Kontaktaufnahme, Sportstättensuche, Spielerlizenzierungen sowie die strukturelle Weiterentwicklung des Vereins.',
-      'Ziel ist der Einstieg in den Berliner Ligabetrieb zur Saison 2026/27.',
-    ],
-  },
-  {
-    slug: 'intarp-hauptsponsor',
-    title: 'Intarp GmbH wird Hauptsponsor von SC Metropolis 25',
-    category: 'Vereinsnews',
-    type: 'news',
-    publishedAt: '2026-01-10',
-    body: [
-      'SC Metropolis 25 freut sich, Intarp GmbH als offiziellen Hauptsponsor begrüßen zu dürfen.',
-      'Die Partnerschaft unterstützt den strukturellen Aufbau und ermöglicht den nächsten Schritt Richtung organisierten Spielbetrieb.',
-      'Wir danken Intarp GmbH für das Vertrauen in unser Projekt.',
+      'Im Frühjahr 2026 arbeitete SC Metropolis 25 gezielt auf den Einstieg in den organisierten Berliner Fußball hin.',
+      'Dazu gehörten: Verbandskontakte, Sportstättensuche, Spielerlizenzierungen sowie die strukturelle Weiterentwicklung des Vereins.',
+      'Diese Arbeit hat ihr Ziel erreicht: Zur Saison 2026/27 tritt die 1. Herrenmannschaft im offiziellen Berliner Spielbetrieb an.',
     ],
   },
   {
@@ -194,7 +231,7 @@ const articles: Article[] = [
     category: 'Community',
     type: 'news',
     publishedAt: '2025-12-10',
-    image: '/images/team spirit.jpeg',
+    image: '/images/team-spirit.jpeg',
     imageAlt: 'SC Metropolis 25 — Mannschaftsgeist in der Kabine',
     body: [
       '2019 begann alles mit sieben Studenten und einem Bolzplatz. Heute zählt die Community über 133 Menschen aus mehr als elf Nationen.',
@@ -234,7 +271,7 @@ const articles: Article[] = [
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2026-05-15',
-    image: '/images/team spirit.jpeg',
+    image: '/images/team-spirit.jpeg',
     imageAlt: 'SC Metropolis 25 — Gemeinschaft in der Kabine vor dem Spiel',
     body: [
       'Es ist Samstagmorgen in Berlin-Lichtenberg. Jemand schreibt in die WhatsApp-Gruppe: "Heute um 10 auf dem Platz?" Zwei Minuten später: fünf Daumen nach oben. Dann zehn.',
@@ -251,7 +288,7 @@ const articles: Article[] = [
     type: 'bericht',
     readTime: '8 min',
     publishedAt: '2026-04-01',
-    image: '/images/trophy for 2nd place.jpeg',
+    image: '/images/trophy-2nd-place.jpeg',
     imageAlt: 'SC Metropolis 25 — Trophäenübergabe Symposium Mboa 2024',
     body: [
       '2019. Viktor-Jara-Wohnheim, Berlin-Lichtenberg. Internationale Studierende, eine gemeinsame Leidenschaft: Fußball.',
@@ -302,16 +339,16 @@ const articles: Article[] = [
   },
   {
     slug: 'der-weg-richtung-bfv',
-    title: 'Der Weg Richtung BFV — Transparenz über unsere Entwicklung',
+    title: 'Unser Weg in den organisierten Fußball — Transparenz über die Entwicklung',
     category: 'Berichte',
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2025-12-15',
     body: [
       'SC Metropolis 25 ist transparent über seinen Weg. Hier ist der aktuelle Stand.',
-      'Erreicht: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), BFV-Aufnahmeantrag (Frühjahr 2026), Antrag auf sportliche Förderungswürdigkeit (Sommer 2026), 23 aktive Feldspieler.',
-      'In Bearbeitung: Anerkennung der sportlichen Förderungswürdigkeit, Sportstättensuche, Spielerlizenzierungen.',
-      'Ziel: Einstieg in den Berliner Ligabetrieb zur Saison 2026/27. Wir berichten weiter — ehrlich und transparent.',
+      'Erreicht: Vereinsgründung (November 2025), Eintragung ins Vereinsregister (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), Aufnahme in den offiziellen Berliner Spielbetrieb (Saison 2026/27), erstes offizielles Pflichtspiel terminiert (30. August 2026), 23 aktive Feldspieler.',
+      'In Bearbeitung: schriftliche Anerkennung der sportlichen Förderungswürdigkeit, dauerhafte Trainings- und Spielstätte, Gewinnung eines Gründungspartners.',
+      'Wir berichten weiter — ehrlich und transparent, auch dann, wenn etwas länger dauert als geplant.',
     ],
   },
 ]
@@ -410,6 +447,11 @@ export default async function ArticlePage({
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white uppercase leading-none mb-4 max-w-3xl">
             {a.title}
           </h1>
+          {a.subtitle && (
+            <p className="text-ivory/75 font-heading text-base md:text-lg leading-relaxed max-w-2xl mb-4">
+              {a.subtitle}
+            </p>
+          )}
           <div className="w-12 h-1 bg-gold mb-4" />
 
           <div className="flex items-center gap-2 text-text-muted text-xs">

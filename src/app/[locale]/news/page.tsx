@@ -21,11 +21,36 @@ const newsItems: NewsItem[] = [
     category: 'Spielberichte',
     type: 'news',
     publishedAt: '2024-07-01',
-    image: '/images/trophy for 2nd place.jpeg',
+    image: '/images/trophy-2nd-place.jpeg',
     imageAlt: 'SC Metropolis 25 — Trophäe und Medaillen Symposium Mboa 2024',
   },
   // ── 2026 ──────────────────────────────────────────────────────────────────
 
+  {
+    id: 'n-erstes-pflichtspiel',
+    slug: 'historischer-meilenstein-erstes-offizielles-pflichtspiel',
+    title: 'Historischer Meilenstein: Unser erstes offizielles Pflichtspiel',
+    excerpt:
+      'Am 30. August 2026 beginnt für SC Metropolis 25 ein neues Kapitel im Berliner Fußball. Um 12:00 Uhr trifft die 1. Herrenmannschaft im Yec-Sports-Pokal auf SG Prenzlauer Berg FZ Kunst — das erste offizielle Pflichtspiel der Vereinsgeschichte.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-11',
+    featured: true,
+    image: '/images/team-photo-kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — 1. Herrenmannschaft vor dem Spiel',
+  },
+  {
+    id: 'n-spielstaette-genehmigt',
+    slug: 'gruenes-licht-fuer-unser-erstes-pflichtspiel',
+    title: 'Grünes Licht für unser erstes Pflichtspiel',
+    excerpt:
+      'Das Bezirksamt Lichtenberg hat die Nutzung des BVB-Stadions, Kunstrasen 2, für das Pflichtspiel am 30. August 2026 genehmigt. Die Nutzungszeit wurde zusätzlich erweitert. Die Suche nach einer dauerhaften Trainings- und Spielstätte läuft weiter.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-10',
+    image: '/images/geschichte-training.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Training',
+  },
   {
     id: 'n-mboa-2026',
     slug: 'symposium-mboa-turnier-2026',
@@ -35,16 +60,15 @@ const newsItems: NewsItem[] = [
     category: 'Spielberichte',
     type: 'news',
     publishedAt: '2026-05-24',
-    featured: true,
     image: '/images/symposium-mboa-2026-team.jpeg',
     imageAlt: 'SC Metropolis 25 Berlin — Team beim Symposium Mboa 2026',
   },
   {
     id: 'n-foerderung',
     slug: 'antrag-sportliche-foerderungswuerdigkeit',
-    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
+    title: 'Sportliche Förderungswürdigkeit — Abschluss des Anerkennungsverfahrens',
     excerpt:
-      'SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht. Ein weiterer struktureller Meilenstein auf dem Weg zum etablierten Berliner Fußballverein.',
+      'SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht. Das Verfahren befindet sich in der Abschlussphase — die finale schriftliche Bestätigung wird erwartet.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-06-01',
@@ -59,7 +83,7 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '4:3',
     publishedAt: '2026-05-17',
-    image: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+    image: '/images/warmup-kmer-lichtenberg.jpeg',
     imageAlt: 'SC Metropolis 25 — Aufwärmen vor dem Spiel',
   },
   {
@@ -67,7 +91,7 @@ const newsItems: NewsItem[] = [
     slug: 'erste-vereinskollektion-entsteht',
     title: 'Die erste Vereinskollektion entsteht',
     excerpt:
-      'Navy, Gold, Ivory — die offiziellen Vereinsfarben des SC Metropolis 25 werden bald auch auf dem Platz sichtbar sein. Die erste Vereinskollektion befindet sich in Vorbereitung und soll rechtzeitig vor dem BFV-Ligastart vorgestellt werden.',
+      'Navy, Gold, Ivory — die offiziellen Vereinsfarben des SC Metropolis 25 werden bald auch auf dem Platz sichtbar sein. Die erste Vereinskollektion befindet sich in Vorbereitung und soll rechtzeitig zum Start des offiziellen Spielbetriebs vorgestellt werden.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-05-01',
@@ -92,7 +116,7 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '1:0',
     publishedAt: '2026-04-27',
-    image: '/images/Integration-tournament-team.jpeg',
+    image: '/images/integration-tournament-team.jpeg',
     imageAlt: 'SC Metropolis 25 — Teamgeist nach dem Sieg',
   },
   {
@@ -105,7 +129,7 @@ const newsItems: NewsItem[] = [
     type: 'news',
     matchResult: '4:2',
     publishedAt: '2026-04-19',
-    image: '/images/team photo before game against Kmer.jpeg',
+    image: '/images/team-photo-kmer.jpeg',
     imageAlt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
   },
   {
@@ -121,9 +145,9 @@ const newsItems: NewsItem[] = [
   {
     id: 'n-bfv',
     slug: 'vorbereitung-berliner-ligabetrieb',
-    title: 'Der nächste Schritt Richtung Berliner Ligabetrieb',
+    title: 'Der Weg in den organisierten Berliner Fußball',
     excerpt:
-      'SC Metropolis 25 bereitet sich aktiv auf den Einstieg in den organisierten Berliner Fußball vor. Sportstättensuche, BFV-Kontaktaufnahme, Spielerlizenzierungen — die organisatorische Arbeit läuft auf Hochtouren. Saison 2026/27 ist das Ziel.',
+      'Sportstättensuche, Verbandskontakte, Spielerlizenzierungen — im Frühjahr 2026 lief die organisatorische Arbeit auf Hochtouren. Ein Rückblick auf die Schritte, die zur Aufnahme in den offiziellen Berliner Spielbetrieb geführt haben.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-03-20',
@@ -182,7 +206,7 @@ const berichte: NewsItem[] = [
     id: 'b-berlin-samstag',
     slug: 'berlin-samstag-fussball',
     title: 'Berlin. Samstag. Fußball.',
-    image: '/images/team spirit.jpeg',
+    image: '/images/team-spirit.jpeg',
     imageAlt: 'SC Metropolis 25 — Gemeinschaft in der Kabine',
     excerpt:
       'Es ist Samstagmorgen. Unterschiedliche Menschen aus unterschiedlichen Ländern kommen auf einem Berliner Bolzplatz zusammen — und spielen Fußball. Was banal klingt, ist das Fundament von SC Metropolis 25. Diese Geschichte ist die Geschichte aller, die dabei waren.',
@@ -239,9 +263,9 @@ const berichte: NewsItem[] = [
   {
     id: 'b-bfv-weg',
     slug: 'der-weg-richtung-bfv',
-    title: 'Der Weg Richtung BFV — Transparenz über unsere Entwicklung',
+    title: 'Unser Weg in den organisierten Fußball — Transparenz über die Entwicklung',
     excerpt:
-      'Vereinsregistrierung, Gemeinnützigkeit, Sportstättensuche, Spielerlizenzierungen — der Weg in den offiziellen Berliner Ligabetrieb ist komplex. Wir berichten transparent über unsere Fortschritte, Hürden und nächsten Schritte.',
+      'Vereinsregistrierung, Gemeinnützigkeit, Sportstättensuche, Spielerlizenzierungen — der Weg in den offiziellen Berliner Spielbetrieb ist komplex. Wir berichten transparent über Fortschritte, Hürden und nächste Schritte.',
     category: 'Berichte',
     type: 'bericht',
     readTime: '6 min',

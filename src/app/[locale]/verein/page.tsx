@@ -15,7 +15,9 @@ const milestones = [
   { year: '26. Nov. 2025', event: 'Vereinsgründung', desc: '22 Mitglieder bei der Gründungsversammlung. SC Metropolis 25 Berlin e.V. entsteht offiziell — mit Vorstand, Satzung und einer klaren Zukunftsvision.' },
   { year: '22. Dez. 2025', event: 'Eintragung ins Vereinsregister', desc: 'Das Amtsgericht Berlin-Charlottenburg trägt den Verein ein. Die rechtliche Grundlage für alles Weitere ist geschaffen.' },
   { year: '30. Apr. 2026', event: 'Gemeinnützigkeit §60a AO', desc: 'Das Finanzamt erkennt die Gemeinnützigkeit vorläufig an. Spenden sind steuerlich absetzbar. Der Verein ist auf institutionellem Kurs.' },
-  { year: '2026/27', event: 'BFV-Spielbetrieb in Vorbereitung', desc: 'Anmeldung zum Berliner Fußball-Verband Spielbetrieb. Aufbau des 2. Herren-Teams und perspektivisch Frauenfußball.' },
+  { year: 'Saison 2026/27', event: 'Aufnahme in den offiziellen Berliner Spielbetrieb', desc: 'Die 1. Herrenmannschaft tritt im Berliner Freizeit- und Betriebsfußball an — in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal.' },
+  { year: 'Aug. 2026', event: 'Erste offizielle Spielstätte für ein Pflichtspiel genehmigt', desc: 'Das Bezirksamt Lichtenberg genehmigt die Nutzung des BVB-Stadions für das erste Pflichtspiel von SC Metropolis 25. Der Antrag auf eine dauerhafte Sportstätte läuft weiter.' },
+  { year: '30. Aug. 2026', event: 'Erstes offizielles Pflichtspiel', desc: 'SC Metropolis 25 gegen SG Prenzlauer Berg FZ Kunst im Yec-Sports-Pokal. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2.' },
 ]
 
 const boardMembers = [

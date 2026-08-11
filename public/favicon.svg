@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Shield background -->
+  <path d="M2,2 H30 C31,2 31,3 31,4 V22 C31,28 16,31 16,31 C16,31 1,28 1,22 V4 C1,3 1,2 2,2 Z" fill="#EDE4CD"/>
+  <path d="M3,3 H29 C30,3 30,4 30,5 V22 C30,27 16,30 16,30 C16,30 2,27 2,22 V5 C2,4 2,3 3,3 Z" fill="#E0A106"/>
+  <path d="M4,4 H28 C29,4 29,5 29,6 V22 C29,27 16,30 16,30 C16,30 3,27 3,22 V6 C3,5 3,4 4,4 Z" fill="#EDE4CD"/>
+  <path d="M5,5 H27 C28,5 28,6 28,7 V22 C28,26 16,29 16,29 C16,29 4,26 4,22 V7 C4,6 4,5 5,5 Z" fill="#002855"/>
+  <!-- M with TV Tower -->
+  <g fill="#E0A106">
+    <rect x="7" y="14" width="3.5" height="11" rx="0.5"/>
+    <rect x="21.5" y="14" width="3.5" height="11" rx="0.5"/>
+    <polygon points="7,14 10.5,14 16,19 21.5,14 25,14 25,16 19,21 16,18 13,21 7,16"/>
+    <!-- TV Tower -->
+    <circle cx="16" cy="19.5" r="2.5"/>
+    <rect x="15.2" y="22" width="1.6" height="4" rx="0.5"/>
+    <rect x="14.5" y="23" width="3" height="1" rx="0.5"/>
+  </g>
+  <!-- 25 text -->
+  <text x="16" y="13" fill="#E0A106" font-family="Arial Black, sans-serif" font-size="5.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">25</text>
+</svg>

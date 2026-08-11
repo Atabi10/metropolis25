@@ -390,7 +390,7 @@ export default function AusstattungPage() {
                 </p>
                 <p className="text-text-muted text-xs leading-relaxed">
                   Die offiziellen Trikots und Vereinskleidung werden rechtzeitig
-                  vor dem BFV-Ligastart Saison 2026/27 vorgestellt.
+                  zum Start des offiziellen Spielbetriebs in der Saison 2026/27 vorgestellt.
                   Halte unsere sozialen Kanäle im Blick für erste Einblicke.
                 </p>
               </div>

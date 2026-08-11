@@ -15,7 +15,7 @@ interface Stat {
 const stats: Stat[] = [
   { value: 2025,  label: 'Gegründet',        description: 'Berlins neueste Fußball-Institution', separator: '' },
   { value: 37,    suffix: '+', label: 'Mitglieder',     description: 'Und wachsend',              separator: '' },
-  { value: 3,     label: 'Teams',            description: 'Im Aufbau',                            separator: '' },
+  { value: 1,     label: 'Herrenteam',       description: 'Im offiziellen Spielbetrieb',          separator: '' },
   { value: 11,    label: 'Nationalitäten',   description: 'Multikulturelle Gemeinschaft',         separator: '' },
 ]
 

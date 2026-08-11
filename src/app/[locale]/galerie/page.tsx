@@ -23,7 +23,7 @@ const groups = [
       },
       {
         type: 'image' as const,
-        src: '/images/trophy for 2nd place.jpeg',
+        src: '/images/trophy-2nd-place.jpeg',
         alt: 'SC Metropolis 25 — Trophäenübergabe 2. Platz Symposium Mboa',
         caption: 'Silber 2024 — der Moment, der den Vereinsgründung auslöste.',
         wide: false,
@@ -54,18 +54,18 @@ const groups = [
   {
     id: 'training',
     label: 'Training & Spieltage',
-    caption: 'Jeder Trainingstag bringt die Mannschaft dem Berliner Ligabetrieb näher.',
+    caption: 'Jeder Trainingstag zahlt auf den offiziellen Spielbetrieb ein.',
     items: [
       {
         type: 'image' as const,
-        src: '/images/team photo before game against Kmer.jpeg',
+        src: '/images/team-photo-kmer.jpeg',
         alt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
         caption: 'Vor dem 4:2-Sieg gegen Lichtenberg Kmer — konzentriert, bereit.',
         wide: true,
       },
       {
         type: 'image' as const,
-        src: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+        src: '/images/warmup-kmer-lichtenberg.jpeg',
         alt: 'SC Metropolis 25 — Aufwärmen vor dem Spiel',
         caption: 'Aufwärmen. Fokussieren. Pressetag auf dem Berliner Rasen.',
         wide: false,
@@ -100,7 +100,7 @@ const groups = [
     items: [
       {
         type: 'image' as const,
-        src: '/images/team spirit.jpeg',
+        src: '/images/team-spirit.jpeg',
         alt: 'SC Metropolis 25 — Kabine, Teamgeist',
         caption: '"Aus Mitspielern wurden Freunde. Aus Freunden ein Verein."',
         wide: true,
@@ -114,7 +114,7 @@ const groups = [
       },
       {
         type: 'image' as const,
-        src: '/images/Integration-tournament-team.jpeg',
+        src: '/images/integration-tournament-team.jpeg',
         alt: 'SC Metropolis 25 — Team nach dem Sieg',
         caption: 'Teamgeist nach dem Sieg — mehr als elf Nationen, ein Verein.',
         wide: false,
@@ -205,7 +205,7 @@ export default function GaleriePage() {
         {/* Hero background — medals photo */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/medals after Symposium final.jpeg"
+            src="/images/medals-symposium-final.jpeg"
             alt="SC Metropolis 25 — Galerie"
             fill
             className="object-cover object-center opacity-20"

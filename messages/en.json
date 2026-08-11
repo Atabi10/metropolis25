@@ -59,7 +59,13 @@
     "ctaHistory": "Our Story",
     "slogan1": "Where Berlin pulses,",
     "slogan2": "our strength grows.",
-    "tagline": "The strength from the capital"
+    "tagline": "The strength from the capital",
+    "trust": {
+      "ev": "Registered association",
+      "gemeinnuetzig": "Non-profit status AO",
+      "members": "Members",
+      "spielbetrieb": "Official competition"
+    }
   },
   "statsBar": {
     "members": "Members",
@@ -69,34 +75,44 @@
   },
   "trust": {
     "label": "Official & transparent",
-    "title": "A club",
-    "titleHighlight": "you can trust",
-    "subtitle": "SC Metropolis 25 Berlin e.V. — registered, non-profit, BFV-ready.",
+    "title": "Club status",
+    "titleHighlight": "at a glance",
+    "subtitle": "SC Metropolis 25 Berlin e.V. — registered, non-profit, and competing in official Berlin football from the 2026/27 season. Open items are shown openly.",
+    "stateDone": "Complete",
+    "statePending": "In progress",
+    "colours": "Club colours: navy, gold & ivory — unity, ambition and fairness.",
     "badges": {
       "ev": {
-        "value": "e.V.",
-        "label": "Registered Association",
+        "label": "Registered association",
         "detail": "District Court Berlin-Charlottenburg · Registered 22.12.2025"
       },
       "gemeinnuetzig": {
-        "value": "§60a AO",
-        "label": "Non-Profit Status",
+        "label": "Non-profit status §60a AO",
         "detail": "Provisionally recognised · April 2026"
       },
-      "bfv": {
-        "value": "BFV",
-        "label": "2026/27 in preparation",
-        "detail": "Membership application submitted"
+      "spielbetrieb": {
+        "label": "Admission to Berlin competition",
+        "detail": "Season 2026/27 · Bezirksliga Betrieb (Bezirksliga FZ) and Yec-Sports-Pokal"
       },
-      "members": {
-        "value": "37+",
-        "label": "Members",
-        "detail": "Including 23 active field players"
+      "dfbnet": {
+        "label": "DFBnet access established",
+        "detail": "Competition administration set up"
       },
-      "berlin": {
-        "value": "Berlin",
-        "label": "Rooted in Lichtenberg",
-        "detail": "Home in Lichtenberg & Marzahn-Hellersdorf"
+      "pflichtspiel": {
+        "label": "First official competitive fixture",
+        "detail": "30.08.2026 · 12:00 · vs SG Prenzlauer Berg FZ Kunst"
+      },
+      "foerderung": {
+        "label": "Sporting eligibility (Förderungswürdigkeit)",
+        "detail": "Recognition procedure in its final phase · written confirmation awaited"
+      },
+      "sportstaette": {
+        "label": "Permanent sports facility",
+        "detail": "Application with Bezirksamt Lichtenberg under review"
+      },
+      "partner": {
+        "label": "Founding partner",
+        "detail": "No main sponsor · actively seeking"
       }
     }
   },
@@ -105,7 +121,7 @@
     "title": "Football",
     "titleHighlight": "& Community",
     "body1": "SC Metropolis 25 Berlin e.V. is not a startup — we are a community that has grown since 2019 on Berlin's public pitches. 133+ people from over 11 nations.",
-    "body2": "Now, as a registered non-profit club, we are preparing for entry into the Berlin league system — with a squad that reflects Berlin's diversity.",
+    "body2": "Now, as a registered non-profit club, we compete in official Berlin football from the 2026/27 season — with a squad that reflects Berlin's diversity.",
     "ctaVerein": "Our Club",
     "ctaMitmachen": "Join Us",
     "stat1": "Members",
@@ -116,12 +132,12 @@
     "label": "Our Teams",
     "title": "Teams",
     "titleHighlight": "overview",
-    "subtitle": "We currently compete with our 1st team in Berlin amateur football. More teams to follow.",
+    "subtitle": "Our first men's team competes in official Berlin football from the 2026/27 season. More teams to follow.",
     "ersteM": {
       "title": "1st Team",
       "badge": "Active",
-      "league": "Preparing for BFV · Season 2026/27",
-      "description": "Our flagship. 23 active field players preparing for Berlin league competition — led by Makendi Amos.",
+      "league": "Official competition · Season 2026/27",
+      "description": "Our flagship. 23 active field players competing in the Bezirksliga Betrieb (Bezirksliga FZ) and the Yec-Sports-Pokal — led by Makendi Amos.",
       "cta": "View Team"
     },
     "comingSoon": {
@@ -185,7 +201,7 @@
       "titleHighlight": "purpose",
       "subtitle": "We are not just a club — we are a movement. Berlin football. Real community.",
       "reason1Title": "A real Berlin club",
-      "reason1Body": "Registered, non-profit, with a future. Not a hobby team — a serious sports club preparing for Berlin leagues.",
+      "reason1Body": "Registered, non-profit, competing officially. Not a hobby team — a serious Berlin sports club.",
       "reason2Title": "Diverse community",
       "reason2Body": "11+ nationalities, one team. Character matters here, not your passport.",
       "reason3Title": "Development pathway",
@@ -208,7 +224,7 @@
       "title": "Why we",
       "titleHighlight": "exist",
       "body1": "SC Metropolis 25 Berlin e.V. was founded on 26 November 2025 — born from the conviction that Berlin needs a club that combines football with social responsibility.",
-      "body2": "We are a registered non-profit association (§60a AO) building our men's team for BFV competition starting season 2026/27.",
+      "body2": "We are a registered non-profit association (§60a AO). Our first men's team competes in official Berlin football from the 2026/27 season.",
       "infoGrundet": "Founded",
       "infoStandort": "Location",
       "infoStandortValue": "Lichtenberg, Berlin",
@@ -218,7 +234,7 @@
     "vision": {
       "title": "Vision 2030",
       "body": "A recognised Berlin football club — with multiple teams, secured venues and a community that moves the city.",
-      "goal1": "BFV Men's competition from season 2026/27",
+      "goal1": "Establishment in official Berlin competition",
       "goal2": "2nd Men's team & women's football in development",
       "goal3": "Secured venue in Lichtenberg",
       "goal4": "Recognition by Berlin sports associations (lsb)"
@@ -275,13 +291,13 @@
     "ersteM": {
       "title": "1st Team",
       "badge": "Active",
-      "league": "Preparing for BFV · Season 2026/27",
-      "description": "The first men's team is the heart of the club. We are actively preparing for entry into Berlin league competition from season 2026/27 — with structured training, team cohesion and real sporting ambition.",
+      "league": "Official competition · Season 2026/27",
+      "description": "The first men's team is the heart of the club. It competes in Berlin recreational and works football in the 2026/27 season — in the Bezirksliga Betrieb (Bezirksliga FZ) and the Yec-Sports-Pokal.",
       "trainerLabel": "Coach",
       "spielerLabel": "Players",
       "spielerValue": "23 active",
-      "zielLabel": "Goal",
-      "zielValue": "BFV 2026/27",
+      "zielLabel": "Competition",
+      "zielValue": "Bezirksliga FZ · Cup",
       "cta": "View Team"
     },
     "zweiteH": {
@@ -336,16 +352,16 @@
   },
   "spielbetrieb": {
     "meta": {
-      "title": "Fixtures — SC Metropolis 25 Berlin",
-      "description": "Fixtures and results of SC Metropolis 25 Berlin."
+      "title": "Fixtures & Results 2026/27 | SC Metropolis 25 Berlin",
+      "description": "Official fixtures of SC Metropolis 25 Berlin e.V. — Bezirksliga Betrieb (Bezirksliga FZ) and Yec-Sports-Pokal."
     },
     "hero": {
-      "label": "Fixtures",
+      "label": "Competition",
       "title": "Fixtures &",
       "titleHighlight": "Results"
     },
-    "preparing": "We are currently preparing for entry into Berlin league competition starting season 2026/27.",
-    "noGames": "No official fixtures yet. Season 2026/27 in preparation."
+    "official": "SC Metropolis 25 enters official Berlin competition in the 2026/27 season.",
+    "noGames": "The league schedule has not been published yet."
   },
   "galerie": {
     "meta": {
@@ -369,8 +385,8 @@
       "titleHighlight": "Partners",
       "description": "Invest in Berlin football. Become part of a movement that nurtures Berlin talent."
     },
-    "mainSponsor": "Our Main Sponsor",
-    "mainSponsorThanks": "We are actively looking for our first founding partners.",
+    "mainSponsor": "Our space for the first official main partner",
+    "mainSponsorThanks": "SC Metropolis 25 currently has no main sponsor. From the 2026/27 season we play official competitive football — become part of the founding chapter.",
     "whyLabel": "Why support us",
     "whyTitle": "The strength from",
     "whyHighlight": "the capital",
@@ -431,11 +447,11 @@
       "title": "26 November 2025.",
       "p1": "22 members gathered for the founding assembly. A board was elected. Statutes were adopted. SC Metropolis 25 Berlin e.V. was officially born.",
       "p2": "Four weeks later, on 22 December 2025, the District Court Berlin-Charlottenburg entered us in the register of associations. The legal foundation was in place. And on 30 April 2026 the tax office recognised our non-profit status under §60a AO — a milestone that makes donations tax-deductible and underlines public trust.",
-      "p3": "Today we are preparing for BFV competition from season 2026/27. With 23 active field players, a licensed coach and the foundation of six years of lived community."
+      "p3": "Today SC Metropolis 25 competes in official Berlin football. On 30 August 2026 the first men's team plays its first competitive fixture — with 23 active field players, a licensed coach and the foundation of seven years of lived community."
     },
     "manifesto": {
       "opening": "We are not a startup. We are not a project.",
-      "body": "We are a community that grew on Berlin's public pitches — from the simple wish to play together. Now we carry this community into official football. With respect for every player. With responsibility to the city. With the goal of shaping Berlin football.",
+      "body": "We are a community that grew on Berlin's public pitches — from the simple wish to play together. Now we carry this community into official football. Friends became team-mates. Team-mates became a club. Now official competition begins.",
       "closing": "That is Metropolis 25."
     },
     "founding": {
@@ -457,7 +473,9 @@
       "y2024": "Symposium Mboa final. Silver. Berlin has a new team.",
       "y2025": "Club founded. 22 members. SC Metropolis 25 Berlin e.V. is born.",
       "y2026a": "Non-profit status §60a AO recognised.",
-      "y2026b": "BFV competition in preparation. Season 2026/27."
+      "y2026b": "Admission to official Berlin competition. Season 2026/27.",
+      "y2026c": "August 2026: First official match venue approved.",
+      "y2026d": "30 August 2026: First official competitive match vs SG Prenzlauer Berg FZ Kunst."
     },
     "cta": {
       "join": "Become part of the story",

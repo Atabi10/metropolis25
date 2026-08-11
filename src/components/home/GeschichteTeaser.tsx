@@ -4,11 +4,18 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
-const milestones = [
-  { year: '2019', text: 'Erste Ballkontakte auf Berliner Bolzplätzen — sieben Studenten, ein Samstag' },
-  { year: '2024', text: 'Finalist beim Symposium Mboa — 0:1 im Finale gegen Flambeau FC. 🥈 Silber. Der Wendepunkt.' },
+interface Milestone {
+  year: string
+  text: string
+  highlight?: boolean
+}
+
+const milestones: Milestone[] = [
+  { year: '2019', text: 'Eine Fußballgemeinschaft beginnt — sieben Studenten, ein Berliner Bolzplatz, ein Samstag' },
+  { year: '2024', text: 'Finalist beim Symposium Mboa — 0:1 im Finale gegen Flambeau FC. Silber. Der Wendepunkt.' },
   { year: '2025', text: 'Vereinsgründung: SC Metropolis 25 Berlin e.V.' },
-  { year: '2026', text: 'Gemeinnützigkeit §60a AO · BFV-Antrag · Förderungswürdigkeit beantragt' },
+  { year: '2026', text: 'Aufnahme in den offiziellen Berliner Spielbetrieb — Saison 2026/27' },
+  { year: '30.08.2026', text: 'Erstes offizielles Pflichtspiel gegen SG Prenzlauer Berg FZ Kunst', highlight: true },
 ]
 
 export function GeschichteTeaser() {
@@ -62,7 +69,7 @@ export function GeschichteTeaser() {
             <div className="relative mb-6 overflow-hidden border border-gold/20">
               <div className="relative h-64 md:h-72">
                 <Image
-                  src="/images/medals after Symposium final.jpeg"
+                  src="/images/medals-symposium-final.jpeg"
                   alt="SC Metropolis 25 — Medaillen beim Symposium Mboa"
                   fill
                   className="object-cover object-top"
@@ -80,16 +87,24 @@ export function GeschichteTeaser() {
             {/* Mini timeline */}
             <div className="relative pl-4 border-l border-gold/30">
               <ol className="space-y-5" aria-label="Vereins-Meilensteine">
-                {milestones.map((m, i) => (
+                {milestones.map(m => (
                   <li key={m.year} className="flex items-start gap-4">
                     <div
-                      className="w-2 h-2 rounded-full mt-1.5 shrink-0 -ml-5"
-                      style={{ background: i === milestones.length - 1 ? 'rgba(224,161,6,0.6)' : '#E0A106' }}
+                      className="w-2 h-2 rounded-full mt-1.5 shrink-0 -ml-5 bg-gold"
+                      style={m.highlight ? { boxShadow: '0 0 0 4px rgba(224,161,6,0.2)' } : undefined}
                       aria-hidden="true"
                     />
                     <div>
                       <span className="font-display text-gold text-sm leading-none block mb-0.5">{m.year}</span>
-                      <p className="text-text-secondary text-xs leading-relaxed">{m.text}</p>
+                      <p
+                        className={
+                          m.highlight
+                            ? 'text-ivory text-xs leading-relaxed font-semibold'
+                            : 'text-text-secondary text-xs leading-relaxed'
+                        }
+                      >
+                        {m.text}
+                      </p>
                     </div>
                   </li>
                 ))}

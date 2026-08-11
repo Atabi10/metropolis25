@@ -15,27 +15,27 @@ const photos = [
     tag: 'Turnier',
   },
   {
-    src: '/images/team spirit.jpeg',
+    src: '/images/team-spirit.jpeg',
     alt: 'SC Metropolis 25 Kabine — Teamgeist vor dem Spiel',
     caption: 'Aus Mitspielern wurden Freunde. Aus Freunden ein Verein.',
     tag: 'Gemeinschaft',
   },
   {
-    src: '/images/team photo before game against Kmer.jpeg',
+    src: '/images/team-photo-kmer.jpeg',
     alt: 'SC Metropolis 25 — Aufstellung vor dem Spiel gegen Lichtenberg Kmer',
     caption: '11 gegen 11. Berliner Fußball, wie er wirklich ist.',
     tag: 'Spieltag',
   },
   {
-    src: '/images/trophy for 2nd place.jpeg',
+    src: '/images/trophy-2nd-place.jpeg',
     alt: 'SC Metropolis 25 — Trophäenübergabe Symposium Mboa',
     caption: 'Silber 2024. Der Moment, der alles veränderte.',
     tag: 'Meilenstein',
   },
   {
-    src: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+    src: '/images/warmup-kmer-lichtenberg.jpeg',
     alt: 'SC Metropolis 25 — Aufwärmen vor dem Spiel',
-    caption: 'Jeden Trainingstag ein Schritt Richtung Ligabetrieb.',
+    caption: 'Jeder Trainingstag zahlt auf den Pflichtspielbetrieb ein.',
     tag: 'Training',
   },
   {

@@ -46,7 +46,7 @@ export function HeroSection() {
       {/* ── Background ──────────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/medals after Symposium final.jpeg"
+          src="/images/medals-symposium-final.jpeg"
           alt="SC Metropolis 25 Berlin"
           fill priority
           className={clsx(
@@ -167,10 +167,10 @@ export function HeroSection() {
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           )}>
             {[
-              { value: 'e.V.',  label: 'Eingetragener Verein' },
-              { value: '§60a', label: 'Gemeinnützigkeit AO' },
-              { value: '37+',  label: 'Mitglieder' },
-              { value: 'BFV',  label: '2026/27 in Vorbereitung' },
+              { value: 'e.V.',    label: t('trust.ev') },
+              { value: '§60a',    label: t('trust.gemeinnuetzig') },
+              { value: '37+',     label: t('trust.members') },
+              { value: '2026/27', label: t('trust.spielbetrieb') },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4">
                 <div>

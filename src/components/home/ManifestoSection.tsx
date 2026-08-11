@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import { clsx } from 'clsx'
 import { Link } from '@/i18n/navigation'
+import { BrandMark, BrandWatermark } from '@/components/ui/BrandMark'
 
 const lines = [
   { de: 'Wir sind kein Verein von der Stange.',  accent: false },
@@ -147,23 +148,14 @@ export function ManifestoSection({
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center py-16 px-8 text-center">
-                  {/* M25 Logo */}
-                  <div className="relative w-20 h-20 mb-5">
-                    <Image
-                      src="/m25-logo.png"
-                      alt="SC Metropolis 25 Berlin"
-                      fill
-                      className="object-contain drop-shadow-[0_0_20px_rgba(224,161,6,0.4)]"
-                    />
-                  </div>
+                  {/* Official club crest */}
+                  <BrandMark size="lg" glow className="mb-5" />
 
-                  {/* Large M watermark */}
-                  <div
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-                    aria-hidden="true"
-                  >
-                    <span className="font-display text-[120px] leading-none text-white/[0.03]">M</span>
-                  </div>
+                  {/* Oversized crest watermark — graphic signature */}
+                  <BrandWatermark
+                    opacity={4}
+                    className="absolute inset-0 flex items-center justify-center"
+                  />
 
                   <p className="font-display text-gold text-sm uppercase tracking-[0.3em] mb-2">
                     SC Metropolis 25

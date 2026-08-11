@@ -27,7 +27,7 @@ const timeline = [
     year: '2024',
     label: 'Symposium Mboa — Das Finale',
     text: 'Gruppenphase ungeschlagen (1:0 Santé Biesdorf · 1:1 Benin · 2:1 Leipzig). Viertelfinale: 2:0 gegen Ghana. Halbfinale: 1:0 gegen Algeria. Finale: 0:1 gegen Flambeau FC. Silber. Dieser Tag veränderte alles — und legte den Grundstein für die Vereinsgründung.',
-    image: '/images/trophy for 2nd place.jpeg',
+    image: '/images/trophy-2nd-place.jpeg',
     imageAlt: 'Trophäenübergabe für den 2. Platz beim Symposium Mboa 2024',
   },
   {
@@ -55,23 +55,37 @@ const timeline = [
     year: 'Mai 2026',
     label: 'Symposium Mboa — Ungeschlagen',
     text: 'Drei Spiele, zwei Siege, ein Unentschieden. SC Metropolis 25 geht ungeschlagen durch die Gruppenphase, gewinnt das Viertelfinale gegen FÉE-FÉE FC mit 1:0 und scheidet erst im Halbfinale gegen Gambia im Elfmeterschießen aus.',
-    image: '/images/medals after Symposium final.jpeg',
+    image: '/images/medals-symposium-final.jpeg',
     imageAlt: 'SC Metropolis 25 — Team mit Medaillen nach dem Symposium Mboa 2026',
   },
   {
-    year: 'Frühjahr 2026',
-    label: 'BFV-Aufnahmeantrag eingereicht',
-    text: 'SC Metropolis 25 Berlin e.V. stellt den offiziellen Aufnahmeantrag beim Berliner Fußball-Verband (BFV). Ein entscheidender Schritt auf dem Weg in den organisierten Berliner Ligabetrieb ab Saison 2026/27.',
+    year: 'Saison 2026/27',
+    label: 'Aufnahme in den offiziellen Berliner Spielbetrieb',
+    text: 'SC Metropolis 25 Berlin e.V. wird in den offiziellen Berliner Spielbetrieb aufgenommen. Die 1. Herrenmannschaft tritt im Berliner Freizeit- und Betriebsfußball an — in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal.',
     image: null,
     imageAlt: null,
   },
   {
     year: 'Sommer 2026',
     label: 'Antrag auf sportliche Förderungswürdigkeit',
-    text: 'Der Verein reicht den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung ein. Die Anerkennung bildet eine wesentliche Grundlage für die Nutzung öffentlicher Sportanlagen. Der Antrag befindet sich in Bearbeitung.',
+    text: 'Der Verein reicht den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung ein. Das Anerkennungsverfahren befindet sich in der Abschlussphase; die schriftliche Bestätigung wird erwartet.',
     image: null,
     imageAlt: null,
     pending: true,
+  },
+  {
+    year: 'Aug. 2026',
+    label: 'Erste offizielle Spielstätte für ein Pflichtspiel genehmigt',
+    text: 'Das Bezirksamt Lichtenberg genehmigt die Nutzung des BVB-Stadions, Kunstrasen 2, für das erste Pflichtspiel von SC Metropolis 25. Die Nutzungszeit wurde erweitert. Der Antrag auf eine dauerhafte Trainings- und Spielstätte läuft parallel weiter.',
+    image: null,
+    imageAlt: null,
+  },
+  {
+    year: '30. Aug. 2026',
+    label: 'Erstes offizielles Pflichtspiel',
+    text: 'SC Metropolis 25 gegen SG Prenzlauer Berg FZ Kunst in der Qualifikationsrunde des Yec-Sports-Pokals. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2, Siegfriedstraße 71, 10365 Berlin. Das erste Pflichtspiel der Vereinsgeschichte.',
+    image: '/images/team-photo-kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 — 1. Herrenmannschaft',
   },
 ]
 
@@ -358,6 +372,11 @@ export default function GeschichtePage() {
                 entstehen und die sportlichen Ziele entwickeln sich Schritt für Schritt weiter.
                 Der Aufbau einer 1. Herrenmannschaft, perspektivisch einer 2. Herrenmannschaft sowie
                 langfristig auch einer Frauenmannschaft ist Teil dieser Entwicklung.
+              </p>
+              <p>
+                Am 30. August 2026 bestreitet SC Metropolis 25 sein erstes offizielles
+                Pflichtspiel. Aus Freunden wurden Mitspieler. Aus Mitspielern wurde ein Verein.
+                Jetzt beginnt der offizielle Spielbetrieb.
               </p>
               <p>
                 Doch unabhängig davon, wie groß der Verein in Zukunft wird, bleibt der Ursprung derselbe.

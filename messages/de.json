@@ -59,7 +59,13 @@
     "ctaHistory": "Unsere Geschichte",
     "slogan1": "Wo Berlin pulsiert,",
     "slogan2": "wächst unsere Stärke.",
-    "tagline": "Die Stärke aus der Hauptstadt"
+    "tagline": "Die Stärke aus der Hauptstadt",
+    "trust": {
+      "ev": "Eingetragener Verein",
+      "gemeinnuetzig": "Gemeinnützigkeit AO",
+      "members": "Mitglieder",
+      "spielbetrieb": "Offizieller Spielbetrieb"
+    }
   },
   "statsBar": {
     "members": "Mitglieder",
@@ -69,34 +75,44 @@
   },
   "trust": {
     "label": "Offiziell & transparent",
-    "title": "Ein Verein",
-    "titleHighlight": "dem man vertrauen kann",
-    "subtitle": "SC Metropolis 25 Berlin e.V. — eingetragen, gemeinnützig, BFV-ready.",
+    "title": "Vereinsstatus",
+    "titleHighlight": "auf einen Blick",
+    "subtitle": "SC Metropolis 25 Berlin e.V. — eingetragen, gemeinnützig und ab der Saison 2026/27 im offiziellen Berliner Spielbetrieb. Offene Punkte weisen wir offen aus.",
+    "stateDone": "Erledigt",
+    "statePending": "In Bearbeitung",
+    "colours": "Vereinsfarben: Navy, Gold & Ivory — Zusammenhalt, Ambition und Fairness.",
     "badges": {
       "ev": {
-        "value": "e.V.",
         "label": "Eingetragener Verein",
         "detail": "Amtsgericht Berlin-Charlottenburg · Eingetragen 22.12.2025"
       },
       "gemeinnuetzig": {
-        "value": "§60a AO",
-        "label": "Gemeinnützigkeit",
+        "label": "Gemeinnützigkeit §60a AO",
         "detail": "Vorläufig anerkannt · April 2026"
       },
-      "bfv": {
-        "value": "BFV",
-        "label": "2026/27 in Vorbereitung",
-        "detail": "Aufnahmeantrag eingereicht"
+      "spielbetrieb": {
+        "label": "Aufnahme in den Berliner Spielbetrieb",
+        "detail": "Saison 2026/27 · Bezirksliga Betrieb (Bezirksliga FZ) und Yec-Sports-Pokal"
       },
-      "members": {
-        "value": "37+",
-        "label": "Mitglieder",
-        "detail": "Davon 23 aktive Feldspieler"
+      "dfbnet": {
+        "label": "DFBnet-Zugang eingerichtet",
+        "detail": "Spielbetrieb administrativ eingerichtet"
       },
-      "berlin": {
-        "value": "Berlin",
-        "label": "Verwurzelt in Lichtenberg",
-        "detail": "Zuhause in Lichtenberg & Marzahn-Hellersdorf"
+      "pflichtspiel": {
+        "label": "Erster offizieller Pflichtspieltermin",
+        "detail": "30.08.2026 · 12:00 Uhr · gegen SG Prenzlauer Berg FZ Kunst"
+      },
+      "foerderung": {
+        "label": "Sportliche Förderungswürdigkeit",
+        "detail": "Anerkennungsverfahren in der Abschlussphase · finale schriftliche Bestätigung erwartet"
+      },
+      "sportstaette": {
+        "label": "Dauerhafte Sportstätte",
+        "detail": "Antrag beim Bezirksamt Lichtenberg in Bearbeitung"
+      },
+      "partner": {
+        "label": "Gründungspartner",
+        "detail": "Kein Hauptsponsor · Akquise läuft"
       }
     }
   },
@@ -105,7 +121,7 @@
     "title": "Fußball",
     "titleHighlight": "& Gemeinschaft",
     "body1": "SC Metropolis 25 Berlin e.V. ist kein Startprojekt — wir sind eine Gemeinschaft, die seit 2019 auf Berliner Bolzplätzen gewachsen ist. 133+ Menschen aus über 11 Nationen.",
-    "body2": "Jetzt, als eingetragener und gemeinnütziger Verein, treten wir in den BFV-Spielbetrieb ein. Mit einem Kader, der Berlins Vielfalt widerspiegelt.",
+    "body2": "Jetzt, als eingetragener und gemeinnütziger Verein, treten wir in der Saison 2026/27 im offiziellen Berliner Spielbetrieb an. Mit einem Kader, der Berlins Vielfalt widerspiegelt.",
     "ctaVerein": "Unser Verein",
     "ctaMitmachen": "Mitmachen",
     "stat1": "Mitglieder",
@@ -116,12 +132,12 @@
     "label": "Unsere Teams",
     "title": "Mannschaften",
     "titleHighlight": "überblick",
-    "subtitle": "Aktuell spielen wir mit unserer 1. Mannschaft im Berliner Amateurfußball. Weitere Teams folgen.",
+    "subtitle": "Unsere 1. Herrenmannschaft tritt in der Saison 2026/27 im offiziellen Berliner Spielbetrieb an. Weitere Teams folgen.",
     "ersteM": {
       "title": "1. Mannschaft",
       "badge": "Aktiv",
-      "league": "Aufbau für BFV-Spielbetrieb · Saison 2026/27",
-      "description": "Unser Aushängeschild. 23 aktive Feldspieler bereiten sich auf den regulären BFV-Spielbetrieb vor — trainiert von Makendi Amos.",
+      "league": "Offizieller Spielbetrieb · Saison 2026/27",
+      "description": "Unser Aushängeschild. 23 aktive Feldspieler treten in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal an — trainiert von Makendi Amos.",
       "cta": "Zum Team"
     },
     "comingSoon": {
@@ -185,7 +201,7 @@
       "titleHighlight": "Bedeutung",
       "subtitle": "Wir sind nicht nur ein Verein — wir sind eine Bewegung. Berliner Fußball. Echte Gemeinschaft.",
       "reason1Title": "Echter Berliner Verein",
-      "reason1Body": "Eingetragen, gemeinnützig, mit Zukunft. Kein Hobbyteam, sondern ein ernsthafter Sportverein mit BFV-Ambitionen.",
+      "reason1Body": "Eingetragen, gemeinnützig, im offiziellen Spielbetrieb. Kein Hobbyteam, sondern ein ernsthafter Berliner Sportverein.",
       "reason2Title": "Diverse Community",
       "reason2Body": "11+ Nationalitäten, ein Team. Bei uns zählt der Charakter, nicht der Pass.",
       "reason3Title": "Entwicklungsperspektive",
@@ -208,7 +224,7 @@
       "title": "Warum es uns",
       "titleHighlight": "gibt",
       "body1": "SC Metropolis 25 Berlin e.V. wurde am 26. November 2025 gegründet — aus der Überzeugung, dass Berlin einen Verein braucht, der Fußball und gesellschaftliche Verantwortung zusammendenkt.",
-      "body2": "Wir sind ein eingetragener, gemeinnütziger Verein (§60a AO) und bauen unsere Herrenmannschaft für den BFV-Spielbetrieb ab Saison 2026/27 auf.",
+      "body2": "Wir sind ein eingetragener, gemeinnütziger Verein (§60a AO). Unsere 1. Herrenmannschaft tritt seit der Saison 2026/27 im offiziellen Berliner Spielbetrieb an.",
       "infoGrundet": "Gegründet",
       "infoStandort": "Standort",
       "infoStandortValue": "Lichtenberg, Berlin",
@@ -218,7 +234,7 @@
     "vision": {
       "title": "Vision 2030",
       "body": "Ein anerkannter Berliner Fußballverein — mit mehreren Teams, gesicherten Sportstätten und einer Community, die die Stadt bewegt.",
-      "goal1": "BFV-Spielbetrieb Herren ab Saison 2026/27",
+      "goal1": "Etablierung im offiziellen Berliner Spielbetrieb",
       "goal2": "2. Herren-Team & Frauenfußball im Aufbau",
       "goal3": "Gesicherte Sportstätte in Lichtenberg",
       "goal4": "Anerkennung durch Berliner Sportverbände (lsb)"
@@ -275,13 +291,13 @@
     "ersteM": {
       "title": "1. Mannschaft",
       "badge": "Aktiv",
-      "league": "Aufbau für BFV-Spielbetrieb · Saison 2026/27",
-      "description": "Die Erste Herrenmannschaft ist das Herzstück des Vereins. Wir bereiten uns aktiv auf den regulären BFV-Spielbetrieb ab Saison 2026/27 vor — mit strukturiertem Trainings- und Teamaufbau und klarer sportlicher Perspektive.",
+      "league": "Offizieller Spielbetrieb · Saison 2026/27",
+      "description": "Die Erste Herrenmannschaft ist das Herzstück des Vereins. Sie tritt in der Saison 2026/27 im Berliner Freizeit- und Betriebsfußball an — in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal.",
       "trainerLabel": "Trainer",
       "spielerLabel": "Spieler",
       "spielerValue": "23 aktiv",
-      "zielLabel": "Ziel",
-      "zielValue": "BFV 2026/27",
+      "zielLabel": "Wettbewerb",
+      "zielValue": "Bezirksliga FZ · Pokal",
       "cta": "Team ansehen"
     },
     "zweiteH": {
@@ -336,16 +352,16 @@
   },
   "spielbetrieb": {
     "meta": {
-      "title": "Spielbetrieb — SC Metropolis 25 Berlin",
-      "description": "Spielplan und Ergebnisse von SC Metropolis 25 Berlin."
+      "title": "Spielplan & Ergebnisse 2026/27 | SC Metropolis 25 Berlin",
+      "description": "Offizieller Spielplan von SC Metropolis 25 Berlin e.V. — Bezirksliga Betrieb (Bezirksliga FZ) und Yec-Sports-Pokal."
     },
     "hero": {
       "label": "Spielbetrieb",
-      "title": "Spiele &",
+      "title": "Spielplan &",
       "titleHighlight": "Ergebnisse"
     },
-    "preparing": "Wir befinden uns aktuell im Aufbau für den BFV-Spielbetrieb ab Saison 2026/27.",
-    "noGames": "Noch keine Pflichtspiele. Saison 2026/27 in Vorbereitung."
+    "official": "SC Metropolis 25 startet in der Saison 2026/27 in den offiziellen Berliner Spielbetrieb.",
+    "noGames": "Der Staffelplan der Liga ist noch nicht veröffentlicht."
   },
   "galerie": {
     "meta": {
@@ -369,8 +385,8 @@
       "titleHighlight": "Partner",
       "description": "Investieren Sie in den Berliner Fußball. Werden Sie Teil einer Bewegung, die Berliner Talente fördert."
     },
-    "mainSponsor": "Unser Hauptsponsor",
-    "mainSponsorThanks": "Wir suchen aktiv nach unseren ersten Gründungspartnern.",
+    "mainSponsor": "Unser Platz für den ersten offiziellen Hauptpartner",
+    "mainSponsorThanks": "SC Metropolis 25 hat derzeit keinen Hauptsponsor. Ab der Saison 2026/27 spielen wir offiziellen Pflichtspielbetrieb — jetzt Gründungspartner werden.",
     "whyLabel": "Warum uns unterstützen",
     "whyTitle": "Die Stärke aus",
     "whyHighlight": "der Hauptstadt",
@@ -431,11 +447,11 @@
       "title": "26. November 2025.",
       "p1": "22 Mitglieder versammelten sich zur Gründungsversammlung. Ein Vorstand wurde gewählt. Eine Satzung verabschiedet. SC Metropolis 25 Berlin e.V. war offiziell geboren.",
       "p2": "Vier Wochen später, am 22. Dezember 2025, trug das Amtsgericht Berlin-Charlottenburg uns ins Vereinsregister ein. Die rechtliche Grundlage war geschaffen. Und am 30. April 2026 anerkannte das Finanzamt die Gemeinnützigkeit nach §60a AO — ein Meilenstein, der Spenden steuerlich absetzbar macht und das Vertrauen der Öffentlichkeit unterstreicht.",
-      "p3": "Heute bereiten wir uns auf den BFV-Spielbetrieb ab Saison 2026/27 vor. Mit 23 aktiven Feldspielern, einem lizenzierten Trainer und dem Fundament von sechs Jahren gelebter Gemeinschaft."
+      "p3": "Heute tritt SC Metropolis 25 im offiziellen Berliner Spielbetrieb an. Am 30. August 2026 bestreitet die 1. Herrenmannschaft ihr erstes Pflichtspiel — mit 23 aktiven Feldspielern, einem lizenzierten Trainer und dem Fundament von sieben Jahren gelebter Gemeinschaft."
     },
     "manifesto": {
       "opening": "Wir sind kein Startup. Wir sind kein Projekt.",
-      "body": "Wir sind eine Gemeinschaft, die auf Berliner Bolzplätzen gewachsen ist — aus dem einfachen Wunsch heraus, zusammen zu spielen. Jetzt tragen wir diese Gemeinschaft in den offiziellen Fußball. Mit Respekt für jeden Spieler. Mit Verantwortung gegenüber der Stadt. Mit dem Ziel, Berliner Fußball zu prägen.",
+      "body": "Wir sind eine Gemeinschaft, die auf Berliner Bolzplätzen gewachsen ist — aus dem einfachen Wunsch heraus, zusammen zu spielen. Jetzt tragen wir diese Gemeinschaft in den offiziellen Fußball. Aus Freunden wurden Mitspieler. Aus Mitspielern wurde ein Verein. Jetzt beginnt der offizielle Spielbetrieb.",
       "closing": "Das ist Metropolis 25."
     },
     "founding": {
@@ -457,7 +473,9 @@
       "y2024": "Finale Symposium Mboa. Silber. Berlin hat ein neues Team.",
       "y2025": "Vereinsgründung. 22 Mitglieder. SC Metropolis 25 Berlin e.V. entsteht.",
       "y2026a": "Gemeinnützigkeit §60a AO anerkannt.",
-      "y2026b": "BFV-Spielbetrieb in Vorbereitung. Saison 2026/27."
+      "y2026b": "Aufnahme in den offiziellen Berliner Spielbetrieb. Saison 2026/27.",
+      "y2026c": "August 2026: Erste offizielle Spielstätte für ein Pflichtspiel genehmigt.",
+      "y2026d": "30. August 2026: Erstes offizielles Pflichtspiel gegen SG Prenzlauer Berg FZ Kunst."
     },
     "cta": {
       "join": "Teil der Geschichte werden",

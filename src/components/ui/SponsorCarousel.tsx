@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { clsx } from 'clsx'
-import { ArrowRight, Heart, Users, TrendingUp, MapPin } from 'lucide-react'
+import { ArrowRight, Heart, Users, Trophy, MapPin } from 'lucide-react'
+import { CURRENT_SEASON, COMPETITIONS } from '@/data/fixtures'
 
 export interface Sponsor {
   name: string
@@ -14,22 +15,16 @@ export interface Sponsor {
 }
 
 // ─── CONFIRMED SPONSORS ───────────────────────────────────────────────────────
-// Add new sponsors here. The component adapts automatically.
-const sponsors: Sponsor[] = [
-  {
-    name:    'Intarp GmbH',
-    tier:    'hauptsponsor',
-    website: 'https://intarp.de',
-    tagline: 'Hauptsponsor',
-  },
-  // { name: 'Nächster Partner', tier: 'gold', website: '#', tagline: 'Gold-Partner' },
-]
+// SC Metropolis 25 currently has NO official main sponsor.
+// Only add a company here once a partnership is contractually confirmed.
+// Never add placeholder or fictional sponsors.
+const sponsors: Sponsor[] = []
 
 const whyReasons = [
-  { icon: MapPin,      label: 'Lokaler Impact',     desc: 'Direkte Sichtbarkeit in der Berliner Fußball-Community' },
-  { icon: Users,       label: 'Diverse Community',  desc: '133+ Mitglieder aus über 11 Nationen' },
-  { icon: TrendingUp,  label: 'Wachstum',           desc: 'Ein Verein im Aufbau — Ihr Logo von Anfang an dabei' },
-  { icon: Heart,       label: 'Authentizität',       desc: 'Echter Berliner Grassroots-Fußball ohne Marketingfassade' },
+  { icon: Trophy,      label: 'Offizieller Spielbetrieb', desc: `Ab Saison ${CURRENT_SEASON} in der ${COMPETITIONS.league} und im ${COMPETITIONS.cup}` },
+  { icon: MapPin,      label: 'Matchday-Sichtbarkeit',    desc: 'Präsenz an offiziellen Spieltagen in Berlin' },
+  { icon: Users,       label: 'Diverse Community',        desc: '133+ Menschen in der Community aus über 11 Nationen' },
+  { icon: Heart,       label: 'Gründungskapitel',         desc: 'Erste offizielle Saison — Ihr Logo von Anfang an dabei' },
 ]
 
 interface SponsorCarouselProps { minimal?: boolean }
@@ -79,8 +74,9 @@ export function SponsorCarousel({ minimal = false }: SponsorCarouselProps) {
           </h2>
           <div className="w-16 h-[2px] bg-gold mx-auto mb-6" />
           <p className="text-ivory/65 text-sm leading-relaxed max-w-xl mx-auto">
-            Unternehmen, die an den Aufbau eines echten Berliner Fußballvereins glauben
-            und Teil der Gründungsgeschichte von SC Metropolis 25 werden.
+            SC Metropolis 25 startet in der Saison {CURRENT_SEASON} in den offiziellen
+            Berliner Spielbetrieb. Werden Sie Teil des Gründungskapitels — als erster
+            offizieller Partner eines Vereins mit Pflichtspielbetrieb.
           </p>
         </div>
 
@@ -127,17 +123,25 @@ export function SponsorCarousel({ minimal = false }: SponsorCarouselProps) {
             )}
           </div>
         ) : (
-          /* No sponsors yet — 3 placeholder slots */
-          <div className="grid sm:grid-cols-3 gap-4 mb-14">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="border border-dashed border-gold/20 p-6 flex flex-col items-center text-center">
-                <div className="w-12 h-12 border border-dashed border-dark-border flex items-center justify-center mb-3">
-                  <span className="text-text-muted text-xl font-display">?</span>
-                </div>
-                <p className="text-text-muted text-xs font-heading uppercase tracking-wider mb-1">Ihr Unternehmen</p>
-                <p className="text-text-muted text-[10px]">Dieser Platz wartet auf Sie</p>
-              </div>
-            ))}
+          /* No sponsor yet — a single, tasteful opportunity card. */
+          <div className="mb-14 max-w-2xl mx-auto">
+            <div className="relative border border-gold/25 bg-dark-card/60 p-8 md:p-10 text-center overflow-hidden">
+              <span className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/40" aria-hidden="true" />
+              <span className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/40" aria-hidden="true" />
+
+              <p className="text-gold font-heading text-[10px] uppercase tracking-[0.3em] mb-4">
+                Hauptpartner
+              </p>
+              <p className="font-display text-white text-xl md:text-2xl uppercase leading-tight mb-4">
+                Unser Platz für den ersten<br className="hidden sm:block" />{' '}
+                offiziellen Hauptpartner
+              </p>
+              <p className="text-ivory/60 text-sm leading-relaxed max-w-md mx-auto">
+                SC Metropolis 25 hat derzeit keinen Hauptsponsor. Dieser Platz ist für
+                das Unternehmen reserviert, das den Verein in seine erste offizielle
+                Saison begleitet.
+              </p>
+            </div>
           </div>
         )}
 

@@ -1,12 +1,12 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { clsx } from 'clsx'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { BrandLockup, BrandMark } from '@/components/ui/BrandMark'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Navbar() {
@@ -89,24 +89,8 @@ export function Navbar() {
         <div className="container-custom h-full flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="SC Metropolis 25 Berlin – Startseite">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-105 shrink-0">
-              <Image
-                src="/m25-logo.png"
-                alt="SC Metropolis 25 Berlin Wappen"
-                fill
-                className="object-contain drop-shadow-md"
-                priority
-              />
-            </div>
-            <div className="hidden xs:block">
-              <div className="font-display text-white text-lg leading-none tracking-wide">
-                SC METROPOLIS
-              </div>
-              <div className="text-gold text-xs font-heading font-semibold tracking-[0.2em] uppercase">
-                25 Berlin e.V.
-              </div>
-            </div>
+          <Link href="/" className="group" aria-label="SC Metropolis 25 Berlin – Startseite">
+            <BrandLockup size="sm" priority hideWordmarkOnMobile />
           </Link>
 
           {/* Desktop Navigation */}
@@ -213,9 +197,12 @@ export function Navbar() {
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-dark-border">
-            <div>
-              <div className="font-display text-white text-lg">SC METROPOLIS</div>
-              <div className="text-gold text-xs font-heading tracking-widest">25 BERLIN e.V.</div>
+            <div className="flex items-center gap-3">
+              <BrandMark size="xs" decorative />
+              <div>
+                <div className="font-display text-white text-lg leading-none">SC METROPOLIS</div>
+                <div className="text-gold text-xs font-heading tracking-widest mt-0.5">25 BERLIN e.V.</div>
+              </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}

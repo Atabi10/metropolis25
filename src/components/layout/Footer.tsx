@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import { Instagram, Youtube, Facebook, Mail, MapPin } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { BrandLockup } from '@/components/ui/BrandMark'
 
 const socialLinks = [
   { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/metropolis25_berlin/' },
@@ -74,21 +74,8 @@ export function Footer() {
 
           {/* Brand Column */}
           <div className="xl:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="relative w-14 h-14 shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src="/m25-logo.png"
-                  alt="SC Metropolis 25 Berlin Wappen"
-                  fill
-                  className="object-contain drop-shadow-md"
-                />
-              </div>
-              <div>
-                <div className="font-display text-white text-lg leading-none tracking-wide">SC METROPOLIS</div>
-                <div className="text-gold text-xs font-heading font-semibold tracking-[0.2em] uppercase mt-0.5">
-                  25 Berlin e.V.
-                </div>
-              </div>
+            <Link href="/" className="inline-block mb-6 group">
+              <BrandLockup size="md" />
             </Link>
 
             <blockquote className="border-l-2 border-gold pl-4 mb-6">

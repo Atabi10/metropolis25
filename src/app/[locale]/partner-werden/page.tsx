@@ -19,7 +19,7 @@ const stats = [
   { value: '133+', label: 'Community-Mitglieder',     sub: 'seit 2019 gewachsen' },
   { value: '2019', label: 'Beginn',                   sub: 'der Fußballgemeinschaft' },
   { value: '2025', label: 'Vereinsgründung',          sub: 'SC Metropolis 25 Berlin e.V.' },
-  { value: '2026', label: 'BFV-Aufnahmeverfahren',    sub: 'Einstieg in den Ligabetrieb' },
+  { value: '2026/27', label: 'Offizieller Spielbetrieb', sub: 'Bezirksliga FZ & Yec-Sports-Pokal' },
 ]
 
 const whyReasons = [
@@ -34,8 +34,8 @@ const whyReasons = [
 const visibilityChannels = [
   { label: 'Website',               desc: 'Namentliche Nennung und Logo-Platzierung auf sc-metropolis25.de' },
   { label: 'Social Media',          desc: 'Instagram, TikTok, YouTube und Facebook (@scmetropolis25)' },
-  { label: 'Freundschaftsspiele',   desc: 'Präsenz bei Testspielen und Community Matches' },
-  { label: 'Turniere',              desc: 'Sichtbarkeit bei Turnierauftritten inkl. Symposium Mboa' },
+  { label: 'Offizielle Spieltage',  desc: 'Matchday-Präsenz bei Pflichtspielen der Saison 2026/27' },
+  { label: 'Turniere & Testspiele', desc: 'Sichtbarkeit bei Turnierauftritten inkl. Symposium Mboa' },
   { label: 'Vereinsveranstaltungen',desc: 'Nennung bei Events, Mitgliederversammlungen und Vereinsfeiern' },
   { label: 'Vereinsbekleidung',     desc: 'Logo auf Vereinsmaterialien nach individueller Vereinbarung' },
 ]
@@ -97,11 +97,12 @@ const timeline = [
   { year: '2019–2024', label: 'Wachstum',     text: 'Community wächst auf 133+ Mitglieder aus über 11 Nationen. Regelmäßige Turnierauftritte.' },
   { year: '2024', label: 'Symposium Mboa',    text: 'Finale beim Symposium Mboa 2024 — Silber. Der Moment, der die Vereinsgründung auslöste.' },
   { year: '2025', label: 'Vereinsgründung',   text: 'SC Metropolis 25 Berlin e.V. offiziell gegründet und ins Vereinsregister eingetragen.' },
-  { year: '2026', label: 'BFV & Zukunft',     text: 'Gemeinnützigkeit §60a AO, BFV-Aufnahmeantrag, Förderungswürdigkeit beantragt.' },
+  { year: '2026', label: 'Gemeinnützigkeit',  text: 'Anerkennung der Gemeinnützigkeit nach §60a AO durch das Finanzamt.' },
+  { year: '2026/27', label: 'Offizieller Spielbetrieb', text: 'Aufnahme in den Berliner Spielbetrieb. Erstes Pflichtspiel am 30. August 2026 im Yec-Sports-Pokal.' },
 ]
 
 const visionGoals = [
-  'Am Berliner Ligabetrieb des BFV teilnehmen',
+  'Sich im offiziellen Berliner Spielbetrieb etablieren',
   'Eine nachhaltige Vereinsstruktur schaffen',
   'Frauenfußball aufbauen und fördern',
   'Lokale Talente entdecken und entwickeln',
@@ -118,7 +119,7 @@ export default function PartnerWerdenPage() {
       <section className="relative min-h-[65vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/medals after Symposium final.jpeg"
+            src="/images/medals-symposium-final.jpeg"
             alt="SC Metropolis 25 Berlin — Gründungspartner werden"
             fill
             priority
@@ -185,9 +186,10 @@ export default function PartnerWerdenPage() {
                 über elf Nationen, vereint durch Fußball.
               </p>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Heute sind wir ein eingetragener, gemeinnütziger Verein mit klarem Ziel:
-                der Einstieg in den organisierten Berliner Ligabetrieb. Wer jetzt Partner
-                wird, begleitet diesen Weg von Anfang an.
+                Heute sind wir ein eingetragener, gemeinnütziger Verein im offiziellen
+                Berliner Spielbetrieb. Am 30. August 2026 bestreiten wir unser erstes
+                Pflichtspiel. Wer jetzt Partner wird, begleitet die erste offizielle
+                Saison von Anfang an.
               </p>
             </div>
 
@@ -376,7 +378,7 @@ export default function PartnerWerdenPage() {
             <div className="relative overflow-hidden border border-dark-border">
               <div className="relative h-80">
                 <Image
-                  src="/images/team photo before game against Kmer.jpeg"
+                  src="/images/team-photo-kmer.jpeg"
                   alt="SC Metropolis 25 — Gemeinsam aufbauen"
                   fill
                   className="object-cover"

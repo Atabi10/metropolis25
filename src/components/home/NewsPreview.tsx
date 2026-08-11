@@ -28,7 +28,7 @@ const latestNews: NewsItem[] = [
     type: 'news',
     matchResult: '4:3',
     publishedAt: '2026-05-17',
-    image: '/images/warming up before match agains Kmer Lichtenberg.jpeg',
+    image: '/images/warmup-kmer-lichtenberg.jpeg',
     imageAlt: 'SC Metropolis 25 — Spieltag-Atmosphäre',
   },
   {
@@ -51,7 +51,7 @@ const latestNews: NewsItem[] = [
     type: 'bericht',
     readTime: '6 min',
     publishedAt: '2026-05-15',
-    image: '/images/team spirit.jpeg',
+    image: '/images/team-spirit.jpeg',
   },
 ]
 
