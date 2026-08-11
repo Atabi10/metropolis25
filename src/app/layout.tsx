@@ -144,7 +144,7 @@ export default function RootLayout({
               name: 'Sport-Club Metropolis 25 Berlin e.V.',
               alternateName: 'SC Metropolis 25',
               url: 'https://sc-metropolis25.de',
-              logo: 'https://sc-metropolis25.de/logo.png',
+              logo: 'https://sc-metropolis25.de/images/crest-on-light.png',
               foundingDate: '2025',
               sport: 'Soccer',
               address: {

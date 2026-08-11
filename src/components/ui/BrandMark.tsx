@@ -24,23 +24,30 @@ import { clsx } from 'clsx'
 // ─── ASSETS ──────────────────────────────────────────────────────────────────
 
 /**
- * The official club crest. Tightly cropped export, transparent background.
- * Used for every on-screen appearance of the badge across the dark navy UI.
+ * The official club crest — genuine alpha channel, verified transparent
+ * (~34% of pixels fully transparent, clean edges). Used for every on-screen
+ * appearance of the badge across the dark navy UI.
  *
- * Rollback: '/images/m25-logo-legacy.png' is the previous export of the same
- * artwork with looser padding. If the crest ever renders with a white rectangle
- * behind it, this file is not transparent — point this constant at the legacy
- * path and the entire site reverts.
+ * Any replacement MUST have a real alpha channel. A PNG saved in RGBA mode is
+ * not enough: an opaque image can still be RGBA with alpha 255 everywhere,
+ * which renders as a white rectangle on the navy background. Verify with:
+ *
+ *   python3 -c "from PIL import Image; \
+ *     print(Image.open('public/images/crest.png').convert('RGBA') \
+ *     .getchannel('A').getextrema())"
+ *
+ * Expect (0, 255). If it prints (255, 255), the file is opaque — do not use it
+ * here; it belongs at CREST_ON_LIGHT instead.
  */
-export const CREST_TRANSPARENT = '/images/logo.png'
+export const CREST_TRANSPARENT = '/images/crest.png'
 
 /**
- * Official crest with a baked-in light background.
+ * Official crest with a baked-in light background (opaque, alpha 255 across).
  * LIGHT SURFACES ONLY — on the dark navy UI this renders as a white box.
  * Also referenced directly (not via this module) by the SEO structured data in
  * app/layout.tsx and by manifest.json, both of which require an opaque image.
  */
-export const CREST_ON_LIGHT = '/logo.png'
+export const CREST_ON_LIGHT = '/images/crest-on-light.png'
 
 export const CREST_ALT = 'SC Metropolis 25 Berlin e.V. — Vereinswappen'
 
