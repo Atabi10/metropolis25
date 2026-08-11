@@ -53,6 +53,12 @@ export interface Fixture {
   pitch?: string
   /** Street address of the venue, if confirmed. */
   venueAddress?: string
+  /**
+   * Explicit map link. Only set this when the generated search URL resolves to
+   * the wrong place — otherwise leave it undefined and let getMapsUrl() build
+   * one from the venue and address.
+   */
+  mapsUrl?: string
   status: FixtureStatus
   /** Only present when status === 'finished'. */
   result?: FixtureResult
@@ -296,6 +302,19 @@ export function formatVenue(f: Fixture, locale: 'de' | 'en' | 'fr' = 'de'): stri
     return locale === 'de' ? 'noch offen' : locale === 'fr' ? 'à confirmer' : 'TBC'
   }
   return f.pitch ? `${f.venue} · ${f.pitch}` : f.venue
+}
+
+/**
+ * Google Maps link for a fixture's venue, or undefined when no venue is
+ * confirmed. Built from the venue name plus street address — the pitch
+ * designation is deliberately left out, since "Kunstrasen 2" is not an address
+ * component and only degrades the geocoding result.
+ */
+export function getMapsUrl(f: Fixture): string | undefined {
+  if (f.mapsUrl) return f.mapsUrl
+  if (!f.venue) return undefined
+  const query = [f.venue, f.venueAddress].filter(Boolean).join(', ')
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
 }
 
 export function formatKickoff(f: Fixture, locale: 'de' | 'en' | 'fr' = 'de'): string {

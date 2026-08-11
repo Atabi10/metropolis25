@@ -1,11 +1,12 @@
 import { Link } from '@/i18n/navigation'
 import { clsx } from 'clsx'
-import { MapPin, Clock, CalendarDays, ArrowRight } from 'lucide-react'
+import { MapPin, Clock, CalendarDays, ArrowRight, ExternalLink } from 'lucide-react'
 import { BrandMark, BrandWatermark } from '@/components/ui/BrandMark'
 import {
   type Fixture,
   formatKickoff,
   formatVenue,
+  getMapsUrl,
 } from '@/data/fixtures'
 
 type Locale = 'de' | 'en' | 'fr'
@@ -23,6 +24,8 @@ const COPY = {
     venue: 'Spielstätte',
     date: 'Datum',
     vs: 'gegen',
+    directions: 'Route in Google Maps öffnen',
+    mapsAria: 'Spielstätte in Google Maps öffnen',
     venueNote:
       'Die Spielstätte wurde vom Bezirksamt Lichtenberg für dieses Spiel überlassen. Der Antrag auf eine dauerhafte Trainings- und Spielstätte läuft weiter.',
   },
@@ -38,6 +41,8 @@ const COPY = {
     venue: 'Venue',
     date: 'Date',
     vs: 'vs',
+    directions: 'Open directions in Google Maps',
+    mapsAria: 'Open venue in Google Maps',
     venueNote:
       'The venue was made available for this match by Bezirksamt Lichtenberg. Our application for a permanent training and match facility remains under review.',
   },
@@ -53,6 +58,8 @@ const COPY = {
     venue: 'Stade',
     date: 'Date',
     vs: 'contre',
+    directions: 'Ouvrir l’itinéraire dans Google Maps',
+    mapsAria: 'Ouvrir le stade dans Google Maps',
     venueNote:
       "Le stade a été mis à disposition pour ce match par le Bezirksamt Lichtenberg. Notre demande d’installation permanente reste à l’étude.",
   },
@@ -94,6 +101,7 @@ export function NextMatchCard({
   const isHero = variant === 'hero'
   const isProvisional = fixture.status === 'provisional'
   const longDate = formatLongDate(fixture.date, locale)
+  const mapsUrl = getMapsUrl(fixture)
 
   return (
     <div
@@ -228,14 +236,48 @@ export function NextMatchCard({
               <dt className="text-text-muted text-[10px] font-heading uppercase tracking-widest mb-1">
                 {c.venue}
               </dt>
-              <dd className="text-white text-sm font-heading font-semibold">
-                {formatVenue(fixture, locale)}
+              <dd>
+                {mapsUrl ? (
+                  <a
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/map inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    aria-label={`${c.mapsAria}: ${formatVenue(fixture, locale)}${
+                      fixture.venueAddress ? `, ${fixture.venueAddress}` : ''
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5 text-white text-sm font-heading font-semibold group-hover/map:text-gold transition-colors">
+                      <span className="underline decoration-gold/40 underline-offset-4 group-hover/map:decoration-gold">
+                        {formatVenue(fixture, locale)}
+                      </span>
+                      <ExternalLink
+                        className="w-3 h-3 shrink-0 text-gold/60 group-hover/map:text-gold transition-colors"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    {fixture.venueAddress && (
+                      <span className="block text-text-muted text-xs mt-0.5 group-hover/map:text-ivory/70 transition-colors">
+                        {fixture.venueAddress}
+                      </span>
+                    )}
+                    <span className="block text-gold/70 text-[10px] font-heading uppercase tracking-widest mt-1.5">
+                      {c.directions}
+                    </span>
+                  </a>
+                ) : (
+                  <>
+                    <span className="block text-white text-sm font-heading font-semibold">
+                      {formatVenue(fixture, locale)}
+                    </span>
+                    {fixture.venueAddress && (
+                      <span className="block text-text-muted text-xs mt-0.5">
+                        {fixture.venueAddress}
+                      </span>
+                    )}
+                  </>
+                )}
               </dd>
-              {fixture.venueAddress && (
-                <dd className="text-text-muted text-xs mt-0.5">
-                  {fixture.venueAddress}
-                </dd>
-              )}
             </div>
           </div>
         </dl>
