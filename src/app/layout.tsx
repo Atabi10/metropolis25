@@ -86,9 +86,11 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.svg',
   },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-  },
+  // Google Search Console verification.
+  // Re-enable once a real token exists — a placeholder here is emitted into
+  // production HTML as <meta name="google-site-verification" content="...">
+  // and simply fails verification.
+  // verification: { google: '<token from Search Console>' },
   alternates: {
     canonical: 'https://sc-metropolis25.de',
     languages: {
@@ -129,7 +131,7 @@ export default function RootLayout({
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
