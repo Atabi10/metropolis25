@@ -99,6 +99,16 @@ const timeline = [
   { year: '2025', label: 'Vereinsgründung',   text: 'SC Metropolis 25 Berlin e.V. offiziell gegründet und ins Vereinsregister eingetragen.' },
   { year: '2026', label: 'Gemeinnützigkeit',  text: 'Anerkennung der Gemeinnützigkeit nach §60a AO durch das Finanzamt.' },
   { year: '2026/27', label: 'Offizieller Spielbetrieb', text: 'Aufnahme in den Berliner Spielbetrieb. Erstes Pflichtspiel am 30. August 2026 im Yec-Sports-Pokal.' },
+  { year: 'Aug. 2026', label: 'Förderungswürdigkeit & LSB', text: 'Sportliche Förderungswürdigkeit durch die Senatsverwaltung für Inneres und Sport anerkannt. Registrierung beim Landessportbund Berlin.' },
+]
+
+/** Institutional credentials — every entry is documented, none are estimates. */
+const credentials = [
+  'Eingetragener Verein · Amtsgericht Berlin-Charlottenburg',
+  'Gemeinnützig nach §60a AO · Spenden steuerlich absetzbar',
+  'Sportliche Förderungswürdigkeit anerkannt · Senatsverwaltung für Inneres und Sport',
+  'Registriert beim Landessportbund Berlin',
+  'Offizieller Berliner Spielbetrieb · erste Wettbewerbssaison 2026/27',
 ]
 
 const visionGoals = [
@@ -185,12 +195,27 @@ export default function PartnerWerdenPage() {
                 sechs Jahre aus einer echten Gemeinschaft — Studenten, Freunde, Berliner aus
                 über elf Nationen, vereint durch Fußball.
               </p>
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="text-text-secondary text-sm leading-relaxed mb-8">
                 Heute sind wir ein eingetragener, gemeinnütziger Verein im offiziellen
                 Berliner Spielbetrieb. Am 30. August 2026 bestreiten wir unser erstes
                 Pflichtspiel. Wer jetzt Partner wird, begleitet die erste offizielle
                 Saison von Anfang an.
               </p>
+
+              {/* Institutional credentials */}
+              <div className="border border-gold/20 bg-navy/30 p-5">
+                <p className="text-gold font-heading text-[10px] uppercase tracking-[0.3em] mb-4">
+                  Institutionelle Grundlagen
+                </p>
+                <ul className="space-y-2.5">
+                  {credentials.map(item => (
+                    <li key={item} className="flex items-start gap-3 text-text-secondary text-xs leading-relaxed">
+                      <CheckCircle className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Mini timeline */}

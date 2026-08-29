@@ -77,7 +77,7 @@
     "label": "Offiziell & transparent",
     "title": "Vereinsstatus",
     "titleHighlight": "auf einen Blick",
-    "subtitle": "SC Metropolis 25 Berlin e.V. — eingetragen, gemeinnützig und ab der Saison 2026/27 im offiziellen Berliner Spielbetrieb. Offene Punkte weisen wir offen aus.",
+    "subtitle": "Die Grundlagen stehen: eingetragen, gemeinnützig, sportlich förderungswürdig anerkannt, beim Landessportbund registriert und im offiziellen Berliner Spielbetrieb. Was noch offen ist, weisen wir offen aus.",
     "stateDone": "Erledigt",
     "statePending": "In Bearbeitung",
     "colours": "Vereinsfarben: Navy, Gold & Ivory — Zusammenhalt, Ambition und Fairness.",
@@ -99,16 +99,20 @@
         "detail": "Spielbetrieb administrativ eingerichtet"
       },
       "pflichtspiel": {
-        "label": "Erster offizieller Pflichtspieltermin",
+        "label": "Erstes offizielles Pflichtspiel terminiert",
         "detail": "30.08.2026 · 12:00 Uhr · gegen SG Prenzlauer Berg FZ Kunst"
       },
       "foerderung": {
-        "label": "Sportliche Förderungswürdigkeit",
-        "detail": "Anerkennungsverfahren in der Abschlussphase · finale schriftliche Bestätigung erwartet"
+        "label": "Sportliche Förderungswürdigkeit anerkannt",
+        "detail": "Senatsverwaltung für Inneres und Sport · Bescheid vom 29.08.2026"
+      },
+      "lsb": {
+        "label": "Registriert beim Landessportbund Berlin",
+        "detail": "Eintragung im LSB-Service-Portal · August 2026"
       },
       "sportstaette": {
-        "label": "Dauerhafte Sportstätte",
-        "detail": "Antrag beim Bezirksamt Lichtenberg in Bearbeitung"
+        "label": "Dauerhafte Trainings- und Heimspielstätte",
+        "detail": "Antrag beim Bezirksamt Lichtenberg weiterhin in Bearbeitung"
       },
       "partner": {
         "label": "Gründungspartner",
@@ -229,7 +233,8 @@
       "infoStandort": "Standort",
       "infoStandortValue": "Lichtenberg, Berlin",
       "infoMitglieder": "Mitglieder",
-      "infoGemeinnuetzig": "Gemeinnützig"
+      "infoGemeinnuetzig": "Gemeinnützig",
+      "infoLsb": "LSB-Vereinsnummer"
     },
     "vision": {
       "title": "Vision 2030",
@@ -237,7 +242,7 @@
       "goal1": "Etablierung im offiziellen Berliner Spielbetrieb",
       "goal2": "2. Herren-Team & Frauenfußball im Aufbau",
       "goal3": "Gesicherte Sportstätte in Lichtenberg",
-      "goal4": "Anerkennung durch Berliner Sportverbände (lsb)"
+      "goal4": "Ausbau der Jugend- und Nachwuchsarbeit"
     },
     "values": {
       "label": "Was uns antreibt",

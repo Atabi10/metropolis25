@@ -74,7 +74,7 @@
     "label": "Officiel & transparent",
     "title": "Statut du club",
     "titleHighlight": "en un coup d'œil",
-    "subtitle": "SC Metropolis 25 Berlin e.V. — enregistré, à but non lucratif et engagé en compétition officielle berlinoise à partir de la saison 2026/27. Les points en cours sont indiqués ouvertement.",
+    "subtitle": "Les fondations sont posées : association déclarée, statut à but non lucratif, éligibilité sportive officiellement reconnue, enregistrement auprès du Landessportbund et compétition officielle berlinoise. Ce qui reste ouvert est indiqué ouvertement.",
     "stateDone": "Terminé",
     "statePending": "En cours",
     "colours": "Couleurs du club : navy, or & ivoire — cohésion, ambition et fair-play.",
@@ -100,12 +100,16 @@
         "detail": "30.08.2026 · 12:00 · contre SG Prenzlauer Berg FZ Kunst"
       },
       "foerderung": {
-        "label": "Éligibilité sportive (Förderungswürdigkeit)",
-        "detail": "Procédure de reconnaissance en phase finale · confirmation écrite attendue"
+        "label": "Éligibilité sportive officiellement reconnue",
+        "detail": "Sénat de Berlin, Intérieur et Sport · décision du 29.08.2026"
+      },
+      "lsb": {
+        "label": "Enregistré auprès du Landessportbund Berlin",
+        "detail": "Inscription au portail de services du LSB · août 2026"
       },
       "sportstaette": {
-        "label": "Installation sportive permanente",
-        "detail": "Demande en cours d'examen au Bezirksamt Lichtenberg"
+        "label": "Installation d'entraînement et de match permanente",
+        "detail": "Demande toujours en cours d'examen au Bezirksamt Lichtenberg"
       },
       "partner": {
         "label": "Partenaire fondateur",
@@ -226,7 +230,8 @@
       "infoStandort": "Lieu",
       "infoStandortValue": "Lichtenberg, Berlin",
       "infoMitglieder": "Membres",
-      "infoGemeinnuetzig": "But non lucratif"
+      "infoGemeinnuetzig": "But non lucratif",
+      "infoLsb": "Numéro de club LSB"
     },
     "vision": {
       "title": "Vision 2030",
@@ -234,7 +239,7 @@
       "goal1": "Établissement en compétition officielle berlinoise",
       "goal2": "2e équipe masculine & football féminin en développement",
       "goal3": "Installation sécurisée à Lichtenberg",
-      "goal4": "Reconnaissance par les associations sportives berlinoises (lsb)"
+      "goal4": "Développer notre travail avec les jeunes"
     },
     "values": {
       "label": "Ce qui nous motive",

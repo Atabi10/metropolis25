@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { MapPin, Calendar, Users, ShieldCheck, ArrowRight } from 'lucide-react'
+import { MapPin, Calendar, Users, ShieldCheck, ArrowRight, Landmark } from 'lucide-react'
+import { LSB } from '@/data/club'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('verein.meta')
@@ -16,8 +17,10 @@ const milestones = [
   { year: '22. Dez. 2025', event: 'Eintragung ins Vereinsregister', desc: 'Das Amtsgericht Berlin-Charlottenburg trägt den Verein ein. Die rechtliche Grundlage für alles Weitere ist geschaffen.' },
   { year: '30. Apr. 2026', event: 'Gemeinnützigkeit §60a AO', desc: 'Das Finanzamt erkennt die Gemeinnützigkeit vorläufig an. Spenden sind steuerlich absetzbar. Der Verein ist auf institutionellem Kurs.' },
   { year: 'Saison 2026/27', event: 'Aufnahme in den offiziellen Berliner Spielbetrieb', desc: 'Die 1. Herrenmannschaft tritt im Berliner Freizeit- und Betriebsfußball an — in der Bezirksliga Betrieb (Bezirksliga FZ) und im Yec-Sports-Pokal.' },
+  { year: '29. Aug. 2026', event: 'Sportliche Förderungswürdigkeit anerkannt', desc: 'Die Senatsverwaltung für Inneres und Sport erkennt SC Metropolis 25 Berlin e.V. offiziell als sportlich förderungswürdig an.' },
+  { year: 'Aug. 2026', event: 'Registrierung beim Landessportbund', desc: 'Im Anschluss an die Anerkennung wird der Verein im LSB-Service-Portal registriert.' },
   { year: 'Aug. 2026', event: 'Erste offizielle Spielstätte für ein Pflichtspiel genehmigt', desc: 'Das Bezirksamt Lichtenberg genehmigt die Nutzung des BVB-Stadions für das erste Pflichtspiel von SC Metropolis 25. Der Antrag auf eine dauerhafte Sportstätte läuft weiter.' },
-  { year: '30. Aug. 2026', event: 'Erstes offizielles Pflichtspiel', desc: 'SC Metropolis 25 gegen SG Prenzlauer Berg FZ Kunst im Yec-Sports-Pokal. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2.' },
+  { year: '30. Aug. 2026', event: 'Erstes offizielles Pflichtspiel terminiert', desc: 'SC Metropolis 25 trifft im Yec-Sports-Pokal auf SG Prenzlauer Berg FZ Kunst. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2.' },
 ]
 
 const boardMembers = [
@@ -84,6 +87,9 @@ export default async function VereinPage() {
                   { icon: MapPin,      label: t('mission.infoStandort'),     value: t('mission.infoStandortValue') },
                   { icon: Users,       label: t('mission.infoMitglieder'),   value: '37+' },
                   { icon: ShieldCheck, label: t('mission.infoGemeinnuetzig'), value: '§60a AO' },
+                  ...(LSB.clubNumber
+                    ? [{ icon: Landmark, label: t('mission.infoLsb'), value: LSB.clubNumber }]
+                    : []),
                 ].map(item => (
                   <div key={item.label} className="card p-4 flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-gold shrink-0" />

@@ -66,12 +66,18 @@ const timeline = [
     imageAlt: null,
   },
   {
-    year: 'Sommer 2026',
-    label: 'Antrag auf sportliche Förderungswürdigkeit',
-    text: 'Der Verein reicht den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung ein. Das Anerkennungsverfahren befindet sich in der Abschlussphase; die schriftliche Bestätigung wird erwartet.',
+    year: '29. Aug. 2026',
+    label: 'Sportliche Förderungswürdigkeit anerkannt',
+    text: 'Die Senatsverwaltung für Inneres und Sport erkennt SC Metropolis 25 Berlin e.V. offiziell als sportlich förderungswürdig an. Der Anerkennungsbescheid geht dem Verein am 29. August 2026 zu und schließt das Verfahren ab.',
     image: null,
     imageAlt: null,
-    pending: true,
+  },
+  {
+    year: 'Aug. 2026',
+    label: 'Registrierung beim Landessportbund',
+    text: 'Im Anschluss an die Anerkennung wird SC Metropolis 25 Berlin e.V. im LSB-Service-Portal registriert. Der Verein führt seither die LSB-Vereinsnummer 13429.',
+    image: null,
+    imageAlt: null,
   },
   {
     year: 'Aug. 2026',
@@ -286,6 +292,8 @@ export default function GeschichtePage() {
                 { date: '26. November 2025', event: 'Gründungsversammlung — 22 Mitglieder anwesend' },
                 { date: '22. Dezember 2025', event: 'Eintragung ins Vereinsregister, Amtsgericht Berlin-Charlottenburg' },
                 { date: '30. April 2026', event: 'Anerkennung Gemeinnützigkeit §60a AO durch das Finanzamt' },
+                { date: '29. August 2026', event: 'Sportliche Förderungswürdigkeit durch die Senatsverwaltung für Inneres und Sport anerkannt' },
+                { date: '30. August 2026', event: 'Erstes offizielles Pflichtspiel terminiert — Yec-Sports-Pokal, Anstoß 12:00 Uhr' },
               ].map(d => (
                 <div key={d.date} className="flex items-start gap-5 card p-5">
                   <div className="shrink-0">

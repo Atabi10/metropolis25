@@ -26,6 +26,28 @@ interface Article {
 }
 
 const articles: Article[] = [
+  // ── MEILENSTEIN: SPORTLICHE FÖRDERUNGSWÜRDIGKEIT ANERKANNT ─────────────────
+  {
+    slug: 'sportliche-foerderungswuerdigkeit-offiziell-anerkannt',
+    title: 'Offiziell anerkannt: Ein weiterer Meilenstein für SC Metropolis 25',
+    subtitle:
+      'Die Senatsverwaltung für Inneres und Sport hat die sportliche Förderungswürdigkeit unseres Vereins offiziell anerkannt.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-29',
+    image: '/images/symposium-mboa-medals-group.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Mannschaft',
+    body: [
+      'SC Metropolis 25 Berlin e.V. hat einen weiteren wichtigen Meilenstein seiner jungen Vereinsgeschichte erreicht: Die Senatsverwaltung für Inneres und Sport, Abteilung Sport, hat die sportliche Förderungswürdigkeit unseres Vereins offiziell anerkannt.',
+      'Der Anerkennungsbescheid erreichte den Verein am 29. August 2026 auf elektronischem Weg. Das Original folgt auf dem Postweg. Damit ist das Anerkennungsverfahren abgeschlossen, das der Verein im Sommer 2026 eingeleitet hatte.',
+      'Die Anerkennung ist ein zentraler Baustein im institutionellen Aufbau eines Berliner Sportvereins. Sie bestätigt, dass SC Metropolis 25 die Voraussetzungen erfüllt, die das Land Berlin an förderungswürdige Sportvereine stellt — und sie reiht sich ein in eine Kette von Schritten, die in den vergangenen Monaten Stück für Stück abgearbeitet wurden: Vereinsgründung im November 2025, Eintragung ins Vereinsregister im Dezember 2025, Anerkennung der Gemeinnützigkeit nach §60a AO im April 2026 und die Aufnahme in den offiziellen Berliner Spielbetrieb zur Saison 2026/27.',
+      'Im Anschluss an die Anerkennung wurde SC Metropolis 25 Berlin e.V. im Service-Portal des Landessportbundes Berlin registriert. Der Verein führt dort die LSB-Vereinsnummer 13429. Die individuellen Portalzugänge werden derzeit noch eingerichtet.',
+      'Die Anerkennung kommt zu einem besonderen Zeitpunkt: Bereits einen Tag später, am 30. August, bestreitet unsere 1. Herrenmannschaft ihr erstes offizielles Pflichtspiel. Zwei Meilensteine, die zeigen, wie weit unser gemeinsamer Weg bereits geführt hat.',
+      'Offen bleibt die Aufgabe, die für den Verein weiterhin die größte ist: Die Suche nach einer dauerhaften Trainings- und Heimspielstätte bleibt parallel eine unserer zentralen Aufgaben. Die Überlassung des BVB-Stadions für das Pflichtspiel am 30. August ist eine Genehmigung für dieses eine Spiel und keine dauerhafte Zuweisung.',
+      'Wir danken allen, die diesen Weg mitgetragen haben — den Mitgliedern, dem Trainerteam und allen, die seit 2019 dabei sind. Die Grundlagen stehen. Jetzt beginnt das nächste Kapitel.',
+    ],
+  },
+
   // ── MEILENSTEIN: ERSTES OFFIZIELLES PFLICHTSPIEL ───────────────────────────
   {
     slug: 'historischer-meilenstein-erstes-offizielles-pflichtspiel',
@@ -163,8 +185,8 @@ const articles: Article[] = [
   // ── VEREINSNEWS ────────────────────────────────────────────────────────────
   {
     slug: 'antrag-sportliche-foerderungswuerdigkeit',
-    title: 'Sportliche Förderungswürdigkeit — Abschluss des Anerkennungsverfahrens',
-    subtitle: 'Die finale schriftliche Bestätigung wird erwartet.',
+    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
+    subtitle: 'Stand: Juni 2026. Die Anerkennung ist inzwischen erfolgt — siehe Update am Ende.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-06-01',
@@ -172,8 +194,8 @@ const articles: Article[] = [
       'Der SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht.',
       'Die Anerkennung der sportlichen Förderungswürdigkeit ist ein wichtiger Schritt für Berliner Sportvereine und bildet eine wesentliche Grundlage für die Nutzung öffentlicher Sportanlagen sowie die weitere institutionelle Entwicklung des Vereins.',
       'Mit der Antragstellung setzt SC Metropolis 25 seinen strukturierten Vereinsaufbau konsequent fort: Vereinsgründung (November 2025), Eintragung (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), Aufnahme in den offiziellen Berliner Spielbetrieb (Saison 2026/27) — und nun die Förderungswürdigkeit.',
-      'Das Anerkennungsverfahren befindet sich in der Abschlussphase. Die zuständige Stelle der Senatsverwaltung hat den Verein telefonisch darüber informiert, dass die schriftliche Anerkennung in Kürze auf dem Postweg zu erwarten ist.',
-      'Der Verein weist diesen Status bis zum Eingang des schriftlichen Bescheids ausdrücklich als „in Bearbeitung“ aus. Erst mit Vorliegen der schriftlichen Anerkennung wird der Status auf dieser Website aktualisiert.',
+      'Das Anerkennungsverfahren läuft. Der Verein weist diesen Status bis zum Eingang des schriftlichen Bescheids ausdrücklich als „in Bearbeitung“ aus. Erst mit Vorliegen der schriftlichen Anerkennung wird der Status auf dieser Website aktualisiert.',
+      'Update vom 29. August 2026: Die Senatsverwaltung für Inneres und Sport hat die sportliche Förderungswürdigkeit inzwischen offiziell anerkannt. Der Anerkennungsbescheid ging dem Verein am 29. August 2026 zu. Dieser Beitrag bleibt als Dokumentation des damaligen Verfahrensstands erhalten.',
     ],
   },
   {
@@ -346,8 +368,8 @@ const articles: Article[] = [
     publishedAt: '2025-12-15',
     body: [
       'SC Metropolis 25 ist transparent über seinen Weg. Hier ist der aktuelle Stand.',
-      'Erreicht: Vereinsgründung (November 2025), Eintragung ins Vereinsregister (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), Aufnahme in den offiziellen Berliner Spielbetrieb (Saison 2026/27), erstes offizielles Pflichtspiel terminiert (30. August 2026), 23 aktive Feldspieler.',
-      'In Bearbeitung: schriftliche Anerkennung der sportlichen Förderungswürdigkeit, dauerhafte Trainings- und Spielstätte, Gewinnung eines Gründungspartners.',
+      'Erreicht: Vereinsgründung (November 2025), Eintragung ins Vereinsregister (Dezember 2025), Gemeinnützigkeit §60a AO (April 2026), Aufnahme in den offiziellen Berliner Spielbetrieb (Saison 2026/27), sportliche Förderungswürdigkeit anerkannt (29. August 2026), Registrierung beim Landessportbund Berlin, erstes offizielles Pflichtspiel terminiert (30. August 2026), 23 aktive Feldspieler.',
+      'In Bearbeitung: dauerhafte Trainings- und Heimspielstätte, Gewinnung eines Gründungspartners.',
       'Wir berichten weiter — ehrlich und transparent, auch dann, wenn etwas länger dauert als geplant.',
     ],
   },

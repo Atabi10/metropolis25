@@ -45,3 +45,20 @@ next-env.d.ts
 
 # Sanity
 .sanity/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Club documents — NEVER commit these
+# ─────────────────────────────────────────────────────────────────────────────
+# Player agreements, legal notes and member records contain personal data
+# (names, addresses, dates of birth, bank details). This repository is pushed
+# to GitHub and deployed publicly. Keep these files locally or in the club's
+# own document storage, not here.
+*.docx
+*.xlsx
+*.pptx
+Spielervereinbarung*
+Player_Agreement*
+Rechtsnotiz*
+Antrag_*.pdf
+M25_Members_*
+spielervereinbarung*.js

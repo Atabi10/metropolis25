@@ -1,6 +1,6 @@
 'use client'
 
-import { ShieldCheck, CheckCircle, Trophy, CalendarCheck, Monitor, Award, MapPin, Handshake } from 'lucide-react'
+import { ShieldCheck, CheckCircle, Trophy, CalendarCheck, Monitor, Award, MapPin, Handshake, Landmark } from 'lucide-react'
 import { clsx } from 'clsx'
 import { useTranslations } from 'next-intl'
 
@@ -9,19 +9,24 @@ import { useTranslations } from 'next-intl'
  *
  * `state` drives the visual treatment:
  *   'done'    → confirmed, documented milestone
- *   'pending' → in progress / awaiting written confirmation
+ *   'pending' → in progress
  *
- * IMPORTANT — sportliche Förderungswürdigkeit stays 'pending' until the
- * written recognition from the Senate has actually been received and filed.
- * A telephone notification is not a written confirmation.
+ * Sportliche Förderungswürdigkeit: recognised by the Senatsverwaltung für
+ * Inneres und Sport, Anerkennungsbescheid received 29.08.2026.
+ *
+ * Two items deliberately stay 'pending':
+ *   sportstaette — the BVB-Stadion approval covers ONE fixture only. It is
+ *                  not a permanent allocation and must not be shown as done.
+ *   partner      — no sponsor is under contract.
  */
 const items = [
   { key: 'ev',            icon: ShieldCheck,    state: 'done' },
   { key: 'gemeinnuetzig', icon: CheckCircle,    state: 'done' },
+  { key: 'foerderung',    icon: Award,          state: 'done' },
+  { key: 'lsb',           icon: Landmark,       state: 'done' },
   { key: 'spielbetrieb',  icon: Trophy,         state: 'done' },
   { key: 'dfbnet',        icon: Monitor,        state: 'done' },
   { key: 'pflichtspiel',  icon: CalendarCheck,  state: 'done' },
-  { key: 'foerderung',    icon: Award,          state: 'pending' },
   { key: 'sportstaette',  icon: MapPin,         state: 'pending' },
   { key: 'partner',       icon: Handshake,      state: 'pending' },
 ] as const

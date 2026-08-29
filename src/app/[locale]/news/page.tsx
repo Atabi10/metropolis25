@@ -27,6 +27,19 @@ const newsItems: NewsItem[] = [
   // ── 2026 ──────────────────────────────────────────────────────────────────
 
   {
+    id: 'n-foerderungswuerdigkeit-anerkannt',
+    slug: 'sportliche-foerderungswuerdigkeit-offiziell-anerkannt',
+    title: 'Offiziell anerkannt: Ein weiterer Meilenstein für SC Metropolis 25',
+    excerpt:
+      'Die Senatsverwaltung für Inneres und Sport hat die sportliche Förderungswürdigkeit von SC Metropolis 25 Berlin e.V. offiziell anerkannt. Der Bescheid erreichte den Verein am 29. August 2026 — einen Tag vor dem ersten offiziellen Pflichtspiel.',
+    category: 'Vereinsnews',
+    type: 'news',
+    publishedAt: '2026-08-29',
+    featured: true,
+    image: '/images/symposium-mboa-medals-group.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — Mannschaft',
+  },
+  {
     id: 'n-erstes-pflichtspiel',
     slug: 'historischer-meilenstein-erstes-offizielles-pflichtspiel',
     title: 'Historischer Meilenstein: Unser erstes offizielles Pflichtspiel',
@@ -66,9 +79,9 @@ const newsItems: NewsItem[] = [
   {
     id: 'n-foerderung',
     slug: 'antrag-sportliche-foerderungswuerdigkeit',
-    title: 'Sportliche Förderungswürdigkeit — Abschluss des Anerkennungsverfahrens',
+    title: 'Antrag auf sportliche Förderungswürdigkeit eingereicht',
     excerpt:
-      'SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht. Das Verfahren befindet sich in der Abschlussphase — die finale schriftliche Bestätigung wird erwartet.',
+      'SC Metropolis 25 Berlin e.V. hat den Antrag auf Anerkennung der sportlichen Förderungswürdigkeit bei der zuständigen Berliner Senatsverwaltung eingereicht. Stand Juni 2026 — inzwischen ist die Anerkennung erfolgt.',
     category: 'Vereinsnews',
     type: 'news',
     publishedAt: '2026-06-01',

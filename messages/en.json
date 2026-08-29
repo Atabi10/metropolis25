@@ -77,7 +77,7 @@
     "label": "Official & transparent",
     "title": "Club status",
     "titleHighlight": "at a glance",
-    "subtitle": "SC Metropolis 25 Berlin e.V. — registered, non-profit, and competing in official Berlin football from the 2026/27 season. Open items are shown openly.",
+    "subtitle": "The foundations are in place: registered, non-profit, officially recognised as eligible for sports funding, registered with the Berlin State Sports Association, and competing in official Berlin football. What is still open, we show openly.",
     "stateDone": "Complete",
     "statePending": "In progress",
     "colours": "Club colours: navy, gold & ivory — unity, ambition and fairness.",
@@ -99,16 +99,20 @@
         "detail": "Competition administration set up"
       },
       "pflichtspiel": {
-        "label": "First official competitive fixture",
+        "label": "First official competitive match scheduled",
         "detail": "30.08.2026 · 12:00 · vs SG Prenzlauer Berg FZ Kunst"
       },
       "foerderung": {
-        "label": "Sporting eligibility (Förderungswürdigkeit)",
-        "detail": "Recognition procedure in its final phase · written confirmation awaited"
+        "label": "Sporting eligibility officially recognised",
+        "detail": "Berlin Senate Department for the Interior and Sport · notice dated 29.08.2026"
+      },
+      "lsb": {
+        "label": "Registered with the Berlin State Sports Association",
+        "detail": "Entered in the LSB service portal · August 2026"
       },
       "sportstaette": {
-        "label": "Permanent sports facility",
-        "detail": "Application with Bezirksamt Lichtenberg under review"
+        "label": "Permanent training and home venue",
+        "detail": "Application with Bezirksamt Lichtenberg still under review"
       },
       "partner": {
         "label": "Founding partner",
@@ -229,7 +233,8 @@
       "infoStandort": "Location",
       "infoStandortValue": "Lichtenberg, Berlin",
       "infoMitglieder": "Members",
-      "infoGemeinnuetzig": "Non-profit"
+      "infoGemeinnuetzig": "Non-profit",
+      "infoLsb": "LSB Club Number"
     },
     "vision": {
       "title": "Vision 2030",
@@ -237,7 +242,7 @@
       "goal1": "Establishment in official Berlin competition",
       "goal2": "2nd Men's team & women's football in development",
       "goal3": "Secured venue in Lichtenberg",
-      "goal4": "Recognition by Berlin sports associations (lsb)"
+      "goal4": "Growing our youth and development programme"
     },
     "values": {
       "label": "What drives us",
