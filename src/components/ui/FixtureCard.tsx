@@ -15,18 +15,21 @@ const COPY = {
     upcoming: 'Bevorstehend', provisional: 'Vorläufig',
     noResult: 'Ergebnis offen', away: 'Auswärts', home: 'Heimspiel',
     vs: 'VS', tbc: 'noch offen',
+    dateTbc: 'Termin noch offen', unscheduled: 'Termin offen',
   },
   en: {
     win: 'Win', draw: 'Draw', loss: 'Loss',
     upcoming: 'Upcoming', provisional: 'Provisional',
     noResult: 'No result', away: 'Away', home: 'Home',
     vs: 'VS', tbc: 'TBC',
+    dateTbc: 'Date TBC', unscheduled: 'Date TBC',
   },
   fr: {
     win: 'Victoire', draw: 'Nul', loss: 'Défaite',
     upcoming: 'À venir', provisional: 'Provisoire',
     noResult: 'Résultat inconnu', away: 'Extérieur', home: 'Domicile',
     vs: 'VS', tbc: 'à confirmer',
+    dateTbc: 'Date à confirmer', unscheduled: 'Date à confirmer',
   },
 }
 
@@ -56,6 +59,7 @@ export function FixtureCard({ fixture, locale = 'de', compact = false }: Fixture
   const finished = fixture.status === 'finished'
   const unconfirmed = fixture.status === 'unconfirmed'
   const provisional = fixture.status === 'provisional'
+  const unscheduled = fixture.status === 'unscheduled'
   const isOfficial = fixture.competitionType === 'league' || fixture.competitionType === 'cup'
 
   return (
@@ -121,6 +125,11 @@ export function FixtureCard({ fixture, locale = 'de', compact = false }: Fixture
               {c.noResult}
             </span>
           )}
+          {unscheduled && (
+            <span className="text-[10px] font-heading uppercase tracking-wider bg-white/5 text-ivory/60 border border-white/10 px-2 py-0.5">
+              {c.unscheduled}
+            </span>
+          )}
         </div>
       </div>
 
@@ -175,10 +184,10 @@ export function FixtureCard({ fixture, locale = 'de', compact = false }: Fixture
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 pt-3 border-t border-dark-border">
           <span className="flex items-center gap-1.5 text-text-muted text-xs">
             <Calendar className="w-3 h-3 text-gold shrink-0" aria-hidden="true" />
-            {formatDate(fixture.date, locale)}
+            {fixture.date ? formatDate(fixture.date, locale) : c.dateTbc}
           </span>
 
-          {!finished && !unconfirmed && (
+          {!finished && !unconfirmed && !unscheduled && (
             <span className="flex items-center gap-1.5 text-text-muted text-xs">
               <Clock className="w-3 h-3 text-gold shrink-0" aria-hidden="true" />
               {fixture.kickoff ?? c.tbc}

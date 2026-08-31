@@ -116,6 +116,10 @@ export function NextMatchCard({
   variant = 'hero',
   className,
 }: NextMatchCardProps) {
+  // A fixture with no date (status 'unscheduled') has nothing to headline.
+  // getNextOfficialMatch() already filters those out; this is the type guard.
+  if (!fixture.date) return null
+
   const c = COPY[locale]
   const isHero = variant === 'hero'
   const isProvisional = fixture.status === 'provisional'

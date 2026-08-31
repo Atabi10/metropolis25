@@ -62,3 +62,8 @@ Rechtsnotiz*
 Antrag_*.pdf
 M25_Members_*
 spielervereinbarung*.js
+
+# Internal club-administration PDFs, named exactly.
+# Deliberately NOT a blanket *.pdf rule — the website may publish PDFs later.
+/SC_Metropolis25_Player_Profile_2026_27.pdf
+/SC_Metropolis25_Player_Profile_2026_27_EN_FR.pdf

@@ -31,8 +31,14 @@ export function FixtureTabs({ fixtures, locale = 'de' }: FixtureTabsProps) {
     { key: 'cup',    label: c.cup,    count: fixtures.filter(f => f.competitionType === 'cup').length },
   ]
 
+  // Chronological. Fixtures with no published date (status 'unscheduled')
+  // always sort last so they never displace a dated fixture.
+  const ordered = [...fixtures].sort(
+    (a, b) => (a.date ?? '9999').localeCompare(b.date ?? '9999'),
+  )
+
   const visible =
-    tab === 'all' ? fixtures : fixtures.filter(f => f.competitionType === tab)
+    tab === 'all' ? ordered : ordered.filter(f => f.competitionType === tab)
 
   return (
     <div>

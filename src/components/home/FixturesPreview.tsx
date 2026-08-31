@@ -21,7 +21,7 @@ const COPY = {
     officialUpcoming: 'Offizielle Spiele',
     results: 'Letzte Ergebnisse',
     friendlies: 'Testspiele & Community Matches',
-    empty: 'Der Staffelplan der Liga ist noch nicht veröffentlicht.',
+    empty: 'Aktuell sind keine weiteren Spiele angesetzt.',
     cta: 'Kompletter Spielplan',
   },
   en: {
@@ -32,7 +32,7 @@ const COPY = {
     officialUpcoming: 'Official fixtures',
     results: 'Latest results',
     friendlies: 'Friendlies & community matches',
-    empty: 'The league schedule has not been published yet.',
+    empty: 'No further fixtures are currently scheduled.',
     cta: 'Full fixture list',
   },
   fr: {
@@ -43,7 +43,7 @@ const COPY = {
     officialUpcoming: 'Matches officiels',
     results: 'Derniers résultats',
     friendlies: 'Matches amicaux',
-    empty: "Le calendrier de la ligue n'est pas encore publié.",
+    empty: "Aucun match supplémentaire n'est actuellement programmé.",
     cta: 'Calendrier complet',
   },
 }

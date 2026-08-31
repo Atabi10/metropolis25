@@ -62,7 +62,10 @@
       "gemeinnuetzig": "Statut associatif AO",
       "members": "Membres",
       "spielbetrieb": "Compétition officielle"
-    }
+    },
+    "slogan1": "Là où Berlin vibre,",
+    "slogan2": "notre force grandit.",
+    "tagline": "La force de la capitale"
   },
   "statsBar": {
     "members": "Membres",
@@ -363,7 +366,7 @@
       "titleHighlight": "résultats"
     },
     "official": "SC Metropolis 25 entre en compétition officielle berlinoise pour la saison 2026/27.",
-    "noGames": "Le calendrier de la ligue n'est pas encore publié."
+    "noGames": "Aucun match supplémentaire n'est actuellement programmé."
   },
   "galerie": {
     "meta": {

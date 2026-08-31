@@ -11,6 +11,7 @@ import {
   getOfficialResults,
   getFriendlies,
   getFriendlyRecord,
+  getOfficialRecord,
   tournaments,
   type TournamentMatch,
   CURRENT_SEASON,
@@ -54,7 +55,7 @@ const COPY = {
       'Offizielle Pflichtspiele und historische Freundschafts- bzw. Turnierspiele werden auf dieser Seite getrennt ausgewiesen. Nicht bestätigte Anstoßzeiten oder Spielstätten werden als „noch offen“ gekennzeichnet.',
     nextMatch: 'Nächstes Pflichtspiel',
     officialTitle: `Offizieller Spielplan ${CURRENT_SEASON}`,
-    officialNote: `Quelle für den offiziellen Spielbetrieb ist Fußball.de. Der Staffelplan der ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) wird ergänzt, sobald er veröffentlicht ist.`,
+    officialNote: `Vorläufiger Spielplan — Ansetzungen, Anstoßzeiten und Spielstätten können sich noch ändern. Der Staffelleiter hat den Spielplan noch nicht abschließend freigegeben. Maßgeblich ist Fußball.de. Wo dort keine Spielstätte oder kein Termin veröffentlicht ist, lassen wir das Feld offen.`,
     resultsTitle: 'Offizielle Ergebnisse',
     resultsEmpty: 'Noch keine offiziellen Pflichtspiele absolviert.',
     friendliesTitle: 'Testspiele & Community Matches',
@@ -76,7 +77,7 @@ const COPY = {
       'Official competitive fixtures and historic friendly or tournament matches are listed separately on this page. Unconfirmed kick-off times and venues are marked "TBC".',
     nextMatch: 'Next official match',
     officialTitle: `Official fixtures ${CURRENT_SEASON}`,
-    officialNote: `Fußball.de is the authoritative source for official competition. The ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) schedule will be added as soon as it is published.`,
+    officialNote: `Provisional schedule — fixtures, kick-off times and venues may still change. The league co-ordinator has not yet given the schedule final approval. Fußball.de is authoritative. Where no venue or date is published there, we leave the field blank.`,
     resultsTitle: 'Official results',
     resultsEmpty: 'No official competitive matches played yet.',
     friendliesTitle: 'Friendlies & community matches',
@@ -98,7 +99,7 @@ const COPY = {
       'Les matches officiels et les rencontres amicales historiques sont présentés séparément. Les horaires et stades non confirmés sont indiqués « à confirmer ».',
     nextMatch: 'Prochain match officiel',
     officialTitle: `Calendrier officiel ${CURRENT_SEASON}`,
-    officialNote: `Fußball.de est la source de référence pour la compétition officielle.`,
+    officialNote: `Calendrier provisoire — les rencontres, horaires et lieux peuvent encore être modifiés. Le responsable de groupe n'a pas encore validé définitivement le calendrier. Fußball.de fait foi. Lorsqu'aucun lieu ou aucune date n'y est publié, le champ reste vide.`,
     resultsTitle: 'Résultats officiels',
     resultsEmpty: 'Aucun match officiel disputé pour le moment.',
     friendliesTitle: 'Matches amicaux',
@@ -190,6 +191,7 @@ export default async function SpielbetriebPage({
   const officialResults = getOfficialResults()
   const friendlies      = getFriendlies()
   const record          = getFriendlyRecord()
+  const officialRecord  = getOfficialRecord()
 
   return (
     <div className="pt-[var(--nav-height)]">
@@ -271,6 +273,25 @@ export default async function SpielbetriebPage({
               {c.resultsTitle}
             </h2>
           </div>
+
+          {officialResults.length > 0 && (
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-7">
+              {[
+                { label: c.stats.played, value: officialRecord.played },
+                { label: c.stats.wins,   value: officialRecord.wins, accent: true },
+                { label: c.stats.draws,  value: officialRecord.draws },
+                { label: c.stats.losses, value: officialRecord.losses },
+                { label: c.stats.goals,  value: `${officialRecord.goalsFor}:${officialRecord.goalsAgainst}` },
+              ].map(s => (
+                <div key={s.label} className="card p-4 text-center">
+                  <div className={clsx('font-display text-3xl leading-none mb-1', s.accent ? 'text-gold' : 'text-white')}>
+                    {s.value}
+                  </div>
+                  <div className="text-text-muted text-[10px] font-heading uppercase tracking-wider">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
 
           {officialResults.length > 0 ? (
             <div className="grid md:grid-cols-2 gap-4">

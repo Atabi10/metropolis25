@@ -75,7 +75,8 @@ A complete entry looks like this:
 ```
 
 **Fields you leave out matter.** If `kickoff` is missing, the UI prints
-"noch offen" / "TBC". If `venue` is missing, same. Do not write `'TBD'` or
+"noch offen" / "TBC" / "à confirmer". If `venue` is missing, the UI prints
+"Spielstätte noch offen" / "Venue TBC" / "Lieu à confirmer". Do not write `'TBD'` or
 `'?'` into the field — omit the field.
 
 ### 4. Pick the right `status`
@@ -168,3 +169,38 @@ COMPETITIONS.cup          // 'Yec-Sports-Pokal'
 ```
 
 Change the season here at the season rollover and every page follows.
+
+
+---
+
+## A fixture we know about but that has no date yet
+
+Sometimes the club knows a tie will be played before Fußball.de publishes it.
+Do **not** guess the date, kick-off, Spielnummer or venue to make the row look
+complete. Record it like this instead:
+
+```ts
+{
+  id: 'liga-2026-aimnation',
+  date: null,                       // the only case where date may be null
+  competition: COMPETITIONS.league,
+  competitionType: 'league',
+  homeTeam: 'SC Metropolis 25',
+  awayTeam: 'Aimnation',
+  status: 'unscheduled',
+  staffelId: STAFFEL.league,
+  source: 'Vorstand SC Metropolis 25',
+  lastVerified: '2026-08-31',
+}
+```
+
+What `status: 'unscheduled'` does:
+
+- the fixture is listed on `/spielbetrieb` with a "Termin offen" badge
+- it always sorts **after** every dated fixture
+- it can never be picked as the homepage next match
+- no date, time or venue line is invented for it
+
+**When Fußball.de publishes it, edit this same entry** — set `date`, `kickoff`,
+`matchNumber` and `venue`, and change `status` to `'scheduled'`. Do not add a
+second row; that would duplicate the match.
