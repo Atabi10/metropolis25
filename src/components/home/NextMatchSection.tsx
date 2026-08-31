@@ -1,5 +1,5 @@
 import { NextMatchCard } from '@/components/ui/NextMatchCard'
-import { getNextOfficialMatch, CURRENT_SEASON } from '@/data/fixtures'
+import { getNextOfficialMatch, getOfficialResults, CURRENT_SEASON } from '@/data/fixtures'
 
 type Locale = 'de' | 'en' | 'fr'
 
@@ -8,27 +8,42 @@ const COPY = {
     label: `Offizieller Spielbetrieb ${CURRENT_SEASON}`,
     title: 'Nächstes',
     titleHighlight: 'Spiel',
+    resultTitle: 'Letztes',
+    resultTitleHighlight: 'Ergebnis',
   },
   en: {
     label: `Official competition ${CURRENT_SEASON}`,
     title: 'Next',
     titleHighlight: 'match',
+    resultTitle: 'Latest',
+    resultTitleHighlight: 'result',
   },
   fr: {
     label: `Compétition officielle ${CURRENT_SEASON}`,
     title: 'Prochain',
     titleHighlight: 'match',
+    resultTitle: 'Dernier',
+    resultTitleHighlight: 'résultat',
   },
 }
 
 /**
- * Homepage hero slot for the club's next official competitive fixture.
- * Renders nothing when no official fixture is scheduled — it never invents one.
+ * Homepage hero slot for official competition.
+ *
+ * Shows the next scheduled fixture when there is one. When there isn't — e.g.
+ * between the cup tie and publication of the league Staffelplan — it falls back
+ * to the most recent official result rather than disappearing. Renders nothing
+ * only when the club has neither; it never invents a fixture.
  */
 export function NextMatchSection({ locale = 'de' }: { locale?: Locale }) {
-  const fixture = getNextOfficialMatch()
+  // Prefer an upcoming fixture. If none is scheduled — e.g. between the cup
+  // tie and publication of the league Staffelplan — show the latest official
+  // result instead, so the homepage never loses this slot.
+  const upcoming = getNextOfficialMatch()
+  const fixture = upcoming ?? getOfficialResults()[0] ?? null
   if (!fixture) return null
 
+  const showingResult = !upcoming
   const c = COPY[locale]
 
   // SportsEvent structured data — only confirmed fields are emitted.
@@ -90,7 +105,10 @@ export function NextMatchSection({ locale = 'de' }: { locale?: Locale }) {
             id="next-match-title"
             className="font-display text-3xl md:text-5xl text-white uppercase"
           >
-            {c.title} <span className="text-gold-gradient">{c.titleHighlight}</span>
+            {showingResult ? c.resultTitle : c.title}{' '}
+            <span className="text-gold-gradient">
+              {showingResult ? c.resultTitleHighlight : c.titleHighlight}
+            </span>
           </h2>
           <div className="w-16 h-[2px] bg-gold mx-auto mt-5" />
         </div>

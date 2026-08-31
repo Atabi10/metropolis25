@@ -27,6 +27,20 @@ const newsItems: NewsItem[] = [
   // ── 2026 ──────────────────────────────────────────────────────────────────
 
   {
+    id: 'n-erster-pflichtspielsieg',
+    slug: 'erstes-pflichtspiel-9-1-gewonnen',
+    title: '9:1 — Der erste Pflichtspielsieg der Vereinsgeschichte',
+    excerpt:
+      'SC Metropolis 25 gewinnt sein erstes offizielles Pflichtspiel mit 9:1 gegen SG Prenzlauer Berg FZ Kunst. Am 30. August 2026, im BVB-Stadion, vor dem ersten offiziellen Anpfiff der Vereinsgeschichte.',
+    category: 'Spielberichte',
+    type: 'news',
+    matchResult: '9:1',
+    publishedAt: '2026-08-30',
+    featured: true,
+    image: '/images/team-photo-kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — 1. Herrenmannschaft',
+  },
+  {
     id: 'n-foerderungswuerdigkeit-anerkannt',
     slug: 'sportliche-foerderungswuerdigkeit-offiziell-anerkannt',
     title: 'Offiziell anerkannt: Ein weiterer Meilenstein für SC Metropolis 25',

@@ -20,7 +20,7 @@ const milestones = [
   { year: '29. Aug. 2026', event: 'Sportliche Förderungswürdigkeit anerkannt', desc: 'Die Senatsverwaltung für Inneres und Sport erkennt SC Metropolis 25 Berlin e.V. offiziell als sportlich förderungswürdig an.' },
   { year: 'Aug. 2026', event: 'Registrierung beim Landessportbund', desc: 'Im Anschluss an die Anerkennung wird der Verein im LSB-Service-Portal registriert.' },
   { year: 'Aug. 2026', event: 'Erste offizielle Spielstätte für ein Pflichtspiel genehmigt', desc: 'Das Bezirksamt Lichtenberg genehmigt die Nutzung des BVB-Stadions für das erste Pflichtspiel von SC Metropolis 25. Der Antrag auf eine dauerhafte Sportstätte läuft weiter.' },
-  { year: '30. Aug. 2026', event: 'Erstes offizielles Pflichtspiel terminiert', desc: 'SC Metropolis 25 trifft im Yec-Sports-Pokal auf SG Prenzlauer Berg FZ Kunst. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2.' },
+  { year: '30. Aug. 2026', event: 'Erstes offizielles Pflichtspiel gewonnen', desc: 'SC Metropolis 25 gewinnt sein erstes Pflichtspiel im Yec-Sports-Pokal mit 9:1 gegen SG Prenzlauer Berg FZ Kunst — im BVB-Stadion, Kunstrasen 2.' },
 ]
 
 const boardMembers = [

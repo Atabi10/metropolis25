@@ -26,6 +26,28 @@ interface Article {
 }
 
 const articles: Article[] = [
+  // ── ERSTER PFLICHTSPIELSIEG ────────────────────────────────────────────────
+  {
+    slug: 'erstes-pflichtspiel-9-1-gewonnen',
+    title: '9:1 — Der erste Pflichtspielsieg der Vereinsgeschichte',
+    subtitle:
+      'SC Metropolis 25 gewinnt sein erstes offizielles Pflichtspiel gegen SG Prenzlauer Berg FZ Kunst.',
+    category: 'Spielberichte',
+    type: 'news',
+    matchResult: '9:1',
+    publishedAt: '2026-08-30',
+    image: '/images/team-photo-kmer.jpeg',
+    imageAlt: 'SC Metropolis 25 Berlin — 1. Herrenmannschaft',
+    body: [
+      'Am Sonntag, den 30. August 2026, um 12:00 Uhr, ist im BVB-Stadion auf Kunstrasen 2 zum ersten Mal in der Geschichte von SC Metropolis 25 Berlin e.V. ein Pflichtspiel angepfiffen worden. Neunzig Minuten später stand es 9:1.',
+      'Es war die Qualifikationsrunde des Yec-Sports-Pokals, Gegner war SG Prenzlauer Berg FZ Kunst. Für den Verein war es mehr als ein Spiel: Es war der erste Auftritt im offiziellen Berliner Spielbetrieb, mit Schiedsrichter, Spielbericht und allem, was dazugehört.',
+      'Neun Tore in einem ersten Pflichtspiel sind ein Ergebnis, mit dem vorher niemand gerechnet hat. Die Mannschaft hat von der ersten Minute an das Spiel bestimmt und ihre Chancen konsequent genutzt. Was in den Testspielen der vergangenen Monate erkennbar war, ist an diesem Sonntag zum ersten Mal unter Wettbewerbsbedingungen sichtbar geworden.',
+      'Einordnen muss man das Ergebnis trotzdem: Es war ein Spiel, es war die Qualifikationsrunde, und der Weg durch die Saison ist lang. Die Mannschaft weiß das. Genau deshalb ist dieser Tag vor allem eines — ein Anfang.',
+      'Der Sieg fällt zusammen mit einem zweiten Meilenstein: Nur einen Tag zuvor, am 29. August, hat die Senatsverwaltung für Inneres und Sport die sportliche Förderungswürdigkeit des Vereins offiziell anerkannt. Zwei Tage, zwei Schritte, die zusammengehören.',
+      'Dank gilt allen, die am Sonntag dabei waren — der Mannschaft, dem Trainerteam um Makendi Amos, den Helferinnen und Helfern rund um das Spiel und allen, die den Weg seit 2019 mitgegangen sind. Aus Freunden wurden Mitspieler. Aus Mitspielern wurde ein Verein. Und jetzt steht das erste Ergebnis im Spielbericht.',
+    ],
+  },
+
   // ── MEILENSTEIN: SPORTLICHE FÖRDERUNGSWÜRDIGKEIT ANERKANNT ─────────────────
   {
     slug: 'sportliche-foerderungswuerdigkeit-offiziell-anerkannt',

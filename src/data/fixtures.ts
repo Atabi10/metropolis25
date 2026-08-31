@@ -99,9 +99,10 @@ export const officialFixtures: Fixture[] = [
     venue: 'BVB-Stadion',
     pitch: 'Kunstrasen 2',
     venueAddress: 'Siegfriedstraße 71, 10365 Berlin',
-    status: 'scheduled',
+    status: 'finished',
+    result: { homeScore: 9, awayScore: 1 },
     milestone: true,
-    source: 'Vereinsangabe · Sportstättenüberlassung Bezirksamt Lichtenberg',
+    source: 'Vereinsangabe · Spielbericht',
   },
 
   // ── Bezirksliga Betrieb (Bezirksliga FZ) 2026/27 ───────────────────────────

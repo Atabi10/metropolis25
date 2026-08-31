@@ -7,6 +7,7 @@ import {
   formatKickoff,
   formatVenue,
   getMapsUrl,
+  getOutcome,
 } from '@/data/fixtures'
 
 type Locale = 'de' | 'en' | 'fr'
@@ -26,6 +27,12 @@ const COPY = {
     vs: 'gegen',
     directions: 'Route in Google Maps öffnen',
     mapsAria: 'Spielstätte in Google Maps öffnen',
+    resultBadge: 'Erstes offizielles Pflichtspiel',
+    resultHeadline: 'Angekommen.',
+    resultBody: (d: string) =>
+      `Am ${d} hat SC Metropolis 25 sein erstes offizielles Pflichtspiel bestritten — und gewonnen.`,
+    finalLabel: 'Endstand',
+    resultCta: 'Alle Ergebnisse',
     venueNote:
       'Die Spielstätte wurde vom Bezirksamt Lichtenberg für dieses Spiel überlassen. Der Antrag auf eine dauerhafte Trainings- und Spielstätte läuft weiter.',
   },
@@ -43,6 +50,12 @@ const COPY = {
     vs: 'vs',
     directions: 'Open directions in Google Maps',
     mapsAria: 'Open venue in Google Maps',
+    resultBadge: 'First official competitive match',
+    resultHeadline: 'We have arrived.',
+    resultBody: (d: string) =>
+      `On ${d} SC Metropolis 25 played its first official competitive match — and won it.`,
+    finalLabel: 'Final score',
+    resultCta: 'All results',
     venueNote:
       'The venue was made available for this match by Bezirksamt Lichtenberg. Our application for a permanent training and match facility remains under review.',
   },
@@ -60,6 +73,12 @@ const COPY = {
     vs: 'contre',
     directions: 'Ouvrir l’itinéraire dans Google Maps',
     mapsAria: 'Ouvrir le stade dans Google Maps',
+    resultBadge: 'Premier match officiel',
+    resultHeadline: 'Nous y sommes.',
+    resultBody: (d: string) =>
+      `Le ${d}, SC Metropolis 25 a disputé son premier match officiel — et l’a gagné.`,
+    finalLabel: 'Score final',
+    resultCta: 'Tous les résultats',
     venueNote:
       "Le stade a été mis à disposition pour ce match par le Bezirksamt Lichtenberg. Notre demande d’installation permanente reste à l’étude.",
   },
@@ -102,6 +121,8 @@ export function NextMatchCard({
   const isProvisional = fixture.status === 'provisional'
   const longDate = formatLongDate(fixture.date, locale)
   const mapsUrl = getMapsUrl(fixture)
+  const isFinished = fixture.status === 'finished' && !!fixture.result
+  const outcome = getOutcome(fixture)
 
   return (
     <div
@@ -138,7 +159,7 @@ export function NextMatchCard({
         {/* ── Competition strip ───────────────────────────────────── */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <span className="bg-gold text-navy text-[10px] font-heading font-bold uppercase tracking-[0.16em] px-3 py-1.5">
-            {c.badge}
+            {isFinished ? c.resultBadge : c.badge}
           </span>
           <span className="text-[10px] font-heading uppercase tracking-[0.16em] text-gold border border-gold/40 px-2.5 py-1.5">
             {fixture.competition}
@@ -159,10 +180,10 @@ export function NextMatchCard({
         {isHero && (
           <>
             <h2 className="font-display text-3xl md:text-5xl text-white uppercase leading-[0.95] mb-4">
-              {c.headline}
+              {isFinished ? c.resultHeadline : c.headline}
             </h2>
             <p className="text-ivory/70 text-sm md:text-base leading-relaxed max-w-xl mb-9">
-              {c.body(longDate)}
+              {isFinished ? c.resultBody(longDate) : c.body(longDate)}
             </p>
           </>
         )}
@@ -181,10 +202,28 @@ export function NextMatchCard({
 
             {/* Separator */}
             <div className="flex flex-col items-center gap-1.5 shrink-0">
-              <span className="font-display text-gold text-2xl md:text-4xl leading-none">
-                VS
-              </span>
-              <span className="w-8 h-px bg-gold/40" aria-hidden="true" />
+              {isFinished && fixture.result ? (
+                <>
+                  <span className="font-display text-white text-3xl md:text-5xl leading-none whitespace-nowrap">
+                    {fixture.result.homeScore}
+                    <span className="text-gold mx-1.5">:</span>
+                    {fixture.result.awayScore}
+                  </span>
+                  <span
+                    className={clsx(
+                      'text-[10px] font-heading font-bold uppercase tracking-[0.16em] px-2 py-0.5 mt-1',
+                      outcome === 'win' ? 'bg-gold text-navy' : 'bg-white/10 text-ivory/70',
+                    )}
+                  >
+                    {c.finalLabel}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="font-display text-gold text-2xl md:text-4xl leading-none">VS</span>
+                  <span className="w-8 h-px bg-gold/40" aria-hidden="true" />
+                </>
+              )}
             </div>
 
             {/* Away */}
@@ -288,7 +327,7 @@ export function NextMatchCard({
             href="/spielbetrieb"
             className="btn-primary btn group inline-flex items-center justify-center gap-2"
           >
-            <span>{c.cta}</span>
+            <span>{isFinished ? c.resultCta : c.cta}</span>
             <ArrowRight
               className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
               aria-hidden="true"

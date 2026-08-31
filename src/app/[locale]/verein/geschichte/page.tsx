@@ -88,8 +88,8 @@ const timeline = [
   },
   {
     year: '30. Aug. 2026',
-    label: 'Erstes offizielles Pflichtspiel',
-    text: 'SC Metropolis 25 gegen SG Prenzlauer Berg FZ Kunst in der Qualifikationsrunde des Yec-Sports-Pokals. Anstoß 12:00 Uhr im BVB-Stadion, Kunstrasen 2, Siegfriedstraße 71, 10365 Berlin. Das erste Pflichtspiel der Vereinsgeschichte.',
+    label: 'Erstes offizielles Pflichtspiel — 9:1 gewonnen',
+    text: 'SC Metropolis 25 bestreitet im BVB-Stadion auf Kunstrasen 2 das erste Pflichtspiel der Vereinsgeschichte — und gewinnt die Qualifikationsrunde des Yec-Sports-Pokals mit 9:1 gegen SG Prenzlauer Berg FZ Kunst.',
     image: '/images/team-photo-kmer.jpeg',
     imageAlt: 'SC Metropolis 25 — 1. Herrenmannschaft',
   },
@@ -293,7 +293,7 @@ export default function GeschichtePage() {
                 { date: '22. Dezember 2025', event: 'Eintragung ins Vereinsregister, Amtsgericht Berlin-Charlottenburg' },
                 { date: '30. April 2026', event: 'Anerkennung Gemeinnützigkeit §60a AO durch das Finanzamt' },
                 { date: '29. August 2026', event: 'Sportliche Förderungswürdigkeit durch die Senatsverwaltung für Inneres und Sport anerkannt' },
-                { date: '30. August 2026', event: 'Erstes offizielles Pflichtspiel terminiert — Yec-Sports-Pokal, Anstoß 12:00 Uhr' },
+                { date: '30. August 2026', event: 'Erstes offizielles Pflichtspiel gewonnen — 9:1 im Yec-Sports-Pokal' },
               ].map(d => (
                 <div key={d.date} className="flex items-start gap-5 card p-5">
                   <div className="shrink-0">
