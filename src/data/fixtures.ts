@@ -77,8 +77,12 @@ export interface Fixture {
   lastVerified?: string
   /**
    * Path to the opponent's crest under /public/images/opponents/.
-   * Leave undefined unless the other club has given permission to use their
-   * mark — the UI falls back to a neutral initials tile, which is always safe.
+   * Leave undefined unless the club has the other club's mark to hand — the UI
+   * falls back to a neutral initials tile, which is always safe.
+   * Crests must be transparent PNGs: the cards render on dark navy, so an
+   * opaque white background shows as a white box. VERIFY, never assume:
+   *   python3 -c "from PIL import Image; a=Image.open(F).convert('RGBA').getchannel('A'); print(a.getextrema())"
+   * must print a range starting at 0, not (255, 255).
    */
   opponentCrest?: string
   /** Free-text note rendered under the fixture (e.g. why no result exists). */
@@ -218,6 +222,12 @@ export const officialFixtures: Fixture[] = [
     homeTeam: 'NFC Urbanspor 361', awayTeam: 'SC Metropolis 25',
     venue: 'Maybachufer KR1', pitch: 'Kunstrasenplatz',
     venueAddress: 'Pflügerstr. 46, 12045 Berlin',
+    // NFC Urbanspor 361 is a team of NFC Rot-Weiss Berlin 1932 e.V. and has no
+    // mark of its own, so the parent club's crest is used. Supplied by the
+    // chairman on 16.09.2026. The source file was fully opaque on white; the
+    // background was keyed out by edge-connected flood fill so the crest's
+    // interior white (bear shield, diagonal band) is preserved.
+    opponentCrest: '/images/opponents/nfc-rot-weiss-berlin-1932.png',
     status: 'scheduled', matchNumber: '760059024', staffelId: STAFFEL.cup,
     source: 'fussball.de',
     sourceUrl: 'https://www.fussball.de/spiel/nfc-urbanspor-361-sc-metropolis-25/-/spiel/031VQSFHI0000000VS5489BUVSORQI22',
