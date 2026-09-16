@@ -75,6 +75,12 @@ export interface Fixture {
   staffelId?: string
   /** ISO date on which this row was last checked against the source. */
   lastVerified?: string
+  /**
+   * Path to the opponent's crest under /public/images/opponents/.
+   * Leave undefined unless the other club has given permission to use their
+   * mark — the UI falls back to a neutral initials tile, which is always safe.
+   */
+  opponentCrest?: string
   /** Free-text note rendered under the fixture (e.g. why no result exists). */
   note?: string
   /** Where this row's data came from. */
@@ -525,6 +531,26 @@ export function getOutcome(f: Fixture): 'win' | 'draw' | 'loss' | null {
 
 export function getOpponent(f: Fixture): string {
   return isHomeGame(f) ? f.awayTeam : f.homeTeam
+}
+
+/**
+ * Short, distinctive initials for the opponent, used by the neutral crest
+ * placeholder. Generic club prefixes and year/squad numbers are dropped so the
+ * tile shows something recognisable: "NFC Urbanspor 361" -> "UR", not "NF".
+ */
+const GENERIC_PREFIX = /^(1\.)?(FC|SC|SG|SV|TSV|NFC|SFC|BSC|FSV|VfB|VfL|TuS)$/i
+
+export function getOpponentInitials(f: Fixture): string {
+  const words = getOpponent(f)
+    .replace(/[/(),.]/g, ' ')
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .filter(w => !GENERIC_PREFIX.test(w))     // FC, SG, NFC ...
+    .filter(w => !/^\d+$/.test(w))            // 1900, 94, 361 ...
+    .filter(w => !/^(I{1,3}|II|IV|FZ|Kunst)$/i.test(w))
+  if (words.length === 0) return getOpponent(f).slice(0, 2).toUpperCase()
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
+  return (words[0][0] + words[1][0]).toUpperCase()
 }
 
 /** Human-readable venue line, or a locale-appropriate "not yet confirmed". */

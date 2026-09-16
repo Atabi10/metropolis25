@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { clsx } from 'clsx'
 import { MapPin, Clock, CalendarDays, ArrowRight, ExternalLink } from 'lucide-react'
@@ -9,6 +10,8 @@ import {
   getMapsUrl,
   getOutcome,
   getOpponent,
+  getOpponentInitials,
+  CLUB_NAME,
 } from '@/data/fixtures'
 
 type Locale = 'de' | 'en' | 'fr'
@@ -156,6 +159,51 @@ export function NextMatchCard({
   const isMilestone = fixture.milestone === true
   const opponent = getOpponent(fixture)
 
+  /**
+   * One side of the fixture. SC Metropolis 25 always gets the official crest,
+   * whichever slot it occupies. The opponent gets their own crest only when
+   * `opponentCrest` is set (i.e. the other club has given permission); the
+   * fallback is a neutral initials tile that claims no one's mark.
+   */
+  function TeamSide({ name }: { name: string }) {
+    const us = name === CLUB_NAME
+    return (
+      <div className="flex-1 flex flex-col items-center text-center gap-3 min-w-0">
+        {us ? (
+          <BrandMark size="lg" glow decorative />
+        ) : fixture.opponentCrest ? (
+          <span className="w-20 h-20 md:w-24 md:h-24 relative shrink-0">
+            <Image
+              src={fixture.opponentCrest}
+              alt=""
+              fill
+              sizes="96px"
+              className="object-contain"
+              aria-hidden="true"
+            />
+          </span>
+        ) : (
+          <span
+            className="w-20 h-20 md:w-24 md:h-24 border border-white/15 bg-white/[0.03] flex items-center justify-center shrink-0"
+            aria-hidden="true"
+          >
+            <span className="font-display text-ivory/30 text-2xl md:text-3xl tracking-[0.08em] leading-none">
+              {getOpponentInitials(fixture)}
+            </span>
+          </span>
+        )}
+        <span
+          className={clsx(
+            'font-display text-base md:text-2xl uppercase leading-tight break-words',
+            us ? 'text-white' : 'text-ivory/85',
+          )}
+        >
+          {name}
+        </span>
+      </div>
+    )
+  }
+
   return (
     <div
       className={clsx(
@@ -236,13 +284,9 @@ export function NextMatchCard({
         <div className="border-y border-white/10 py-7 mb-7">
           <div className="flex items-center justify-center gap-5 md:gap-10">
 
-            {/* Home — SC Metropolis 25, badged with the official crest */}
-            <div className="flex-1 flex flex-col items-center text-center gap-3 min-w-0">
-              <BrandMark size="lg" glow decorative />
-              <span className="font-display text-white text-base md:text-2xl uppercase leading-tight break-words">
-                {fixture.homeTeam}
-              </span>
-            </div>
+            {/* Home side. The crest follows SC Metropolis 25, not the home
+                slot — for an away fixture the club is on the right. */}
+            <TeamSide name={fixture.homeTeam} />
 
             {/* Separator */}
             <div className="flex flex-col items-center gap-1.5 shrink-0">
@@ -270,20 +314,8 @@ export function NextMatchCard({
               )}
             </div>
 
-            {/* Away */}
-            <div className="flex-1 flex flex-col items-center text-center gap-3 min-w-0">
-              <span
-                className="w-20 h-20 md:w-24 md:h-24 border border-white/15 flex items-center justify-center shrink-0"
-                aria-hidden="true"
-              >
-                <span className="font-display text-ivory/25 text-3xl md:text-4xl leading-none">
-                  {fixture.awayTeam.charAt(0)}
-                </span>
-              </span>
-              <span className="font-display text-ivory/85 text-base md:text-2xl uppercase leading-tight break-words">
-                {fixture.awayTeam}
-              </span>
-            </div>
+            {/* Away side */}
+            <TeamSide name={fixture.awayTeam} />
           </div>
         </div>
 
