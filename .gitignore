@@ -67,3 +67,8 @@ spielervereinbarung*.js
 # Deliberately NOT a blanket *.pdf rule — the website may publish PDFs later.
 /SC_Metropolis25_Player_Profile_2026_27.pdf
 /SC_Metropolis25_Player_Profile_2026_27_EN_FR.pdf
+
+# Matchday flyers generated for social media. These are published to Instagram
+# and WhatsApp, not served by the site, so they stay out of the repo.
+# Deliberately NOT a blanket *.png rule — /public/images holds site assets.
+/M25_vs_FC_Kontinental_Matchday1.png

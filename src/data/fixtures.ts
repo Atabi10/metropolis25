@@ -113,6 +113,10 @@ export const STAFFEL = { league: '667003', cup: '760059' } as const
  * each one is expected to move. If the Staffelleiter later identifies
  * particular fixtures, switch those rows to `provisional` — the UI already
  * renders a "Vorläufig" badge for that status.
+ *
+ * HOW TO RE-CHECK: the notice sits in a hidden node, so it does NOT appear in
+ * document.body.innerText. Test document.documentElement.innerHTML instead, or
+ * check the Staffel page directly. Confirmed still present on 16.09.2026.
  */
 export const SCHEDULE_IS_PROVISIONAL = true
 
@@ -150,23 +154,34 @@ export const officialFixtures: Fixture[] = [
   },
 
   // ── Bezirksliga Betrieb (Bezirksliga FZ) 2026/27 ───────────────────────────
-  // Staffel 667003. Eleven first-round fixtures in total. Ten are fully
-  // published on Fußball.de; the tie against Aimnation is known to the club but
-  // its date, kick-off and Spielnummer are not yet published, so it is recorded
-  // below as `unscheduled` rather than given invented values.
-  // Venues are recorded ONLY where Fußball.de publishes them — three are still
+  // Staffel 667003. All eleven fixtures are now published on Fußball.de,
+  // including the Aimnation tie (13.12.2026), which was carried as
+  // `unscheduled` until 16.09.2026.
+  // Venues are recorded ONLY where Fußball.de publishes them — two are still
   // blank and must stay blank until confirmed.
   {
     id: 'liga-2026-09-06-kontinental',
-    date: '2026-09-06', kickoff: '10:00',
+    date: '2026-09-06',
+    // Kick-off corrected to 14:00 on 04.09.2026 on the chairman's confirmation.
+    // Fußball.de showed 10:00 when this row was researched on 31.08.2026 and its
+    // kick-off times are rendered as images, so the current published value
+    // could not be re-read. Re-verify once Fußball.de is readable again.
+    kickoff: '14:00',
     competition: COMPETITIONS.league, competitionType: 'league',
     homeTeam: 'FC Kontinental', awayTeam: 'SC Metropolis 25',
     venue: 'Adlergestell NR1', pitch: 'Rasenplatz',
-    venueAddress: 'Adlergestell 103, 12439 Berlin',
-    status: 'scheduled', matchNumber: '667003005', staffelId: STAFFEL.league,
+    venueAddress: 'Adlergestell 105, 12439 Berlin',
+    status: 'finished',
+    result: { homeScore: 0, awayScore: 10 },
+    halfTime: { homeScore: 0, awayScore: 10 },
+    matchNumber: '667003005', staffelId: STAFFEL.league,
     source: 'fussball.de',
     sourceUrl: 'https://www.fussball.de/spiel/fc-kontinental-sc-metropolis-25/-/spiel/031FVLLTAO000000VS5489BTVVG7L386',
-    lastVerified: '2026-08-31',
+    lastVerified: '2026-09-16',
+    // Fußball.de obfuscates the final score in the DOM, so it is corroborated
+    // by the published half-time score of 0:10 and by ten M25 goal minutes
+    // (10', 14', 16', 25', 30', 34', 38', 39', 41', 44') with no goal recorded
+    // after the interval by either side. 1. Spieltag.
   },
   {
     id: 'liga-2026-09-14-sfc-stern',
@@ -175,10 +190,32 @@ export const officialFixtures: Fixture[] = [
     homeTeam: 'SFC Stern 1900', awayTeam: 'SC Metropolis 25',
     venue: 'Schildhornstraße KR1', pitch: 'Kunstrasenplatz',
     venueAddress: 'Paulsenstr. / Eing. Kreuznacher Str. 29, 12163 Berlin',
-    status: 'scheduled', matchNumber: '667003016', staffelId: STAFFEL.league,
+    status: 'finished',
+    result: { homeScore: 2, awayScore: 4 },
+    halfTime: { homeScore: 0, awayScore: 2 },
+    matchNumber: '667003016', staffelId: STAFFEL.league,
     source: 'fussball.de',
     sourceUrl: 'https://www.fussball.de/spiel/sfc-stern-1900-sc-metropolis-25/-/spiel/031FVLLSOK000000VS5489BTVVG7L386',
-    lastVerified: '2026-08-31',
+    lastVerified: '2026-09-16',
+    // Corroborated by the published half-time score of 0:2 and by the goal
+    // minutes: M25 36', 40', 64', 74' — SFC Stern 1900 60', 84'. 3. Spieltag.
+  },
+
+  // ── Yec-Sports-Pokal, second tie ──────────────────────────────────────────
+  // Published by Fußball.de after the 9:1 qualifying win. Fußball.de shows no
+  // round label for this tie, so `round` is deliberately omitted rather than
+  // guessed.
+  {
+    id: 'cup-2026-09-23-urbanspor',
+    date: '2026-09-23', kickoff: '20:00',
+    competition: COMPETITIONS.cup, competitionType: 'cup',
+    homeTeam: 'NFC Urbanspor 361', awayTeam: 'SC Metropolis 25',
+    venue: 'Maybachufer KR1', pitch: 'Kunstrasenplatz',
+    venueAddress: 'Pflügerstr. 46, 12045 Berlin',
+    status: 'scheduled', matchNumber: '760059024', staffelId: STAFFEL.cup,
+    source: 'fussball.de',
+    sourceUrl: 'https://www.fussball.de/spiel/nfc-urbanspor-361-sc-metropolis-25/-/spiel/031VQSFHI0000000VS5489BUVSORQI22',
+    lastVerified: '2026-09-16',
   },
   {
     id: 'liga-2026-09-28-prenzlauer-berg',
@@ -233,7 +270,7 @@ export const officialFixtures: Fixture[] = [
     competition: COMPETITIONS.league, competitionType: 'league',
     homeTeam: 'SC Berliner Star', awayTeam: 'SC Metropolis 25',
     venue: 'Adlergestell NR1', pitch: 'Rasenplatz',
-    venueAddress: 'Adlergestell 103, 12439 Berlin',
+    venueAddress: 'Adlergestell 105, 12439 Berlin',
     status: 'scheduled', matchNumber: '667003061', staffelId: STAFFEL.league,
     source: 'fussball.de',
     sourceUrl: 'https://www.fussball.de/spiel/sc-berliner-star-sc-metropolis-25/-/spiel/031FVLLS00000000VS5489BTVVG7L386',
@@ -275,24 +312,22 @@ export const officialFixtures: Fixture[] = [
     lastVerified: '2026-08-31',
   },
 
-  // ── Known fixture, not yet scheduled ──────────────────────────────────────
-  // The club has confirmed this Bezirksliga FZ tie exists. Fußball.de has not
-  // published a date, kick-off time, Spielnummer or venue for it. Those fields
-  // are therefore deliberately absent — do NOT fill them in from inference.
-  // When Fußball.de publishes the full fixture, UPDATE THIS ENTRY in place
-  // (set date / kickoff / matchNumber / venue and change status to 'scheduled').
-  // Do not create a second row for the same match.
+  // Fußball.de published this tie in full on 16.09.2026. It was previously
+  // carried as `unscheduled` on the chairman's confirmation; this is the same
+  // row updated in place, not a duplicate. 13. Spieltag.
   {
     id: 'liga-2026-aimnation',
-    date: null,
+    date: '2026-12-13', kickoff: '12:00',
     competition: COMPETITIONS.league,
     competitionType: 'league',
     homeTeam: 'SC Metropolis 25',
     awayTeam: 'Aimnation',
-    status: 'unscheduled',
-    staffelId: STAFFEL.league,
-    source: 'Vorstand SC Metropolis 25',
-    lastVerified: '2026-08-31',
+    venue: 'BVB-Stadion', pitch: 'Kunstrasen 4',
+    venueAddress: 'Siegfriedstraße 71, 10365 Berlin',
+    status: 'scheduled', matchNumber: '667003087', staffelId: STAFFEL.league,
+    source: 'fussball.de',
+    sourceUrl: 'https://www.fussball.de/spiel/sc-metropolis-25-aimnation/-/spiel/031FVLLTM8000000VS5489BTVVG7L386',
+    lastVerified: '2026-09-16',
   },
 ]
 

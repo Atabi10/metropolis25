@@ -23,15 +23,15 @@ type Locale = 'de' | 'en' | 'fr'
 const META = {
   de: {
     title: `Spielplan & Ergebnisse ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
-    description: `Offizieller Spielplan von SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) und ${COMPETITIONS.cup}. Erstes Pflichtspiel am 30. August 2026 gegen SG Prenzlauer Berg FZ Kunst.`,
+    description: `Offizieller Spielplan von SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) und ${COMPETITIONS.cup}. Alle Termine, Ergebnisse und Spielstätten der Saison ${CURRENT_SEASON}.`,
   },
   en: {
     title: `Fixtures & Results ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
-    description: `Official fixtures of SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) and the ${COMPETITIONS.cup}. First competitive match on 30 August 2026 against SG Prenzlauer Berg FZ Kunst.`,
+    description: `Official fixtures of SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) and the ${COMPETITIONS.cup}. All fixtures, results and venues for the ${CURRENT_SEASON} season.`,
   },
   fr: {
     title: `Calendrier & résultats ${CURRENT_SEASON} | SC Metropolis 25 Berlin`,
-    description: `Calendrier officiel du SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) et ${COMPETITIONS.cup}. Premier match officiel le 30 août 2026 contre SG Prenzlauer Berg FZ Kunst.`,
+    description: `Calendrier officiel du SC Metropolis 25 Berlin e.V. — ${COMPETITIONS.league} (${COMPETITIONS.leagueShort}) et ${COMPETITIONS.cup}. Tous les matchs, résultats et lieux de la saison ${CURRENT_SEASON}.`,
   },
 } as const
 

@@ -8,17 +8,22 @@ import {
   formatVenue,
   getMapsUrl,
   getOutcome,
+  getOpponent,
 } from '@/data/fixtures'
 
 type Locale = 'de' | 'en' | 'fr'
 
 const COPY = {
   de: {
-    badge: 'Erstes offizielles Pflichtspiel',
+    badgeMilestone: 'Erstes offizielles Pflichtspiel',
+    badge: 'Nächstes Pflichtspiel',
     provisional: 'Vorläufig',
-    headline: 'Jetzt wird es offiziell.',
-    body: (d: string) =>
+    headlineMilestone: 'Jetzt wird es offiziell.',
+    headline: 'Weiter geht es.',
+    bodyMilestone: (d: string) =>
       `Am ${d} beginnt ein neues Kapitel unserer Geschichte. SC Metropolis 25 bestreitet sein erstes offizielles Pflichtspiel im Berliner Fußball.`,
+    body: (d: string, comp: string, opp: string) =>
+      `Am ${d} trifft SC Metropolis 25 in der Begegnung ${comp} auf ${opp}.`,
     cta: 'Zum Spiel',
     ctaSecondary: 'Spielplan ansehen',
     kickoff: 'Anstoß',
@@ -27,21 +32,29 @@ const COPY = {
     vs: 'gegen',
     directions: 'Route in Google Maps öffnen',
     mapsAria: 'Spielstätte in Google Maps öffnen',
-    resultBadge: 'Erstes offizielles Pflichtspiel',
-    resultHeadline: 'Angekommen.',
-    resultBody: (d: string) =>
+    resultBadgeMilestone: 'Erstes offizielles Pflichtspiel',
+    resultBadge: 'Letztes Ergebnis',
+    resultHeadlineMilestone: 'Angekommen.',
+    resultHeadline: { win: 'Gewonnen.', draw: 'Geteilt.', loss: 'Abgehakt.' },
+    resultBodyMilestone: (d: string) =>
       `Am ${d} hat SC Metropolis 25 sein erstes offizielles Pflichtspiel bestritten — und gewonnen.`,
+    resultBody: (d: string, comp: string, opp: string) =>
+      `Am ${d} in der Begegnung ${comp} gegen ${opp}.`,
     finalLabel: 'Endstand',
     resultCta: 'Alle Ergebnisse',
     venueNote:
       'Die Spielstätte wurde vom Bezirksamt Lichtenberg für dieses Spiel überlassen. Der Antrag auf eine dauerhafte Trainings- und Spielstätte läuft weiter.',
   },
   en: {
-    badge: 'First official competitive match',
+    badgeMilestone: 'First official competitive match',
+    badge: 'Next competitive match',
     provisional: 'Provisional',
-    headline: 'It becomes official.',
-    body: (d: string) =>
+    headlineMilestone: 'It becomes official.',
+    headline: 'Next up.',
+    bodyMilestone: (d: string) =>
       `On ${d} a new chapter of our history begins. SC Metropolis 25 plays its first official competitive match in Berlin football.`,
+    body: (d: string, comp: string, opp: string) =>
+      `On ${d} SC Metropolis 25 face ${opp} in the ${comp}.`,
     cta: 'Match details',
     ctaSecondary: 'View fixtures',
     kickoff: 'Kick-off',
@@ -50,21 +63,29 @@ const COPY = {
     vs: 'vs',
     directions: 'Open directions in Google Maps',
     mapsAria: 'Open venue in Google Maps',
-    resultBadge: 'First official competitive match',
-    resultHeadline: 'We have arrived.',
-    resultBody: (d: string) =>
+    resultBadgeMilestone: 'First official competitive match',
+    resultBadge: 'Latest result',
+    resultHeadlineMilestone: 'We have arrived.',
+    resultHeadline: { win: 'Won.', draw: 'Shared.', loss: 'Done with.' },
+    resultBodyMilestone: (d: string) =>
       `On ${d} SC Metropolis 25 played its first official competitive match — and won it.`,
+    resultBody: (d: string, comp: string, opp: string) =>
+      `On ${d} against ${opp} in the ${comp}.`,
     finalLabel: 'Final score',
     resultCta: 'All results',
     venueNote:
       'The venue was made available for this match by Bezirksamt Lichtenberg. Our application for a permanent training and match facility remains under review.',
   },
   fr: {
-    badge: 'Premier match officiel',
+    badgeMilestone: 'Premier match officiel',
+    badge: 'Prochain match officiel',
     provisional: 'Provisoire',
-    headline: 'Cela devient officiel.',
-    body: (d: string) =>
+    headlineMilestone: 'Cela devient officiel.',
+    headline: 'La suite.',
+    bodyMilestone: (d: string) =>
       `Le ${d}, un nouveau chapitre de notre histoire commence. SC Metropolis 25 dispute son premier match officiel dans le football berlinois.`,
+    body: (d: string, comp: string, opp: string) =>
+      `Le ${d}, SC Metropolis 25 affronte ${opp} en ${comp}.`,
     cta: 'Voir le match',
     ctaSecondary: 'Voir le calendrier',
     kickoff: 'Coup d’envoi',
@@ -73,10 +94,14 @@ const COPY = {
     vs: 'contre',
     directions: 'Ouvrir l’itinéraire dans Google Maps',
     mapsAria: 'Ouvrir le stade dans Google Maps',
-    resultBadge: 'Premier match officiel',
-    resultHeadline: 'Nous y sommes.',
-    resultBody: (d: string) =>
+    resultBadgeMilestone: 'Premier match officiel',
+    resultBadge: 'Dernier résultat',
+    resultHeadlineMilestone: 'Nous y sommes.',
+    resultHeadline: { win: 'Gagné.', draw: 'Partagé.', loss: 'Tourné la page.' },
+    resultBodyMilestone: (d: string) =>
       `Le ${d}, SC Metropolis 25 a disputé son premier match officiel — et l’a gagné.`,
+    resultBody: (d: string, comp: string, opp: string) =>
+      `Le ${d}, contre ${opp} en ${comp}.`,
     finalLabel: 'Score final',
     resultCta: 'Tous les résultats',
     venueNote:
@@ -127,6 +152,9 @@ export function NextMatchCard({
   const mapsUrl = getMapsUrl(fixture)
   const isFinished = fixture.status === 'finished' && !!fixture.result
   const outcome = getOutcome(fixture)
+  // Only the club's genuine first official fixture may use the milestone copy.
+  const isMilestone = fixture.milestone === true
+  const opponent = getOpponent(fixture)
 
   return (
     <div
@@ -163,7 +191,9 @@ export function NextMatchCard({
         {/* ── Competition strip ───────────────────────────────────── */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <span className="bg-gold text-navy text-[10px] font-heading font-bold uppercase tracking-[0.16em] px-3 py-1.5">
-            {isFinished ? c.resultBadge : c.badge}
+            {isFinished
+              ? (isMilestone ? c.resultBadgeMilestone : c.resultBadge)
+              : (isMilestone ? c.badgeMilestone : c.badge)}
           </span>
           <span className="text-[10px] font-heading uppercase tracking-[0.16em] text-gold border border-gold/40 px-2.5 py-1.5">
             {fixture.competition}
@@ -184,10 +214,20 @@ export function NextMatchCard({
         {isHero && (
           <>
             <h2 className="font-display text-3xl md:text-5xl text-white uppercase leading-[0.95] mb-4">
-              {isFinished ? c.resultHeadline : c.headline}
+              {isFinished
+                ? (isMilestone
+                    ? c.resultHeadlineMilestone
+                    : c.resultHeadline[outcome ?? 'draw'])
+                : (isMilestone ? c.headlineMilestone : c.headline)}
             </h2>
             <p className="text-ivory/70 text-sm md:text-base leading-relaxed max-w-xl mb-9">
-              {isFinished ? c.resultBody(longDate) : c.body(longDate)}
+              {isFinished
+                ? (isMilestone
+                    ? c.resultBodyMilestone(longDate)
+                    : c.resultBody(longDate, fixture.competition, opponent))
+                : (isMilestone
+                    ? c.bodyMilestone(longDate)
+                    : c.body(longDate, fixture.competition, opponent))}
             </p>
           </>
         )}
