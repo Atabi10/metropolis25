@@ -31,7 +31,7 @@ Bevor du beginnst, installiere folgendes auf deinem Computer:
 
 ```bash
 # Navigiere zum Projektordner (passe den Pfad an)
-cd "/Users/atabi/Desktop/M25/Website/Sportclub website"
+cd "/Users/atabi/Developer/CLAUDE/metropolis25/Website/Sportclub website"
 
 # Git initialisieren
 git init
